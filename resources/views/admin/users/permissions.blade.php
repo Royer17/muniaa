@@ -75,9 +75,6 @@
     </div><!-- /.row -->
   </section><!-- /.content -->
   </div>
-
-@include('admin.users.crear-editar')
-
 @stop
 
 @section('scripts')
