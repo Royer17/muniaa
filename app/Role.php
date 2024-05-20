@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Role extends Model
 {
@@ -12,7 +13,7 @@ class Role extends Model
 
     protected $primaryKey = 'id';
     
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'slug'];
 
     public function users() {
         return $this->hasMany('App\User', 'role_id');

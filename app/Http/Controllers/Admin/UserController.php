@@ -40,7 +40,11 @@ class UserController extends Controller {
         	return redirect('/admin/dashboard');
         }
 
-		return View::make('admin.users.datatable');
+		$roles = DB::table('roles')
+			->where('deleted_at', NULL)
+			->get(['id', 'name']);
+
+		return View::make('admin.users.datatable', compact('roles'));
 	}
 
 	public function get_datatable(Request $request)

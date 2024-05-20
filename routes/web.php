@@ -249,6 +249,14 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
     Route::get('/user-datatable', 'UserController@get_datatable');
     
 
+    //Roles
+    Route::get('/roles', ['as' => 'datatable-user', 'uses' => 'RoleController@get_index']);
+    Route::post('role', 'RoleController@store');
+    Route::put('role/{id}', 'RoleController@update');
+    Route::get('role/{id}', 'RoleController@show');
+    Route::delete('role/{id}', 'RoleController@delete');
+    Route::get('/role-datatable', 'RoleController@get_datatable');
+    
     //Comisiones
     Route::get('/comisiones', ['as' => 'datatable-comisiones', 'uses' => 'CommissionController@get_index']);
     Route::post('commission', 'CommissionController@store');

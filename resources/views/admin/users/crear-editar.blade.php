@@ -23,13 +23,17 @@
                                     @if(\Auth::user()->role_id == 1)
                                     <div class="form-group">
                                         {{ Form::label('content', 'Rol') }}
-
+    
                                         <select name="role_id" class="form-control">
                                             <option value="">Seleccione</option>
-                                            <option value="1">Administrador</option>
+                                            @foreach($roles as $role)
+                                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                            @endforeach
+                                            {{-- 
                                             <option value="3">Imagen</option>
                                             <option value="4">Recursos</option>
                                             <option value="5">Legal</option>
+                                            --}}
 
                                         </select>
                                         <div id="user-subject-error" class="text-danger mensaje-error"></div>
