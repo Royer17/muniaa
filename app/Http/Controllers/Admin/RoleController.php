@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Role;
+use App\User;
 use App\Http\Requests\RoleRequest;
 use DB;
 use Auth;
 use Illuminate\Support\Facades\View;
 use DataTables;
+use App\Permission;
 
 class RoleController extends Controller
 {
@@ -57,8 +59,11 @@ class RoleController extends Controller
                     </button>
                     <button class='btn btn-danger btn-sm solsoConfirm' data-toggle='modal' data-title='Slider' title='Eliminar' value=$model->id OnClick='Eliminar(this);'>
                       <i class='fa fa-trash'></i>
-                    </button>";
-
+                    </button>
+                    <form action='/admin/role/permisos' method='POST' target='_blank'>
+                        <input type='hidden' value=$model->id name='role_id'>
+                        <button class='btn btn-sm' type='submit'>Permisos</button>
+                    </form>";
         })->make();
     }
 
@@ -106,7 +111,47 @@ class RoleController extends Controller
         $role = Role::find($id);
         $role->delete();
         return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha eliminado correctamente', 'symbol' => 'success'], 200);
-        
+       
     }
+
+	public function post_view_permissions(Request $request)
+	{	
+		$role = Role::find($request->role_id);
+
+		$permission_list = Permission::with(['role' => function($query) use($role) {
+			$query->where('role_id', $role->id);
+		}])->get();
+
+		// $permission_list = DB::table('permissions')
+		// 	->leftJoin('permission_user', 'permissions.id', '=', 'permission_user.permission_id')
+		// 	->where('permission_user.user_id', $user->id)
+		// 	->select(['permissions.name', 'permissions.id', 'permission_user.user_id'])
+		// 	->get();
+
+		return View::make('admin.roles.permissions', compact('permission_list', 'role'));
+
+	}
+    
+	public function get_view_permissions()
+	{
+		abord(404);
+	}
+
+	public function update_permissions($role_id, Request $request)
+	{
+		$role = Role::find($role_id);
+		$permissions = $request->permissions;
+		$role->permissions()->sync($permissions);
+
+        $users_of_this_role = User::whereRoleId($role_id)
+            ->get();
+
+        foreach ($users_of_this_role as $key => $user) {
+		    $user->permissions()->sync($permissions);
+        }
+
+		return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha actualizado correctamente los permisos', 'symbol' => 'success'], 200);
+
+	}
 
 }

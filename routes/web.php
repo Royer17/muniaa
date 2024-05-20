@@ -254,7 +254,10 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
     Route::post('role', 'RoleController@store');
     Route::put('role/{id}', 'RoleController@update');
     Route::get('role/{id}', 'RoleController@show');
+    Route::post('/role/permisos', 'RoleController@post_view_permissions');
+    Route::get('/role/permisos', 'RoleController@get_view_permissions');
     Route::delete('role/{id}', 'RoleController@delete');
+    Route::post('/role/{id}/permissions', 'RoleController@update_permissions');
     Route::get('/role-datatable', 'RoleController@get_datatable');
     
     //Comisiones

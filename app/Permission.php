@@ -21,5 +21,9 @@ class Permission extends Model
         return $this->hasMany('App\PermissionUser', 'permission_id');
     }
 
+    public function role()
+    {
+        return $this->hasMany('App\RolePermission', 'permission_id');
+    }
 
 }
