@@ -11,6 +11,7 @@
 |
 */
 
+
 //Route::get('/login', 'Auth\LoginController@showLoginForm');
 
 Route::get('/panel',
