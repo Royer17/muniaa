@@ -44,6 +44,15 @@
           </li>
           @endif
 
+          @if(in_array('ver-roles', $permissions))
+          <li class="nav-item">
+            <a href="/admin/roles" class="nav-link">
+              <i class="nav-icon fas fa-id-card"></i>
+              <p>Roles</p>
+            </a>
+          </li>
+          @endif
+
           @if(in_array('ver-concejo-municipal', $permissions))
           <li class="nav-item">
             <a href="/admin/concejo-municipal" class="nav-link">
