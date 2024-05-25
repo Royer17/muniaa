@@ -12,6 +12,7 @@
 
     <link href="{{ '/css/plugins.css' }}" rel="stylesheet">
     <link href="{{ '/css/app.css' }}" rel="stylesheet">
+    <link href="{{ '/css/uidev.css'}}" rel="stylesheet">
 
     <link href="{{ '/store/css/stylus.css' }}" rel="stylesheet">
     <link href="{{ '/css/styles.html' }}" rel="stylesheet">
@@ -32,7 +33,84 @@
 
  
    <style>
-       .gc-bubbleDefault{background-color:transparent!important;text-align:left;padding:0!important;margin:0!important;border:0!important;table-layout:auto!important}.gc-reset{background-color:transparent!important;border:0!important;padding:0!important;margin:0!important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc!important}.pls-contentLeft,.pls-topTail,.pls-vertShimLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif)!important}.pls-topTail{background-repeat:repeat-x!important;background-position:bottom!important}.pls-vertShim{background-color:#fff!important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5!important}.pls-vertShimLeft{background-repeat:repeat-y!important;background-position:100%!important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2!important}.pls-contentWrap{background-color:#fff!important;position:relative!important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:100%;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png)!important;background-repeat:repeat-y!important;vertical-align:top}.pls-dropBL,.pls-dropTR .pls-dropBR,.pls-tailleft,.pls-vert,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png)!important;background-repeat:repeat-x!important;width:100%;vertical-align:top}.pls-topLeft{background:inherit!important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit!important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit!important;text-align:right}.pls-bottomRight{background:inherit!important;text-align:left;vertical-align:top}.pls-tailbottom,.pls-tailleft,.pls-tailright,.pls-tailtop{display:none;position:relative}.pls-dropBL,.pls-dropBR,.pls-dropTR,.pls-tailbottom,.pls-tailleft,.pls-tailright,.pls-tailtop{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png)!important;background-repeat:no-repeat}.tbl-grey .pls-dropBL,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropTR,.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailleft,.tbl-grey .pls-tailright,.tbl-grey .pls-tailtop{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png)!important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-tailbottom,.pls-topLeft img,.pls-topRight img{vertical-align:bottom}.bubbleDropTR,.pls-bottomLeft,.pls-bottomLeft img,.pls-dropBottom img,.pls-dropBottomL img,.pls-dropBottomR img{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacerbottom,.pls-spacerleft,.pls-spacerright,.pls-spacertop{position:static!important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}
+       .gc-bubbleDefault{background-color:transparent!important;
+        text-align:left;padding:0!important;
+        margin:0!important;
+        border:0!important;
+        table-layout:auto!important}.gc-reset{background-color:transparent!important;
+        border:0!important;
+        padding:0!important;
+        margin:0!important;
+        text-align:left}
+        .pls-bubbleTop{border-bottom:1px solid #ccc!important}
+        .pls-contentLeft,.pls-topTail,
+        .pls-vertShimLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif)!important}
+        .pls-topTail{background-repeat:repeat-x!important;background-position:bottom!important}
+        .pls-vertShim{background-color:#fff!important;text-align:right}.tbl-grey 
+        .pls-vertShim{background-color:#f5f5f5!important}
+        .pls-vertShimLeft{background-repeat:repeat-y!important;background-position:100%!important;height:4px}
+        .pls-vertShimRight{height:4px}
+        .pls-confirm-container 
+        .pls-vertShim{background-color:#fff3c2!important}
+        .pls-contentWrap{background-color:#fff!important;position:relative!important;vertical-align:top}
+        .pls-contentLeft{background-repeat:repeat-y;background-position:100%;vertical-align:top}
+        .pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png)!important;background-repeat:repeat-y!important;vertical-align:top}
+        .pls-dropBL,.pls-dropTR .pls-dropBR,.pls-tailleft,.pls-vert,
+        .pls-vert img{vertical-align:top}
+        .pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png)!important;background-repeat:repeat-x!important;width:100%;vertical-align:top}
+        .pls-topLeft{background:inherit!important;text-align:right;vertical-align:bottom}
+        .pls-topRight{background:inherit!important;text-align:left;vertical-align:bottom}
+        .pls-bottomLeft{background:inherit!important;text-align:right}
+        .pls-bottomRight{background:inherit!important;text-align:left;vertical-align:top}
+        .pls-tailbottom,.pls-tailleft,.pls-tailright,.pls-tailtop{display:none;position:relative}
+        .pls-dropBL,.pls-dropBR,.pls-dropTR,.pls-tailbottom,.pls-tailleft,.pls-tailright,
+        .pls-tailtop{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png)!important;background-repeat:no-repeat}
+        .tbl-grey .pls-dropBL,.tbl-grey .pls-dropBR,.tbl-grey 
+        .pls-dropTR,.tbl-grey .pls-tailbottom,.tbl-grey 
+        .pls-tailleft,.tbl-grey .pls-tailright,.tbl-grey 
+        .pls-tailtop{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png)!important}
+        .pls-tailbottom{background-position:-23px 0}
+        .pls-confirm-container .pls-tailbottom{background-position:-23px -10px}
+        .pls-tailtop{background-position:-19px -20px}
+        .pls-tailright{background-position:0 0}
+        .pls-tailleft{background-position:-10px 0}
+        .pls-tailtop{vertical-align:top}
+        .gc-bubbleDefault td{line-height:0;font-size:0}.pls-tailbottom,
+        .pls-topLeft img,.pls-topRight img{vertical-align:bottom}
+        .bubbleDropTR,.pls-bottomLeft,.pls-bottomLeft img,
+        .pls-dropBottom img,.pls-dropBottomL img,
+        .pls-dropBottomR img{vertical-align:top}
+        .pls-dropTR{background-position:0 -22px}
+        .pls-dropBR{background-position:0 -27px}
+        .pls-dropBL{background-position:0 -16px}
+        .pls-spacerbottom,.pls-spacerleft,.pls-spacerright,
+        .pls-spacertop{position:static!important}
+        .pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}
+
+        /* INICIO  UIDEV */
+
+        body {
+            font-family: 'Roboto', Arial, Tahoma, sans-serif;
+        }
+        .main-menu .navigation>li>a {
+            color: #000000; 
+            font-weight:600;
+           
+        }
+        .main-menu .navigation>li:hover>a, .main-menu .navigation>li.current>a, .header-style-two .header-upper .main-menu .navigation>li:hover>a, .header-style-two .header-upper .main-menu .navigation>li.current>a, .header-style-two .header-upper .main-menu .navigation>li.current>a:before, .header-style-two .header-upper .main-menu .navigation>li:hover>a:before {
+            color: #063A62 ;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            
+        }
+
+        .main-menu .navigation>li>ul>li:hover>a{
+            color: #063A62 ;
+        }
+
+        /* FIN  UIDEV */
    </style>
 </head>
 <body>

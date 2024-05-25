@@ -345,7 +345,7 @@
     color: #211F20;
 }
 .cbasic{
-    color: #B12C40;
+    color: #063A62;
 }
 
 .cdark{
@@ -372,7 +372,7 @@
     background: #00A551;
 }
 .ctext_anuncio{
-    background-color: #B12C40; color: #FFF;
+    background-color: #063A62; color: #FFF;
 }
 .tobra_e{
     
@@ -719,7 +719,7 @@
     color:#222222;
 }
 .reclamaciones:hover{
-    color: #B12C40;
+    color: #063A62;
 }
 .anuncio__option{
     display: grid;

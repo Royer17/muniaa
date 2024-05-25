@@ -2,19 +2,7 @@
 
 
 <section class="banner__section banner__opacidad">
-<!-- 
-  <div id="banner__logo" class="text-white text-center">
-    <div class="banner__logo--visible text-right mb-5">
-        <img class="logo_size" src="img/logo1.png" alt="...">
-    </div> 
-    <div class="pr-2 pl-2 pr-md-4 pl-md-4 mb-5">
-        <p class="muni__titulo1">Municipalidad Distrital de</p>
-        <p class="muni__titulo2">Estique</p>
-    </div>
-    <div class="banner__logo--visible text-left mb-5">
-        <img class="logo_size" src="img/logo20231.png" alt="...">
-    </div>
-</div>-->
+
 
 <div id="carouselExampleIndicators" class="carousel slide banner__section" data-ride="carousel" style="position: relative;">
     <ol class="carousel-indicators">
@@ -26,14 +14,7 @@
             @endif
         @endforeach
 
-<!--         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li> -->
+
 
     </ol>
 
@@ -71,9 +52,10 @@
 
 
 <section class="contenedor">
+ 
     <div class="contenedor__seccion">
         <div class="row naviconos"> 
-
+    
          <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 pb-3">
             <div class="card card-body btn_ovrly">
                 <a href="/convocatoria">
@@ -123,7 +105,6 @@
             </div>
         </div>
     </div>
-
 
 
     <div class="row pt-4">
