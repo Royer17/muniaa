@@ -21,7 +21,7 @@ $datatable = $('#document-type-datatable').DataTable({
     processing: true,
     serverSide: true,
     destroy:true,
-    ajax: `/admin/role-datatable`,
+    ajax: `/admin/document-types-datatable`,
     columns: [
         {data:'id', name: 'id', 'searchable': false},
         {data:'name', name: 'name', 'searchable': true},
@@ -78,7 +78,7 @@ function Eliminar(btn){
     const id = btn.value;
 
     Swal.fire({
-    title: `Eliminar Rol`,
+    title: `Eliminar: ${btn.dataset.name}`,
     showCancelButton: true,
     confirmButtonText: `Confirmar`,
     cancelButtonText: `Cancelar`,

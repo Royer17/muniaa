@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-12">
           <div class="col-sm-12">
-            <h1>Roles</h1>
+            <h1>Tipos de Documento</h1>
           </div>
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-              <li class="breadcrumb-item active">Roles</li>
+              <li class="breadcrumb-item active">Tipos de Documento</li>
             </ol>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <div class="box-header">
             <div class="col-lg-12">
               <button type="button" class="btn btn-success add" data-toggle="modal" data-target="">
-                <i class="fa fa-book-open"></i> Nuevo Tipo de document
+                <i class="fa fa-book-open"></i> Nuevo Tipo de Documento
               </button>
             </div>
           </div>

@@ -141,6 +141,14 @@
               <p>Normas</p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="/admin/tipos-de-documento" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Tipos de documento</p>
+            </a>
+          </li>
+
           @endif
 
           @if(in_array('ver-videos', $permissions))

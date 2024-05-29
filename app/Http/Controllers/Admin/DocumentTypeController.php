@@ -21,7 +21,7 @@ class DocumentTypeController extends Controller
             ->where('user_id', $user->id)
             ->join('permissions', 'permission_user.permission_id', '=', 'permissions.id')
             ->select(['permissions.slug'])
-            ->where('permissions.slug', 'ver-roles')
+            ->where('permissions.slug', 'ver-normas')
             ->get()
             ->toArray();
 
@@ -29,7 +29,7 @@ class DocumentTypeController extends Controller
             return redirect('/admin/dashboard');
         }
        
-        return View::make('admin.roles.datatable');
+        return View::make('admin.document_types.datatable');
     }
 
     public function get_datatable(Request $request)
@@ -45,7 +45,7 @@ class DocumentTypeController extends Controller
             return "<button class='btn btn-primary btn-sm solsoShowModal' data-toggle='tooltip' title='Editar' value=$model->id OnClick='Editar(this);'>
                     <i class='fa fa-edit'></i>
                     </button>
-                    <button class='btn btn-danger btn-sm solsoConfirm' data-toggle='modal' data-title='Slider' title='Eliminar' value=$model->id OnClick='Eliminar(this);'>
+                    <button class='btn btn-danger btn-sm solsoConfirm' data-toggle='modal' data-title='Slider' data-name='$model->name' title='Eliminar' value=$model->id OnClick='Eliminar(this);'>
                       <i class='fa fa-trash'></i>
                     </button>";
         })->make();

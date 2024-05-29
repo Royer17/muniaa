@@ -188,6 +188,15 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
     Route::delete('norma/{id}', 'NormaController@delete');
     Route::get('/normas-datatable', 'NormaController@get_datatable');
 
+    //Document types
+    Route::get('/tipos-de-documento', ['as' => 'datatable-document-types', 'uses' => 'DocumentTypeController@get_index']);
+    Route::post('document-type', 'DocumentTypeController@store');
+    Route::put('document-type/{id}', 'DocumentTypeController@update');
+    Route::get('document-type/{id}', 'DocumentTypeController@show');
+
+    Route::delete('document-type/{id}', 'DocumentTypeController@delete');
+    Route::get('/document-types-datatable', 'DocumentTypeController@get_datatable');
+
     //Videos
     Route::get('/videos', ['as' => 'datatable-videos', 'uses' => 'YoutubeController@get_index']);
     Route::post('video', 'YoutubeController@store');
