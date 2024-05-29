@@ -6,7 +6,7 @@
         <div class="modal-header">
            <div class="row">
             <div class="col-md-6">
-              <h4 class="solsoModalTitle" id="modal-title-norma">Crear Norma</h4>
+              <h4 class="solsoModalTitle title">Crear Norma</h4>
             </div>
             <div class="col-md-6">
             </div>
