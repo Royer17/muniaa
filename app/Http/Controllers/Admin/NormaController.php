@@ -38,9 +38,9 @@ class NormaController extends Controller
             return redirect('/admin/dashboard');
         }
 
-
-        $document_types = DB::table('tdocumento')
-            ->select(['iddoc as id', 'detalle as name'])
+        $document_types = DB::table('document_types')
+            ->select(['id', 'name'])
+            ->where('deleted_at', NULL)
             ->get();
 
         return View::make('admin.normas.datatable', compact('document_types'));
@@ -51,8 +51,8 @@ class NormaController extends Controller
         $role_id = $request->role_id;
 
         $result = DB::table('normas')
-            //->join('tdocumento', 'normas.tipodocu', '=', 'tdocumento.iddoc')
-            ->select('normas.idnor', 'normas.tipodocu as detalle','normas.fechaemi', 'normas.numdoc', 'normas.nomfile', 'normas.published')
+            ->join('document_types', 'normas.tipodocu', '=', 'document_types.id')
+            ->select('normas.idnor', 'document_types.name as detalle','normas.fechaemi', 'normas.numdoc', 'normas.nomfile', 'normas.published')
             ->where('normas.deleted_at', NULL);
 
         return DataTables::of($result)

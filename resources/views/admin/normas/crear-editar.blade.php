@@ -31,11 +31,16 @@
                                     <div class="form-group">
                                         {{ Form::label('title', 'Tipo de Documento') }}
                                         <select name="tipodocu" class="form-control">
+                                            @foreach($document_types as $document_type)
+                                            <option value="{{ $document_type->id }}">{{ $document_type->name }}</option>
+                                            @endforeach
+                                            {{-- 
                                             <option value="Acuerdo de Concejo">Acuerdo de Concejo</option>
                                             <option value="Ordenanza Municipal">Ordenanza Municipal</option>
                                             <option value="Resolución de Alcaldia">Resolución de Alcaldia</option>
                                             <option value="Decreto de Alcaldia">Decreto de Alcaldia</option>
                                             <option value="Resolución de Gerencia Municipal">Resolución de Gerencia Municipal</option>
+                                            --}}
                                         </select>
                                         <div id="norma-tipodocu-error" class="text-danger mensaje-error"></div>
                                     </div>

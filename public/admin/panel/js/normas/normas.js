@@ -29,7 +29,7 @@ function datatableConvocatorias()
         ajax: `/admin/normas-datatable?role_id=${roleId}`,
         columns: [
             {data:'idnor', name: 'idnor', 'searchable': false},
-            {data:'detalle', name: 'normas.tipodocu', 'searchable': true},
+            {data:'detalle', name: 'document_types.name', 'searchable': true},
             {data:'fechaemi', name: 'fechaemi', 'searchable': false},
             {data:'numdoc', name: 'numdoc', 'searchable': true},
             {data:'nomfile', name: 'nomfile', 'searchable': false},
