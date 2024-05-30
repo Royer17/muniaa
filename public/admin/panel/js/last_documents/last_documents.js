@@ -34,7 +34,7 @@ function datatableDocuments()
         "aoColumnDefs": [
             {
                 "bVisible": false,
-                 "aTargets": [0, 4]
+                 "aTargets": [0, 2, 4]
             },
             {
                   "aTargets": [ 3 ],
@@ -82,12 +82,26 @@ function Editar(btn){
     let _route = '/admin/last-document/'+_id;
     $.get(_route, function(p){
         const form = `#form-last-documents`;
+
+        const {image, external_image, description, url} = p;
+
         document.querySelector(`${form} input[name="title"]`).value = p.title; 
         document.querySelector(`${form} input[name="id"]`).value = p.id; 
-        document.querySelector(`${form} input[name="acronym"]`).value = p.acronym;
+        document.querySelector(`${form} textarea[name="description"]`).value = description;
         document.querySelector(`${form} select[name="published"]`).value = p.published;
+        document.querySelector(`${form} input[name="url"]`).value = url;
+        addSummernoteEditorMini($(`${last_document.formId} textarea[name="description"]`));
 
-        console.log(p);
+        if(image){
+            document.querySelector(`${last_document.formId} .image`).setAttribute('src', `${image}`);
+            $(`${last_document.formId} .image`).show();
+        }
+
+        if(external_image){
+            document.querySelector(`${last_document.formId} .external_image`).setAttribute('src', `${external_image}`);
+            $(`${last_document.formId} .external_image`).show();
+        }
+
         let content = "";
         p.files.forEach((element) => {
             content += `<a href="${element.url}" target="_blank">${element.title}</a><button>X</button>`;
@@ -177,23 +191,31 @@ last_document.btnAdd.on('click', function(){
     last_document.modalTitle.text("Crear Documento");
     last_document.btnUpdate.hide();
     last_document.btnSave.show();
+    addSummernoteEditorMini($(`${last_document.formId} textarea[name="description"]`));
+
     $('#modalCrearLastDocument').modal('show');
 
 });
 
 //Eventos de limpieza
 function cleanModal(){
-  $('#form-last-documents')[0].reset();
-  $(`#video_method`).remove();
-  //$('#modalCrearLastDocument a').hide();
+    destroySummernote($(`${last_document.formId} textarea[name="description"]`));
 
-  while(document.querySelector('#form-last-documents .files').firstChild){
+    $('#form-last-documents')[0].reset();
+    $(`${last_document.formId} textarea[name="description"]`).val("");
+    $(`#video_method`).remove();
+    //$('#modalCrearLastDocument a').hide();
+
+    while(document.querySelector('#form-last-documents .files').firstChild){
     document.querySelector('#form-last-documents .files').removeChild(document.querySelector('#form-last-documents .files').firstChild);
-  }
+    }
 
-  while(document.querySelector('#form-last-documents .links').firstChild){
+    while(document.querySelector('#form-last-documents .links').firstChild){
     document.querySelector('#form-last-documents .links').removeChild(document.querySelector('#form-last-documents .links').firstChild);
-  }
+    }
+
+    $(`${last_document.formId} .image`).hide();
+    $(`${last_document.formId} .external_image`).hide();
 
 }
 
