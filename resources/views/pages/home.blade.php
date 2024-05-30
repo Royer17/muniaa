@@ -492,10 +492,10 @@
             </div>
             @endforeach
 
+        </div>
     </div>
-</div>
 
-<div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 pb-5">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 pb-5">
     <h3 class="section__titulo">Documentos de Gestión</h3>
     <div class="card sombrax">
         <div class="nav-link tdocu" style="background-color:#2ecc71">
@@ -518,7 +518,27 @@
 </div>  
 </div>
 
-
+<div class="row pt-4">
+    <div class="col-12 col-sm-12 pb-5">
+        <h3 class="section__titulo">Galería de Imágenes</h3>
+        <div class="carousel-box">
+            <div class="owl-theme owl-carousel">
+                @foreach($notice_images as $image)
+                <div class="item">
+                        <div class="card d-flex justify-content-end">
+                            <div class="caja">
+                                <div class="box img-hover-zoom">
+                                    <img src="{{ $image->foto }}" alt="Sin Imagen">
+                                </div>
+                            </div>
+    
+                        </div>     
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="row pt-4">
     <div class="col-12 col-sm-12 pb-5">
