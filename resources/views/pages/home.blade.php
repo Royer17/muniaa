@@ -13,9 +13,6 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"></li>
             @endif
         @endforeach
-
-
-
     </ol>
 
     <div class="carousel-inner banner__caja">
