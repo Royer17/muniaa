@@ -13,7 +13,7 @@ class LastDocument extends Model
 
     protected $primaryKey = 'id';
     
-    protected $fillable = ['title', 'slug', 'acronym', 'published'];
+    protected $fillable = ['title', 'slug', 'acronym', 'published', 'url', 'description'];
 
     public function files()
     {

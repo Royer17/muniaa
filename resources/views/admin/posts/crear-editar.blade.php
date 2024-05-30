@@ -39,7 +39,7 @@
 
                                     <div class="form-group">
                                         {{ Form::label('content', 'Resumen') }}
-                                        <textarea name="vc_resumen_informacion" placeholder="Resumen de la noticia." class="form-control" id="summary-post" rows="5"></textarea>
+                                        <textarea name="description" placeholder="" class="form-control" rows="5"></textarea>
                                     </div>
 
                                     <div class="form-group">

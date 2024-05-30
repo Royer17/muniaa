@@ -84,7 +84,8 @@ class LastDocumentController extends Controller
 
     public function store(CreateLastDocumentRequest $request)
     {
-        $data = $request->except(['files', 'files_title']);
+        $data = $request->except(['files', 'files_title', 'image', 'external_image']);
+        $data['acronym'] = NULL;
 
         $document = new LastDocument();
         $document->fill($data);
@@ -126,7 +127,8 @@ class LastDocumentController extends Controller
  public function update($id, CreateLastDocumentRequest $request)
  {
 
-    $data = $request->except(['files', 'files_title']);
+    $data = $request->except(['files', 'files_title', 'image', 'external_image']);
+    $data['acronym'] = NULL;
 
     $document = LastDocument::find($id);
     $document->fill($data);

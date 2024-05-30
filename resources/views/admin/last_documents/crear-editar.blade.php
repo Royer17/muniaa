@@ -35,9 +35,25 @@
                                     </div>
 
                                     <div class="form-group">
-                                        {{ Form::label('title', 'Sigla') }}
-                                        {{ Form::text('acronym', null, array('placeholder' => 'Sigla', 'class' => 'form-control')) }}
-                                        <div id="last-document-sigla-error" class="mensaje-error"></div>
+                                        <label>Imágen</label>
+                                        <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img src="" alt="" style="height: 200px;">
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ Form::label('content', 'Descripción') }}
+                                        <textarea name="description" placeholder="Resumen de la noticia." class="form-control" id="summary-post" rows="5"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Imágen Externa</label>
+                                        <input type="file" name="external_image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img src="" alt="" style="height: 200px;">
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ Form::label('title', 'URL') }}
+                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
                                     </div>
 
                                     <div class="form-group">
