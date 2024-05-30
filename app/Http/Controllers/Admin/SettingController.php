@@ -18,7 +18,7 @@ class SettingController extends Controller
 
     public function update($id, Request $request)
     {
-        $data = $request->except(['photo']);
+        $data = $request->except(['photo', 'image1', 'image2', 'image3']);
 
         $record = Setting::find($id);
         $record->fill($data);
@@ -46,8 +46,8 @@ class SettingController extends Controller
             $photo = $request->file('photo');
             $filename_photo = time().time().str_slug($photo->getClientOriginalExtension());
 
-            $photo->move(public_path() . '/imagenes/muniestique/', $filename_photo);
-            $path = '/imagenes/muniestique/' . $filename_photo;
+            $photo->move(public_path() . '/imagenes/muni/', $filename_photo);
+            $path = '/imagenes/muni/' . $filename_photo;
 
             $record->photo = $path;
         }
@@ -76,8 +76,8 @@ class SettingController extends Controller
             $organization_chart = $request->file('organization_chart');
             $filename_organization_chart = time().time().str_slug($organization_chart->getClientOriginalExtension());
 
-            $organization_chart->move(public_path() . '/imagenes/muniestique/', $filename_organization_chart);
-            $path = '/imagenes/muniestique/' . $filename_organization_chart;
+            $organization_chart->move(public_path() . '/imagenes/muni/', $filename_organization_chart);
+            $path = '/imagenes/muni/' . $filename_organization_chart;
 
             $record->organization_chart = $path;
         }
@@ -104,10 +104,61 @@ class SettingController extends Controller
 
             $cover = $request->file('cover');
             $filename_cover = time().time().str_slug($cover->getClientOriginalExtension());
-            $cover->move(public_path() . '/imagenes/muniestique/', $filename_cover);
-            $path = '/imagenes/muniestique/' . $filename_cover;
+            $cover->move(public_path() . '/imagenes/muni/', $filename_cover);
+            $path = '/imagenes/muni/' . $filename_cover;
 
             $record->cover = $path;
+        }
+
+        if ($request->hasFile('image1')) {
+
+            if($record->image1)
+            {
+                if (file_exists($record->image1)) {
+                    unlink($record->image1);
+                }
+
+            }
+
+            $image1 = $request->file('image1');
+            $filename = time().time().str_slug($image1->getClientOriginalExtension());
+            $image1->move(public_path() . '/imagenes/muni/', $filename);
+            $path = '/imagenes/muni/' . $filename;
+            $record->image1 = $path;
+        }
+
+        if ($request->hasFile('image2')) {
+
+            if($record->image2)
+            {
+                if (file_exists($record->image2)) {
+                    unlink($record->image2);
+                }
+
+            }
+
+            $image2 = $request->file('image2');
+            $filename = time().time().str_slug($image2->getClientOriginalExtension());
+            $image2->move(public_path() . '/imagenes/muni/', $filename);
+            $path = '/imagenes/muni/' . $filename;
+            $record->image2 = $path;
+        }
+
+        if ($request->hasFile('image3')) {
+
+            if($record->image3)
+            {
+                if (file_exists($record->image3)) {
+                    unlink($record->image3);
+                }
+
+            }
+
+            $image3 = $request->file('image3');
+            $filename = time().time().str_slug($image3->getClientOriginalExtension());
+            $image3->move(public_path() . '/imagenes/muni/', $filename);
+            $path = '/imagenes/muni/' . $filename;
+            $record->image3 = $path;
         }
 
         $record->save();
@@ -154,8 +205,8 @@ class SettingController extends Controller
 
                         //$cover = Input::file('cover');
                         $filename = time().time().str_slug($file1->getClientOriginalExtension());
-                        $file1->move(public_path() . '/imagenes/muniestique/', $filename);
-                        $path = '/imagenes/muniestique/' . $filename;
+                        $file1->move(public_path() . '/imagenes/muni/', $filename);
+                        $path = '/imagenes/muni/' . $filename;
 
                         //$file_name = $file1->getClientOriginalName().time();
 
@@ -181,8 +232,8 @@ class SettingController extends Controller
                         //Storage::disk('google')->put($file_name, fopen($file1, 'r+'));
                         //$url = Storage::disk('google')->url($file_name);
                         $filename = time().time().str_slug($file1->getClientOriginalExtension());
-                        $file1->move(public_path() . '/imagenes/muniestique/', $filename);
-                        $path = '/imagenes/muniestique/' . $filename;
+                        $file1->move(public_path() . '/imagenes/muni/', $filename);
+                        $path = '/imagenes/muni/' . $filename;
 
                         $record->photo = $path;
                     }
