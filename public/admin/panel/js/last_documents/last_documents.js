@@ -192,7 +192,6 @@ last_document.btnAdd.on('click', function(){
     last_document.btnUpdate.hide();
     last_document.btnSave.show();
     addSummernoteEditorMini($(`${last_document.formId} textarea[name="description"]`));
-
     $('#modalCrearLastDocument').modal('show');
 
 });

@@ -103,7 +103,9 @@ class LastDocumentController extends Controller
         if ($request->hasFile('external_image')) {
             $file2 = $request->file('external_image');
 
-            $filename = time().str_slug($file1->getClientOriginalExtension());
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
             $file1->move(public_path(). "/img/documents", $filename);
             $document->external_image = "/img/documents/".$filename;
         }
@@ -158,11 +160,6 @@ class LastDocumentController extends Controller
 
         if($document->image)
         {
-            // $val = explode('id=', $city_council->photo); 
-            // $val = $val[1];
-            // $val = explode('&', $val); 
-            // $val = $val[0];
-            // Storage::disk('google')->delete($val);
             if (file_exists($document->image)) {
                 unlink($document->image);
             }
@@ -179,11 +176,7 @@ class LastDocumentController extends Controller
 
         if($document->external_image)
         {
-            // $val = explode('id=', $city_council->photo); 
-            // $val = $val[1];
-            // $val = explode('&', $val); 
-            // $val = $val[0];
-            // Storage::disk('google')->delete($val);
+
             if (file_exists($document->external_image)) {
                 unlink($document->external_image);
             }

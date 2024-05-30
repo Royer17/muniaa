@@ -34,10 +34,27 @@
                                         <div id="inst-document-title-error" class="mensaje-error"></div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group d-none">
                                         {{ Form::label('title', 'Sigla') }}
                                         {{ Form::text('acronym', null, array('placeholder' => 'EJEMPLO: ROF', 'class' => 'form-control')) }}
                                         <div id="inst-document-sigla-error" class="mensaje-error"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Imágen</label>
+                                        <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img class="image" src="" alt="" style="height: 200px;">
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ Form::label('content', 'Descripción') }}
+                                        <textarea name="description" placeholder="Resumen de la noticia." class="form-control" id="summary-post" rows="5"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Imágen Externa</label>
+                                        <input type="file" name="external_image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img class="external_image" src="" alt="" style="height: 200px;">
                                     </div>
                                     
                                     <div class="form-group">
