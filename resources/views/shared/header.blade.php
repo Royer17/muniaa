@@ -390,22 +390,7 @@
               >
             </li>
             @endforeach
-            {{-- 
-            <li>
-              <a
-                href="#"
-                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >ROF 2</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >OTROS 3</a
-              >
-            </li>
-            --}}
+
           </ul>
         </div>
         <div class="h-6 bg-dark-blue w-0.5"></div>
@@ -422,7 +407,7 @@
 
   <!-- moblile -->
     <div class="hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1 absolute bg-white w-full z-50">
+      <div class="px-2 pt-2 pb-3 space-y-1 absolute bg-white w-full z-50 md:hidden">
         <a
           href="#"
           class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"

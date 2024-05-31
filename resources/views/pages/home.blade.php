@@ -55,26 +55,7 @@
       <a href="/servicios-municipales/{{ $service->slug }}"> <img src="{{ $service->image }}" /> </a>
     </div>
     @endforeach
-    {{-- 
-    <div class="service-card-base">
-      <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
-    </div>
-    <div class="service-card-base">
-      <a href="#"> <img src="{{ '/img/services/licenciafun.png' }}" /> </a>
-    </div>
-    <div class="service-card-base">
-      <a href="#"> <img src="{{ '/img/services/sci.png' }}" /> </a>
-    </div>
-    <div class="service-card-base">
-      <a href="#"> <img src="{{ '/img/services/regciv.png' }}" /> </a>
-    </div>
-    <div class="service-card-base">
-      <a href="#"> <img src="{{ '/img/services/sci.png' }}" /> </a>
-    </div>
-    <div class="service-card-base">
-      <a href="#"> <img src="{{ '/img/services/regciv.png' }}" /> </a>
-    </div>
-    --}}
+
   </div>
 </section>
 <section class="section hidden md:block bg-[#E3E3E3]" id="news-desktop">
