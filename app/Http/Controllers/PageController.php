@@ -87,7 +87,14 @@ class PageController extends Controller
 
         $setting = Setting::first();
 
-        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup'));
+        $notice_images = DB::table('info_informacion')
+            ->orderBy('fecha_en', 'DESC')
+            ->where('published', 1)
+            ->where('deleted_at', NULL)
+            ->take(20)
+            ->get(['foto', 'foto1', 'foto2']);
+
+        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup', 'notice_images'));
     }
 
     public function transparencyPortal()

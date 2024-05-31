@@ -85,11 +85,31 @@ class LastDocumentController extends Controller
     public function store(CreateLastDocumentRequest $request)
     {
         $data = $request->except(['files', 'files_title', 'image', 'external_image']);
-        $data['acronym'] = NULL;
+        $data['acronym'] = str_slug($data['title']);
 
         $document = new LastDocument();
         $document->fill($data);
         $document->slug = str_slug($data['title']);
+
+        if ($request->hasFile('image')) {
+            $file1 = $request->file('image');
+
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+            $file1->move(public_path(). "/img/documents", $filename);
+            $document->image = "/img/documents/".$filename;
+        }
+
+        if ($request->hasFile('external_image')) {
+            $file2 = $request->file('external_image');
+
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
+            $file1->move(public_path(). "/img/documents", $filename);
+            $document->external_image = "/img/documents/".$filename;
+        }
+
         $document->save();
 
         if ($request->hasFile('file')) {
@@ -128,11 +148,47 @@ class LastDocumentController extends Controller
  {
 
     $data = $request->except(['files', 'files_title', 'image', 'external_image']);
-    $data['acronym'] = NULL;
+    $data['acronym'] = str_slug($data['title']);
 
     $document = LastDocument::find($id);
     $document->fill($data);
     $document->slug = str_slug($data['title']);
+    //$document->save();
+
+    if ($request->hasFile('image')) {
+        $file1 = $request->file('image');
+
+        if($document->image)
+        {
+            if (file_exists($document->image)) {
+                unlink($document->image);
+            }
+        }
+
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+        $file1->move(public_path(). "/img/documents", $filename);
+        $document->image = "/img/documents/".$filename;
+    }
+
+    if ($request->hasFile('external_image')) {
+        $file2 = $request->file('external_image');
+
+        if($document->external_image)
+        {
+
+            if (file_exists($document->external_image)) {
+                unlink($document->external_image);
+            }
+        }
+
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
+        $file2->move(public_path(). "/img/documents", $filename);
+        $document->external_image = "/img/documents/".$filename;
+    }
+
     $document->save();
 
     if ($request->hasFile('file')) {
@@ -169,9 +225,39 @@ class LastDocumentController extends Controller
         $contents = Content::whereModelType(2)
             ->whereModelId($document->id)
             ->whereType(2)
-            ->delete();
+            ->get();
+
+        foreach ($contents as $key => $content) {
+            if($content->url)
+            {
+                if (file_exists($content->url)) {
+                    unlink($content->url);
+                }
+            }
+
+            $content->delete();
+        }
+
+
+        if($document->image)
+        {
+            if (file_exists($document->image)) {
+                unlink($document->image);
+            }
+        }
+
+        if($document->external_image)
+        {
+
+            if (file_exists($document->external_image)) {
+                unlink($document->external_image);
+            }
+        }
 
         $document->delete();
+
+
+
         
         return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha eliminado correctamente', 'symbol' => 'success'], 200);
         

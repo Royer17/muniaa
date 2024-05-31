@@ -2,6 +2,9 @@ const initSwipers = () => {
   const commonSwiperOpts = {
     direction: "horizontal",
     loop: true,
+    autoplay: {
+      delay: 5000,
+    },
     autoHeight: true,
     navigation: {
       nextEl: ".button-next",

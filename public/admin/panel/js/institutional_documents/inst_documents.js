@@ -34,7 +34,7 @@ function datatableDocuments()
         "aoColumnDefs": [
             {
                 "bVisible": false,
-                 "aTargets": [0, 4]
+                 "aTargets": [0, 2, 4]
             },
             {
                   "aTargets": [ 3 ],
@@ -83,11 +83,27 @@ function Editar(btn){
     let _route = '/admin/institutional-document/'+_id;
     $.get(_route, function(p){
         const form = `#form-inst-documents`;
+
+        const {image, external_image, description} = p;
+
+
         document.querySelector(`${form} input[name="title"]`).value = p.title; 
         document.querySelector(`${form} input[name="id"]`).value = p.id; 
-        document.querySelector(`${form} input[name="acronym"]`).value = p.acronym; 
+        document.querySelector(`${form} textarea[name="description"]`).value = description;
+        //document.querySelector(`${form} input[name="acronym"]`).value = p.acronym;
         document.querySelector(`${form} select[name="published"]`).value = p.published;
-        console.log(p);
+        addSummernoteEditorMini($(`${form} textarea[name="description"]`));
+
+        if(image){
+            document.querySelector(`${form} .image`).setAttribute('src', `${image}`);
+            $(`${form} .image`).show();
+        }
+
+        if(external_image){
+            document.querySelector(`${form} .external_image`).setAttribute('src', `${external_image}`);
+            $(`${form} .external_image`).show();
+        }
+
         let content = "";
         p.files.forEach((element) => {
             content += `<a href="${element.url}" target="_blank">${element.title}</a><button>X</button>`;
@@ -177,23 +193,30 @@ inst_documents.btnAdd.on('click', function(){
     inst_documents.modalTitle.text("Crear Documento");
     inst_documents.btnUpdate.hide();
     inst_documents.btnSave.show();
+    addSummernoteEditorMini($(`#form-inst-documents textarea[name="description"]`));
     $('#modalCrearInstDocument').modal('show');
 
 });
 
 //Eventos de limpieza
 function cleanModal(){
-  $('#form-inst-documents')[0].reset();
-  $(`#video_method`).remove();
-  //$('#modalCrearInstDocument a').hide();
+    destroySummernote($(`#form-inst-documents textarea[name="description"]`));
 
-  while(document.querySelector('#form-inst-documents .files').firstChild){
+    $('#form-inst-documents')[0].reset();
+    $(`#form-inst-documents textarea[name="description"]`).val("");
+    $(`#video_method`).remove();
+    //$('#modalCrearInstDocument a').hide();
+
+    while(document.querySelector('#form-inst-documents .files').firstChild){
     document.querySelector('#form-inst-documents .files').removeChild(document.querySelector('#form-inst-documents .files').firstChild);
-  }
+    }
 
-  while(document.querySelector('#form-inst-documents .links').firstChild){
+    while(document.querySelector('#form-inst-documents .links').firstChild){
     document.querySelector('#form-inst-documents .links').removeChild(document.querySelector('#form-inst-documents .links').firstChild);
-  }
+    }
+
+    $(`#form-inst-documents .image`).hide();
+    $(`#form-inst-documents .external_image`).hide();
 
 }
 

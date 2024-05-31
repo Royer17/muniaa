@@ -37,7 +37,7 @@
                                     <div class="form-group">
                                         <label>Imágen</label>
                                         <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
-                                        <img src="" alt="" style="height: 200px;">
+                                        <img class="image" src="" alt="" style="height: 200px;">
                                     </div>
 
                                     <div class="form-group">
@@ -48,7 +48,7 @@
                                     <div class="form-group">
                                         <label>Imágen Externa</label>
                                         <input type="file" name="external_image" value="" style="margin-bottom: 10px;" class="form-control">
-                                        <img src="" alt="" style="height: 200px;">
+                                        <img class="external_image" src="" alt="" style="height: 200px;">
                                     </div>
 
                                     <div class="form-group">

@@ -137,6 +137,30 @@
                     <input type="text" name="schedule_hours" value="{{ $setting->schedule_hours }}" placeholder="Ejm. De 7:30 a.m. a 03:30 p.m." style="margin-bottom: 10px;" class="form-control">
                 </div>
 
+                <div class="form-group">
+                    <label>Imagen 1</label>
+                    <input type="file" name="image1" placeholder="Imagen1" style="margin-bottom: 10px;" class="form-control">
+                    @if($setting->image1)
+                    <img src="{{ $setting->image1 }}" width="500px">
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>Imagen 2</label>
+                    <input type="file" name="image2" placeholder="Imagen2" style="margin-bottom: 10px;" class="form-control">
+                    @if($setting->image2)
+                    <img src="{{ $setting->image2 }}" width="500px">
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label>Imagen 3</label>
+                    <input type="file" name="image3" placeholder="Imagen3" style="margin-bottom: 10px;" class="form-control">
+                    @if($setting->image3)
+                    <img src="{{ $setting->image3 }}" width="500px">
+                    @endif
+                </div>
+
             </div>
           </div>
           <button class="btn btn-success float-right" id="first_part">Actualizar</button>

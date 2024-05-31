@@ -1,606 +1,598 @@
 <?php $__env->startSection('content'); ?>
 
+<section class="section" id="slider">
+    <div class="swiper main-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            class="w-full"
+            src="img/photos/alianza.png"
+            alt="Foto principal alto de alianza"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="w-full"
+            src="img/photos/alianza.png"
+            alt="Foto principal alto de alianza"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="w-full"
+            src="img/photos/alianza.png"
+            alt="Foto principal alto de alianza"
+          />
+        </div>
+      </div>
 
-<section class="banner__section banner__opacidad">
-
-
-<div id="carouselExampleIndicators" class="carousel slide banner__section" data-ride="carousel" style="position: relative;">
-    <ol class="carousel-indicators">
-        @foreach($sliders as $key => $slider)
-            @if($key == 0)
-                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}" class="active"></li>
-            @else
-                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"></li>
-            @endif
-        @endforeach
-    </ol>
-
-    <div class="carousel-inner banner__caja">
-        @foreach($sliders as $iu => $slider)
-            @if($iu == 0)
-                <div class="carousel-item active box2">
-                    <img src="{{ $slider->img_slide }}" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-left" style="padding-bottom: 100px;">
-                        <p><b>{{ $slider->titulo_slide }}</b> <br></p>
-                    </div>
-                </div>
-            @else
-                <div class="carousel-item box2">
-                    <img src="{{ $slider->img_slide }}" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-left" style="padding-bottom: 100px;">
-                        <p><b>{{ $slider->titulo_slide }}</b> <br></p>
-                    </div>
-                </div>
-            @endif
-        @endforeach
+      <div class="button-next custom-next">
+        <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <div class="button-prev custom-prev">
+        <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-  </a>
-</div>
+  </section>
+  <section class="section" id="services">
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 px-4 md:px-20 md:py-6 md:gap-x-7 md:gap-y-8"
+    >
+      <div class="service-card-base">
+        <a href="#"> <img src="./img/services/secciu.png" /> </a>
+      </div>
+      <div class="service-card-base">
+        <a href="#"> <img src="./img/services/parquefami.png" /> </a>
+      </div>
+      <div class="service-card-base">
+        <a href="#"> <img src="./img/services/licenciafun.png" /> </a>
+      </div>
+      <div class="service-card-base">
+        <a href="#"> <img src="./img/services/sci.png" /> </a>
+      </div>
+      <div class="service-card-base">
+        <a href="#"> <img src="./img/services/regciv.png" /> </a>
+      </div>
+      <div class="service-card-base">
+        <a href="#"> <img src="./img/services/sci.png" /> </a>
+      </div>
+      <div class="service-card-base">
+        <a href="#"> <img src="./img/services/regciv.png" /> </a>
+      </div>
+    </div>
+  </section>
+  <section class="section hidden md:block bg-[#E3E3E3]" id="news-desktop">
+    <div class="flex p-5 max-w-[800px] lg:max-w-[1400px] mx-auto py-10">
+      <div class="max-w-4xl">
+        <h1 class="title">Noticias</h1>
+        <div
+          thumbsSlider=""
+          class="swiper news-thumb-swiper h-[435px] rounded-l-xl"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                  <p class="text-xs group-hover:text-white">23 de Nov.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                  <p class="text-xs group-hover:text-white">23 de Nov.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                  <p class="text-xs group-hover:text-white">23 de Nov.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                  <p class="text-xs group-hover:text-white">23 de Nov.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<!--</div> -->
-</section>
+      <div class="w-8/12">
+        <div
+          class="swiper news-swiper max-w-full max-h-[500px] w-full rounded-xl overflow-hidden"
+        >
+          <div class="swiper-wrapper w-full">
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
+            </div>
+          </div>
 
+          <div class="button-next custom-next">
+            <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="button-prev custom-prev">
+            <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section md:hidden" id="news-mobile">
+    <h1 class="title">Noticias</h1>
+    <div class="swiper news-swiper bg-dark-blue rounded-tl-xl">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="news-slide">
+            <div>
+              <img src="https://picsum.photos/300/200" />
+            </div>
+            <div class="flex flex-col justify-center gap-2 text-white">
+              <p class="text-sm font-bold">
+                Patrullaje permanente en la avenida manuel cuadros
+              </p>
+              <p class="text-xs">23 de Nov.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="news-slide">
+            <div>
+              <img src="https://picsum.photos/300/200" />
+            </div>
+            <div class="flex flex-col justify-center gap-2 text-white">
+              <p class="text-sm font-bold">
+                Patrullaje permanente en la avenida manuel cuadros
+              </p>
+              <p class="text-xs">23 de Nov.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="news-slide">
+            <div>
+              <img src="https://picsum.photos/300/200" />
+            </div>
+            <div class="flex flex-col justify-center gap-2 text-white">
+              <p class="text-sm font-bold">
+                Patrullaje permanente en la avenida manuel cuadros
+              </p>
+              <p class="text-xs">23 de Nov.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<section class="contenedor">
- 
-    <div class="contenedor__seccion">
-        <div class="row naviconos"> 
-    
-         <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 pb-3">
-            <div class="card card-body btn_ovrly">
-                <a href="/convocatoria">
-                    <h1><i class="fas fa-bullhorn"></i></h1>
-                    <p>Convocatorias</p>
-                </a>
+      <div class="button-next custom-next">
+        <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <div class="button-prev custom-prev">
+        <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+  </section>
+  <section class="section hidden md:block" id="works-desktop">
+    <div class="flex p-5 max-w-[800px] lg:max-w-[1400px] mx-auto py-10">
+      <div class="max-w-4xl">
+        <h1 class="title">Obras</h1>
+        <div
+          thumbsSlider=""
+          class="swiper works-thumb-swiper border-solid border-l-2 border-t-2 border-b-2 border-[#B0B0B0] h-[435px] rounded-l-xl"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 pb-3">
-            <div class="card card-body btn_ovrly">
-                <a href="#" target="_blank">
-                    <h1><i class="fas fa-clipboard"></i></h1>
-                    <p>Mesa de Partes</p>
-                </a>
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 pb-3">
-            <div class="card card-body btn_ovrly">
-                <a href="/normatividad/ordenanzas-municipales">
-                    <h1><i class="fab fa-leanpub"></i></h1>
-                    <p>Normatividad</p>
-                </a>
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 pb-3">
-            <div class="card card-body btn_ovrly">
-                <a href="{{ route('pages.modernization.operating-license') }}"> 
-                    <h1><i class="fas fa-building"></i></h1>
-                    <p >Licencias</p>
-                </a>
+            <div class="swiper-slide">
+              <div class="group slide-item">
+                <div>
+                  <img
+                    class="max-w-[200px] w-full"
+                    src="https://picsum.photos/300/200"
+                  />
+                </div>
+                <div class="flex flex-col justify-center gap-2 text-white">
+                  <p class="text-sm font-bold group-hover:text-white">
+                    Patrullaje permanente en la avenida manuel cuadros
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 pb-3">
-            <div class="card card-body btn_ovrly">
-                <a href="{{ route('pages.modernization.municipal-taxes') }}"> 
-                    <h1><i class="fas fa-handshake"></i></h1>
-                    <p >Tributos</p>
-                </a>
+      </div>
+
+      <div class="w-8/12">
+        <div
+          class="swiper works-swiper max-w-full max-h-[500px] w-full rounded-xl overflow-hidden"
+        >
+          <div class="swiper-wrapper w-full">
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
             </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 pb-3">
-            <div class="card card-body btn_ovrly">
-                <a href="#"  target="_blank"> 
-                    <h1><i class="fa fa-book"></i></h1>
-                    <p >Reclamos</p>
-                </a>
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
             </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://picsum.photos/1500/1200"
+              />
+            </div>
+          </div>
+
+          <div class="button-next custom-next">
+            <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="button-prev custom-prev">
+            <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="section md:hidden" id="works-mobile">
+    <h1 class="title">Obras</h1>
+    <div class="swiper works-swiper bg-dark-blue rounded-tl-xl">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="works-slide">
+            <div>
+              <img src="https://picsum.photos/300/200" alt="Foto obras 1" />
+            </div>
+            <div class="flex flex-col justify-center gap-2 text-white">
+              <p class="text-sm font-bold">
+                Patrullaje permanente en la avenida manuel cuadros
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="works-slide">
+            <div>
+              <img src="https://picsum.photos/300/200" alt="Foto obras 2" />
+            </div>
+            <div class="text-white">
+              <p>Patrullaje permanente en la avenida manuel cuadros</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="works-slide">
+            <div>
+              <img src="https://picsum.photos/300/200" alt="Foto obras 3" />
+            </div>
+            <div class="text-white">
+              <p>Patrullaje permanente en la avenida manuel cuadros</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-next custom-next">
+        <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <div class="button-prev custom-prev">
+        <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <div></div>
+  </section>
+  <section class="section mt-5" id="photo-gallery">
+    <div class="bg-dark-blue py-2 md:pt-6 md:pb-10">
+      <div class="max-w-[300px] md:max-w-[900px] mx-auto">
+        <h1
+          class="text-white text-[14px] md:text-[32px] text-center font-bold mb-3 mt-1"
+        >
+          Galeria de Fotos
+        </h1>
+        <div class="swiper photo-gallery-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide px-[20px]">
+              <img src="img/photos/foto.png" alt="Fotos Alto de Alianza 1" />
+            </div>
+            <div class="swiper-slide px-[20px]">
+              <img src="img/photos/foto.png" alt="Fotos Alto de Alianza 2" />
+            </div>
+          </div>
+          <div class="button-next custom-next">
+            <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="button-prev custom-prev">
+            <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+  <section class="section" id="links">
+    <h1 class="title md:hidden">Enlaces</h1>
+    <div class="swiper links-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="mx-auto" src="icons/INDECOPI.svg" alt="Indecopi" />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="mx-auto"
+            src="icons/CONTRALORIA.svg"
+            alt="Contraloria"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img class="mx-auto" src="icons/OSCE.svg" alt="Osce" />
+        </div>
+        <div class="swiper-slide">
+          <img class="mx-auto" src="icons/SUNASS.svg" alt="Sunass" />
+        </div>
+      </div>
+
+      <div class="button-next custom-next">
+        <svg fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <div class="button-prev custom-prev">
+        <svg fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div id="news-popup" class="popup-gallery hidden">
+      <a
+        href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg"
+        title="The Cleaner"
+        ><img
+          src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg"
+          width="75"
+          height="75"
+      /></a>
+      <a
+        href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg"
+        title="Winter Dance"
+        ><img
+          src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg"
+          width="75"
+          height="75"
+      /></a>
+      <a
+        href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg"
+        title="The Uninvited Guest"
+        ><img
+          src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg"
+          width="75"
+          height="75"
+      /></a>
+      <a
+        href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg"
+        title="Oh no, not again!"
+        ><img
+          src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg"
+          width="75"
+          height="75"
+      /></a>
+      <a
+        href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg"
+        title="Swan Lake"
+        ><img
+          src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg"
+          width="75"
+          height="75"
+      /></a>
+      <a
+        href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg"
+        title="The Shake"
+        ><img
+          src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg"
+          width="75"
+          height="75"
+      /></a>
+      <a
+        href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg"
+        title="Who's that, mommy?"
+        ><img
+          src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg"
+          width="75"
+          height="75"
+      /></a>
     </div>
 
 
-    <div class="row pt-4">
-        <div class="col-lg-12 px-3">
-            <h3 class="section__titulo">Noticias</h3>
-            <div class="row">
-                @foreach($news as $item)
-                <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
-                    <div class="card d-flex justify-content-end">
-                        <div class="caja">
-                            <div class="box img-hover-zoom">
-                                <a href="/noticias/{{ $item->slug }}"><img src="{{ $item->image }}" alt="Sin Imagen"></a>
-                            </div>
-                        </div>
-                        <div class="p-2 noticia__container">
-                            <div class="row-12 text-right text-white">
-                                <h6>{{ \Date::parse($item->date)->format('l\, d \d\e\ F \d\e\l\ Y') }} </h6>
-                            </div>
-                            <div class="row-12 text-center">
-                                <a class="text-white" href="/noticias/{{ $item->slug }}"><h5>{{ $item->title }}</h5></a>
-                            </div> 
-                        </div>      
-                    </div>     
-                </div> 
-                @endforeach
-
-            </div>   
-            <br>                               
-            <div class="see-more centered">
-                <a href="/noticias" class="theme-btn btn-style-three text-uppercase"><span class="btn-title">Ver más Noticias</span></a>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="row pt-4">
-
-        <div class="col-12 col-lg-8 px-3">
-            <h3 class="section__titulo">Redes Sociales</h3>
-            <div class="row">
-
-
-                <div class="col-12 col-md-6 text-center pb-4">
-                    <div class="card sombrax">
-                       <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-ce65efb0-596d-4032-b9ef-60d1303bfe96"></div>
-
-                    </div>
-                </div>  
-                <div class="col-12 col-md-6 text-center pb-4">
-                    <div class="card sombrax">
-                        <div class="socialfb">
-                            <i class="fab fa-facebook-f"></i> Facebook
-                        </div>                                 
-                        <div id="fb-root"></div>
-                        <script async defer crossorigin="anonymous" src="../connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0" nonce="UkbjlAKm"></script>
-
-                        <div class="fb-page"  data-href="https://www.facebook.com/profile.php?id=100089636037765" data-tabs="timeline" data-width="1200" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100089636037765" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100089636037765">Municipalidad Distrital de Estique</a></blockquote></div>
-
-                    </div>
-                </div> 
-            </div>
-        </div>  
-        <div class="col-12 col-lg-4 px-3 pb-4">
-            <h3 class="section__titulo">Anuncios</h3>
-            <div class="row">
-                <div class="col-12 text-center pb-4">
-                    <div class="card sombrax">
-                        <div class="carousel-box">
-                            <div id="carouselExampleIndicators2" class="carousel slide carousel-fade" data-ride="carousel">
-                                @if(count($modals_to_show)) 
-
-                                <div class="carousel-inner">                                                                                                                              <div class="carousel-item active">
-                                    <a href="{{ $modals_to_show[0]->imagen }}" data-fancybox="zoom">
-                                        <img class="d-block w-100" src="{{ $modals_to_show[0]->imagen }}" alt="...">
-                                    </a>
-                                </div>
-
-                            </div>
-
-                            @endif 
-                        </div>
-                    </div>
-                    <div class="anuncio__option">
-                        <a href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                            <div class="anuncio__boton">
-                                <span class="ctxt"  aria-hidden="true"><i class="fas fa-long-arrow-alt-left"></i></span>
-                                <span class="sr-only">Previous</span>
-                            </div>
-                        </a>
-
-                        <a href="#carouselExampleIndicators2" role="button" data-slide="next">
-                            <div class="anuncio__boton">
-                                <span class="ctxt" aria-hidden="true"><i class="fas fa-long-arrow-alt-right"></i></span>
-                                <span class="sr-only">Next</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> 
-        </div>
-    </div>  
-</div>  
-
-
-
-<div class="row pt-4">
-    <div class="col-12 pb-2">
-        <script src="../apis.google.com/js/platform.js"></script>
-        <div class="g-ytsubscribe" data-channelid="UCPAGvuGP5mFVtlyfVWbg2jw" data-layout="full" data-count="hidden"></div>
-    </div>
-    <br>
-
-
-</div>
-
-
-<div class="row pt-4">
-    <div class="col-lg-12">
-        <h3 class="section__titulo">Obras</h3>
-        <div class="row">
-            
-            <div class="col-lg-4 col-md-4 col-sm-12 pb-4">
-                @if($works_categories[0])
-                <div class="card d-flex justify-content-end">
-                    <div class="caja">
-
-                        <div style="width:100%">
-                            <div class="card__categoria">
-                                Ejecutadas
-                            </div> 
-                        </div>  
-
-                        @if($works_categories[0]['one_works'])
-                        <div class="box caja__imagen">
-                          <a href="#"><img src="{{ $works_categories[0]['one_works']['foto'] }}" alt="Sin Imagen"></a>
-                        </div>
-                        @endif
-                    </div>
-
-                    @if($works_categories[0]['one_works'])
-                    <div class="p-2 noticia__container">
-                        <div class="row-12 text-right text-white">
-                        <h6>{{ \Date::parse($works_categories[0]['one_works']['fechaini'])->format('l\, d \d\e\ F \d\e\l\ Y') }}</h6>
-                        </div>
-                        <div class="row-12 text-center">
-                            <a class="text-white" href="#"><h5>{{ $works_categories[0]['one_works']['actividad'] }}</h5></a>
-                        </div> 
-                    </div> 
-                    @endif 
-                </div> 
-                @endif   
-            </div>             
-        
-        
-        
-            <div class="col-lg-4 col-md-4 col-sm-12 pb-4">
-                @if($works_categories[1])
-                <div class="card d-flex justify-content-end">
-                    <div class="caja">
-
-                        <div style="width:100%">
-                            <div class="card__categoria">
-                                En ejecución
-                            </div> 
-                        </div>  
-
-                        @if($works_categories[1]['one_works'])
-                        <div class="box caja__imagen">
-                          <a href="#"><img src="{{ $works_categories[1]['one_works']['foto'] }}" alt="Sin Imagen"></a>
-                        </div>
-                        @endif
-                    </div>
-
-                    @if($works_categories[1]['one_works'])
-                    <div class="p-2 noticia__container">
-                        <div class="row-12 text-right text-white">
-                        <h6>{{ \Date::parse($works_categories[1]['one_works']['fechaini'])->format('l\, d \d\e\ F \d\e\l\ Y') }}</h6>
-                        </div>
-                        <div class="row-12 text-center">
-                            <a class="text-white" href="#"><h5>{{ $works_categories[1]['one_works']['actividad'] }} </h5> </a>
-                        </div> 
-                    </div> 
-                    @endif 
-                </div> 
-                @endif
-            </div>             
-        
-    <!--</div> -->
-            <div class="col-lg-4 col-md-4 col-sm-12 pb-4">
-                @if($works_categories[2])
-                <div class="card d-flex justify-content-end">
-                    <div class="caja">
-
-                        <div style="width:100%">
-                            <div class="card__categoria">
-                                Por Ejecutar
-                            </div> 
-                        </div>  
-
-                        @if($works_categories[2]['one_works'])
-                        <div class="box caja__imagen">
-                          <a href="#"><img src="{{ $works_categories[2]['one_works']['foto'] }}" alt="Sin Imagen"></a>
-                        </div>
-                        @endif
-                    </div>
-                    
-                    @if($works_categories[2]['one_works'])
-                    <div class="p-2 noticia__container">
-                        <div class="row-12 text-right text-white">
-                        <h6>{{ \Date::parse($works_categories[2]['one_works']['fechaini'])->format('l\, d \d\e\ F \d\e\l\ Y') }}</h6>
-                        </div>
-                        <div class="row-12 text-center">
-                            <a class="text-white" href="#"><h5>{{ $works_categories[2]['one_works']['actividad'] }}</h5></a>
-                        </div> 
-                    </div> 
-                    @endif 
-                </div> 
-                 @endif
-            </div>   
-        </div>
-        
-<!--
-    </div>
-</div>
--->
-
-    <br>                               
-    <div class="see-more centered">
-        <a href="/obras" class="theme-btn btn-style-three text-uppercase"><span class="btn-title">Ver más Obras</span></a>
-    </div>
-</div>
-</div> 
-
-
-
-<div class="row pt-4">
-    <div class="col col-lg-12">
-        <h3 class="section__titulo">Últimos Documentos Emitidos</h3>
-        <div class="row">
-            <div class="col-sm-12 col-lg-4 col-md-6 pb-2">
-                <div class="card sombrax">
-                    <div class="nav-link tobra_e" style="background-color:#2ecc71">
-                        <CENTER>ÚLTIMAS CONVOCATORIAS</CENTER> 
-                    </div>
-                    <div class="card-body">     
-
-                        
-                        <div class="overflow-auto"  style="height: 500px">
-                            @foreach($calls as $call)
-                            <div class="pb-1">
-                                <b class="cbasic txtup">  {{ $call->referencia }}  </b>
-                            </div>
-                            <div class="texto__normatividad">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>{{ \Date::parse($call->fecha)->format('l\, d \d\e\ F \d\e\l\ Y') }}</span> 
-                            </div>
-                            <div class="pb-2 texto__normatividad">
-                                <p>{{ $call->unidad }}</p>
-                            </div>
-                            <div class="pb-3 text-center">
-                                @if($call->bases)
-                                <a class="btn_e1 mr-1"  href="{{ $call->bases }}"  target="blank">
-                                    <i class="far fa-copy"></i> Bases
-                                </a>
-                                @endif
-    
-                                @if($call->aptos)
-                                <a class="btn_e1 mr-1" href="{{ $call->aptos }}"  target="blank">
-                                   <i class="far fa-address-book"></i> Aptos
-                               </a>
-                               @endif
-                                
-                                @if($call->resultados)
-                               <a class="btn_e1 mr-1" href="{{ $call->resultados }}"  target="blank">
-                                  <i class="far fa-calendar-check"></i> Resultados
-                              </a>
-                              @endif
-                          </div>
-                          <hr class="pb-1">
-                          @endforeach
-                      </div>
-                        
-                  <br>
-
-                  <div class="see-more centered">
-                    <a href="/convocatoria" class="theme-btn btn-style-three text-uppercase"><span class="btn-title">Ver más Convocatorias</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-4 col-md-6 pb-2">
-        <div class="card sombrax">
-            <div class="nav-link tobra_p" style="background-color:#2ecc71">
-               <CENTER>ÚLTIMAS NORMAS</CENTER> 
-           </div>
-           <div class="card-body">     
-            <div class=" overflow-auto"  style="height: 500px">
-                @foreach($resolutions as $resolution)                                    
-                <div class="pb-2">
-                    <b class="cbasic txtup"> {{ $resolution->numdoc }}</b>
-                </div>
-                <div class="conten-tab-detail">
-                    <div class="pb-2 texto__normatividad">
-                        <p>{{ $resolution->referenc }}</p>
-                    </div>
-                    <div class="pb-3 text-center">
-                       @if($resolution->nomfile)
-                       <a class="btn_e1" href="{{ $resolution->nomfile }}" target="blank" >
-
-                        <i class="far fa-file-alt"></i> Documento
-                    </a>@endif
-                    </div>
-                
-                    <hr class="pb-1">
-                </div>
-                @endforeach
-                <br>
-            </div>
-            <div class="see-more centered">
-                <a href="/normatividad" class="theme-btn btn-style-three text-uppercase"><span class="btn-title">Ver más Normatividad</span></a>
-            </div> 
-        </div> 
-    </div>
-</div>
-
-<div class="col-sm-12 col-lg-4 col-md-6 pb-2">
-    <div class="card sombrax">
-        <div class="nav-link tobra_pe" style="background-color:#2ecc71">
-           <CENTER>Otros Documentos Importantes  </CENTER> 
-       </div>
-       <div class="card-body">     
-        <div class="overflow-auto"  style="height: 500px">
-            
-            @foreach($last_documents as $document)
-            @if(count($document['files']))
-            <div class="pb-2">
-                <b class="cbasic txtup"> {{ $document['title'] }}</b>
-            </div>
-            <div class="conten-tab-detail">
-                <div class="pb-2 texto__normatividad">
-                    <p>{{ $document['title'] }}</p> 
-                </div>
-                <div class="pb-3 text-center">
-                    <a class="btn_e1" href="{{ $document['files'][0]['url'] }}" target="blank">
-                        <i class="far fa-file-alt"></i> Documento
-                    </a>
-                </div>  
-                <hr class="pb-1">
-            </div>
-            @endif
-            @endforeach
-        </div>
-        <br>
-        <div class="see-more centered">
-            <a href="normatividad/otros-documentos" class="theme-btn btn-style-three text-uppercase"><span class="btn-title">Ver más Otros Documentos</span></a>
-        </div> 
-    </div>
-</div>
-</div>
-</div>
-</div>       
-</div>    
-
-
-
-<div class="row pt-4">
-    <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 pb-5">
-        <h3 class="section__titulo">Servicios Municipales</h3>
-        <div class="row">
-            @foreach($services as $service)
-             <div class="col-6 col-md-4 col-xl-3 pb-2">
-                <a href="/servicios-municipales/{{ $service['slug'] }}">
-                    <div class="btnservicio" style="background-color: #27ae60; border-color: #27ae60;">
-                        <div class="btnservicio_imagen">
-                            <img style="height:100%;"  src="{{ $service['icon'] }}">
-                        </div> 
-                        <div class="btnservicio__texto" style="color: #27ae60;">
-                            <p><b>{{ $service['title'] }}</b></p>
-                        </div>
-                    </div>
-                </a> 
-            </div>
-            @endforeach
-
-    </div>
-</div>
-
-<div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 pb-5">
-    <h3 class="section__titulo">Documentos de Gestión</h3>
-    <div class="card sombrax">
-        <div class="nav-link tdocu" style="background-color:#2ecc71">
-            <i class="fa fa-bolt"></i> DOCUMENTOS 
-        </div>
-        <div class="card-body">     
-            <div class=" overflow-auto"  style="height: 440px;">
-
-                @foreach($inst_documents as $document)
-                <div class="col-12 col-sm-12 col-md-12 pb-2">
-                    <a href="/docgestion/{{ $document['acronym'] }}" style="color:#57585A;">
-                        <div class="col-12 btn_e2 pt-1 pb-1"><i class="fas fa-folder"></i> {{ $document['acronym'] }}</div>
-                    </a>
-                </div>
-                @endforeach
-                
-            </div>
-        </div>
-    </div>
-</div>  
-</div>
-
-
-
-<div class="row pt-4">
-    <div class="col-12 col-sm-12 pb-5">
-        <h3 class="section__titulo">Enlaces de interés</h3>
-        <div class="carousel-box">
-            <div class="owl-theme owl-carousel">
-
-                <div class="item">
-                    <a href="https://www.mim.org.pe/" target="_blank" class="image-box">
-                        <figure class="image"><img src="img/links/mim-peru.jpg" alt=""></figure>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="http://www.drtpetacna.gob.pe/prg_os/" target="_blank" class="image-box">
-                        <figure class="image"><img src="img/links/OselTacnaa.jpg" alt=""></figure>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.gob.pe/mef" target="_blank" class="image-box">
-                        <figure class="image"><img src="img/links/mef-peru.jpg" alt=""></figure>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.gob.pe/cofopri" target="_blank" class="image-box">
-                        <figure class="image"><img src="img/links/cofopri.jpg" alt=""></figure>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.osiptel.gob.pe/" target="_blank" class="image-box">
-                        <figure class="image"><img src="img/links/osiptel.jpg" alt=""></figure>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="http://www.sunat.gob.pe/" target="_blank" class="image-box">
-                        <figure class="image"><img src="img/links/sunat.jpg" alt=""></figure>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.gob.pe/apci" target="_blank" class="image-box">
-                        <figure class="image"><img src="img/links/apci.jpg" alt=""></figure>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</div>
-</section>
-
-
-@if($last_popup)
-<div class="modal  fade modal-notice" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered  modal-md" role="document">
-    <div class="modal-content border-0"  style="background-color: transparent;">
-        <div class="carousel-box">
-            <div id="carouselExampleIndicators3" class="carousel slide carousel-fade" data-ride="carousel">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #FFF;">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="{{ $last_popup->enlace }}" target="_blank">
-                            <img class="d-block w-100" src="{{ $last_popup->imagen }}" alt="...">
-                        </a>
-                    </div>
-
-                </div>
-                
-            </div>
-        </div>
-
-    </div>
-</div>
-</div>
-@endif
-
-
-
-<!-- links -->
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('facebookRoot'); ?>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v8.0" nonce="crVYCqnk"></script>
-<?php $__env->stopSection(); ?>
+    <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-

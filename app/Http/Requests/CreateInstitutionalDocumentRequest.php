@@ -25,7 +25,7 @@ class CreateInstitutionalDocumentRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'acronym' => 'required',
+            //'acronym' => 'required',
         ];
     }
 }

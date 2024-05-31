@@ -85,10 +85,30 @@ class InstitutionalDocumentController extends Controller
     public function store(CreateInstitutionalDocumentRequest $request)
     {
         $data = $request->except(['files', 'files_title']);
-
+        $data['acronym'] = str_slug($data['title']);
         $document = new InstitutionalDocument();
         $document->fill($data);
         $document->slug = str_slug($data['title']);
+
+        if ($request->hasFile('image')) {
+            $file1 = $request->file('image');
+
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+            $file1->move(public_path(). "/img/documents", $filename);
+            $document->image = "/img/documents/".$filename;
+        }
+
+        if ($request->hasFile('external_image')) {
+            $file2 = $request->file('external_image');
+
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
+            $file1->move(public_path(). "/img/documents", $filename);
+            $document->external_image = "/img/documents/".$filename;
+        }
+
         $document->save();
 
         if ($request->hasFile('file')) {
@@ -126,10 +146,44 @@ class InstitutionalDocumentController extends Controller
  {
 
     $data = $request->except(['files', 'files_title']);
-
+    $data['acronym'] = str_slug($data['title']);
     $document = InstitutionalDocument::find($id);
     $document->fill($data);
     $document->slug = str_slug($data['title']);
+
+    if ($request->hasFile('image')) {
+        $file1 = $request->file('image');
+
+        if($document->image)
+        {
+            if (file_exists($document->image)) {
+                unlink($document->image);
+            }
+        }
+
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+        $file1->move(public_path(). "/img/documents", $filename);
+        $document->image = "/img/documents/".$filename;
+    }
+
+    if ($request->hasFile('external_image')) {
+        $file2 = $request->file('external_image');
+
+        if($document->external_image)
+        {
+            if (file_exists($document->external_image)) {
+                unlink($document->external_image);
+            }
+        }
+
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
+        $file2->move(public_path(). "/img/documents", $filename);
+        $document->external_image = "/img/documents/".$filename;
+    }
+
     $document->save();
 
     if ($request->hasFile('file')) {
@@ -166,6 +220,21 @@ class InstitutionalDocumentController extends Controller
             ->whereModelId($document->id)
             ->whereType(2)
             ->delete();
+
+        if($document->image)
+        {
+            if (file_exists($document->image)) {
+                unlink($document->image);
+            }
+        }
+
+        if($document->external_image)
+        {
+
+            if (file_exists($document->external_image)) {
+                unlink($document->external_image);
+            }
+        }
 
         $document->delete();
         

@@ -7,5 +7,6 @@ var last_document = {
 	selectCategories:$('#categories-last-document'),
 	modalTitle:$('#modal-title-last-document'),
 	form:$('#form-last-documents'),
+    formId: '#form-last-documents',
 
 };

@@ -25,7 +25,6 @@ class CreateLastDocumentRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'acronym' => 'required',
         ];
     }
 }
