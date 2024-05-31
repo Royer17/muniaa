@@ -34,6 +34,7 @@ Route::prefix('municipalidad')->group(function(){
     Route::get('organigrama', 'MunicipalityController@organizationChart')->name('pages.municipality.organization-chart');
     Route::get('directorio-telefonico', 'MunicipalityController@phoneBook')->name('pages.municipality.phone-book');
 });
+
 Route::prefix('modernizacion')->group(function(){
     Route::get('tributos-municipales', 'ModernizationController@municipalTaxes')->name('pages.modernization.municipal-taxes');
     Route::get('licencia-de-edificaciones', 'ModernizationController@buildingLicense')->name('pages.modernization.building-license');
@@ -54,7 +55,9 @@ Route::prefix('servicios-municipales')->group(function(){
     Route::get('sisfoh', 'ServiceController@sisfoh')->name('pages.services.sisfoh');
 });
 
-Route::get('/docgestion/{acronym}', 'InstitutionalDocumentController@get_view');
+//Route::get('/docgestion/{acronym}', 'InstitutionalDocumentController@get_view');
+Route::get('/favoritos/{slug}', 'InstitutionalDocumentController@get_view');
+Route::get('/enlaces/{slug}', 'InstitutionalDocumentController@get_view_links');
 
 Route::prefix('normatividad')->group(function(){
     Route::get('resoluciones-de-alcaldia', 'NormativityController@mayoralResolutions')->name('pages.normativity.mayoral-resolutions');
@@ -214,6 +217,8 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
 
     Route::delete('institutional-document/{id}', 'InstitutionalDocumentController@delete');
     Route::get('/institutional-documents-datatable', 'InstitutionalDocumentController@get_datatable');
+
+
 
     //otros documentos importantes
     Route::get('/otros-documentos-importantes', ['as' => 'datatable-otros-documentos-importantes', 'uses' => 'LastDocumentController@get_index']);
