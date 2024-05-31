@@ -71,5 +71,6 @@
     </div>
   </section>
 
+
   @include('shared.information')
 @endsection
