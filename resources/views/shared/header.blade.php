@@ -35,13 +35,13 @@
             <div class="flex items-center gap-8 max-w-32 md:max-w-[300px]">
               <a href="#">
                 <img
-                  src="./img/logo.png"
+                src="{{ asset('img/logo.png') }}"
                   alt="Municipalidad Alto de la Alianza Logo"
                 />
               </a>
               <a class="hidden md:block" href="#">
                 <img
-                  src="img/logo4.png"
+                src="{{ asset('img/logo4.png') }}"
                   alt="Municipalidad Alto de la Alianza Slogan"
                 />
               </a>
@@ -49,18 +49,18 @@
             <div class="flex gap-4 items-center">
               <div class="hidden md:flex gap-2 max-w-28">
                 <a href="#">
-                  <img src="img/fb.png" alt="Facebook" />
+                  <img src="{{ asset('img/fb.png') }}" alt="Facebook" />
                 </a>
                 <a href="#">
-                  <img src="img/tiktok.png" alt="Tiktok" />
+                  <img src="{{ asset('img/tiktok.png') }}" alt="Tiktok" />
                 </a>
                 <a href="#">
-                  <img src="img/ig.png" alt="instagram" />
+                  <img src="{{ asset('img/ig.png') }}" alt="instagram" />
                 </a>
               </div>
               <a href="#">
                 <img
-                  src="./img/logo-portal-transparencia.png"
+                  src="{{ asset('img/logo-portal-transparencia.png') }}"
                   class="max-w-[110px]"
                   alt="Portal de Transparencia"
                 />
