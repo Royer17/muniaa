@@ -77,22 +77,74 @@
         <a
           href="#"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-          >Informe de Rendición de Cuentas</a
+          >Inicio</a
         >
         <div class="h-6 bg-dark-blue w-0.5"></div>
+
         <a
           href="#"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-          >El Distrito</a
+          >Informe de Rendición Cuentas</a
         >
         <div class="h-6 bg-dark-blue w-0.5"></div>
 
         <button
+        id="dropdownNavbarLink"
+        data-dropdown-toggle="dropdownNavbar"
+        class="text-black font-medium flex items-center justify-between w-fit"
+      >
+        El Distrito
+        <svg
+          class="w-4 h-4 ml-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <div
+        id="dropdownNavbar"
+        class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
+      >
+        <ul class="py-1" aria-labelledby="dropdownLargeButton">
+          <li>
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Historia</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Turismo</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Galeia de Fotos</a
+            >
+          </li>
+        </ul>
+      </div>
+
+        
+        <div class="h-6 bg-dark-blue w-0.5"></div>
+
+        <button
           id="dropdownNavbarLink"
-          data-dropdown-toggle="dropdownNavbar"
+          data-dropdown-toggle="dropdownNavbar2"
           class="text-black font-medium flex items-center justify-between w-fit"
         >
-          Dropdown
+          La Municipalidad
           <svg
             class="w-4 h-4 ml-1"
             fill="currentColor"
@@ -107,7 +159,7 @@
           </svg>
         </button>
         <div
-          id="dropdownNavbar"
+          id="dropdownNavbar2"
           class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
         >
           <ul class="py-1" aria-labelledby="dropdownLargeButton">
@@ -115,21 +167,14 @@
               <a
                 href="#"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >Dashboard</a
+                >Misión y Visión</a
               >
             </li>
             <li>
               <a
                 href="#"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >Settings</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >Earnings</a
+                >Alcalde</a
               >
             </li>
           </ul>
@@ -137,48 +182,233 @@
             <a
               href="#"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >Sign out</a
+              >Concejo Municipal </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Funcionarios</a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Organigrama </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Concejo Municipal </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Concejo Municipal </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Directorio Telefónico </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Planeamiento y Organización </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Directivas Municipal </a
             >
           </div>
         </div>
-
         <div class="h-6 bg-dark-blue w-0.5"></div>
-
         <a
           href="#"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-          >Obras Municipales</a
+          >Obras</a
         >
         <div class="h-6 bg-dark-blue w-0.5"></div>
 
-        <a
-          href="#"
-          class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-          >Enlaces</a
+        
+        <button
+        id="dropdownNavbarLink"
+        data-dropdown-toggle="dropdownNavbar3"
+        class="text-black font-medium flex items-center justify-between w-fit"
+      >
+        Enlaces
+    
+        <svg
+          class="w-4 h-4 ml-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
         >
-        <div class="h-6 bg-dark-blue w-0.5"></div>
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <div
+        id="dropdownNavbar3"
+        class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
+      >
+        <ul class="py-1" aria-labelledby="dropdownLargeButton">
+          <li>
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Enlaces 1</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >
+              Enlaces 2</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Enlaces 3</a
+            >
+          </li>
+        </ul>
+      </div>
 
-        <a
-          href="#"
-          class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-          >Servicios</a
+
+
+
+
+        <div class="h-6 bg-dark-blue w-0.5"></div>
+          <button
+          id="dropdownNavbarLink"
+          data-dropdown-toggle="dropdownNavbar4"
+          class="text-black font-medium flex items-center justify-between w-fit"
         >
-        <div class="h-6 bg-dark-blue w-0.5"></div>
-
-        <a
-          href="#"
-          class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-          >Favoritos</a
+          Servicios
+      
+          <svg
+            class="w-4 h-4 ml-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="dropdownNavbar4"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
         >
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Servicio 1</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Servicio 2</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Servicio 3</a
+              >
+            </li>
+          </ul>
+        </div>
         <div class="h-6 bg-dark-blue w-0.5"></div>
-
+          <button
+          id="dropdownNavbarLink"
+          data-dropdown-toggle="dropdownNavbar5"
+          class="text-black font-medium flex items-center justify-between w-fit"
+        >
+          Favoritos
+      
+          <svg
+            class="w-4 h-4 ml-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="dropdownNavbar5"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
+        >
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >TUPA 1</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >ROF 2</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >OTROS 3</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="h-6 bg-dark-blue w-0.5"></div>
         <a
           href="#"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
           >Portal de Transparencia</a
         >
+
+
       </div>
     </div>
+
+
+  <!-- moblile -->
     <div class="hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 absolute bg-white w-full z-50">
         <a

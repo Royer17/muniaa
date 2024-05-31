@@ -54,7 +54,7 @@
 
 
 <script src="{{ '/js/slides/homepage.min.js'}}"></script>
-<script src="./js/slides/vision.min.js"></script>
+<script src="{{ '/js/slides/vision.min.js'}}"></script>
 <script src="{{ '/js/main.min.js'}}"></script>
 </body>
 </html>
