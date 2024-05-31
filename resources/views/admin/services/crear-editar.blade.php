@@ -33,11 +33,23 @@
                                         {{ Form::text('title', null, array('placeholder' => 'Título', 'class' => 'form-control')) }}
                                         <div id="service-title-error" class="mensaje-error"></div>
                                     </div>
-                                    
+
+                                    <div class="form-group">
+                                        <label>Imágen</label>
+                                        <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img class="image" src="" alt="" style="height: 200px;">
+                                    </div>
+
                                     <div class="form-group">
                                         {{ Form::label('title', 'Descripción') }}
                                         {{ Form::textarea('description', null, array('placeholder' => 'Descripción', 'class' => 'form-control')) }}
                                         <div id="service-description-error" class="mensaje-error"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Imágen Externa</label>
+                                        <input type="file" name="external_image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img class="external_image" src="" alt="" style="height: 200px;">
                                     </div>
 
                                     <div class="form-group">
