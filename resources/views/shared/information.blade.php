@@ -1,3 +1,15 @@
+<div class="hidden md:flex flex-col gap-5">
+  @foreach($services as $service)
+  <div class="service-card-base">
+    <a href="/servicios-municipales/{{ $service->slug }}"> <img src="{{ $service->icon }}" /> </a>
+  </div>
+  @endforeach
+
+</div>
+</div>
+</div>
+</section>
+
 <section class="section md:hidden mt-10" id="news-mobile">
     <div class="swiper news-swiper bg-dark-blue rounded-tl-xl">
       <div class="swiper-wrapper">
