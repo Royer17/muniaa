@@ -80,6 +80,10 @@ class ServiceController extends Controller
     {
         $data = $request->except(['icon']);
 
+        if (!$data['order']) {
+            $data['order'] = 1;
+        }
+
         $service = new Service();
         $service->fill($data);
         $service->slug = str_slug($data['title']);
@@ -143,6 +147,10 @@ class ServiceController extends Controller
  public function update($id, CreateServiceRequest $request)
  {
     $data = $request->except(['icon']);
+
+    if (!$data['order']) {
+            $data['order'] = 1;
+    }
 
     $service = Service::find($id);
         

@@ -52,7 +52,7 @@
   >
     @foreach($services as $service)
     <div class="service-card-base">
-      <a href="/servicios-municipales/{{ $service->slug }}"> <img src="{{ $service->icon }}" /> </a>
+      <a href="/servicios-municipales/{{ $service->slug }}"> <img src="{{ $service->image }}" /> </a>
     </div>
     @endforeach
     {{-- 

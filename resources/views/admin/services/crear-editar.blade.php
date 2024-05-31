@@ -61,9 +61,14 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ícono</label>
+                                        {{ Form::label('title', 'Orden') }}
+                                        {{ Form::text('order', null, array('placeholder' => '###', 'class' => 'form-control')) }}
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>PDF</label>
                                         <input type="file" name="icon" value="" style="margin-bottom: 10px;" class="form-control">
-                                        <img src="" width="200px">
+                                        <a href="" target="_blank">Archivo</a>
                                     </div>
                                     
                               {{ Form::close() }}

@@ -82,15 +82,16 @@ function Editar(btn){
 
         const {image, external_image} = p;
 
-        document.querySelector(`${form} input[name="title"]`).value = p.title; 
+        document.querySelector(`${form} input[name="title"]`).value = p.title;
         document.querySelector(`${form} input[name="id"]`).value = p.id; 
         document.querySelector(`${form} textarea[name="description"]`).value = p.description;
         document.querySelector(`${form} select[name="published"]`).value = p.published;
+        document.querySelector(`${form} input[name="order"]`).value = p.order; 
         addSummernoteEditorMini($(`textarea[name="description"]`));
 
         $('#form-services input[name="icon"]').next().hide();
         if(p.icon){
-            $('#form-services input[name="icon"]').next().attr('src', p.icon);
+            $('#form-services input[name="icon"]').next().attr('href', p.icon);
             $('#form-services input[name="icon"]').next().show();
         }
 
@@ -183,6 +184,8 @@ function cleanModal(){
 
     $(`${service.formId} .image`).hide();
     $(`${service.formId} .external_image`).hide();
+    $('#form-services input[name="icon"]').next().hide();
+
 }
 
 //-----------------------

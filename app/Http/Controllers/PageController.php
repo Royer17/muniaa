@@ -59,7 +59,7 @@ class PageController extends Controller
 
         $services = Service::take(8)
             ->wherePublished(1)
-            ->orderBy('id', 'DESC')
+            ->orderBy('order', 'ASC')
             ->get();
 
         $inst_documents = InstitutionalDocument::take(8)
