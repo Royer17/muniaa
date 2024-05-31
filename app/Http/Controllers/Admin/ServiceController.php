@@ -100,14 +100,33 @@ class ServiceController extends Controller
 
             // Storage::disk('google')->put($path, fopen($file1, 'r+'));
             // $url = Storage::disk('google')->url($path);
-            $filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
             //$img2->move(public_path('img/obras'), $filename2);
             $file1->move(public_path(). "/img/services", $filename);
-
             $service->icon = "/img/services/".$filename;
             //$service->icon_path = $path;
         }
         
+        if ($request->hasFile('image')) {
+            $file2 = $request->file('image');
+
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+            $file2->move(public_path(). "/img/services", $filename);
+            $service->image = "/img/services/".$filename;
+        }
+
+        if ($request->hasFile('external_image')) {
+            $file3 = $request->file('external_image');
+
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file3->getClientOriginalName()).".".$file3->getClientOriginalExtension();
+
+            $file3->move(public_path(). "/img/services", $filename);
+            $service->external_image = "/img/services/".$filename;
+        }
+
         $service->save();
 
         return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha creado correctamente', 'symbol' => 'success'], 200);
@@ -153,6 +172,40 @@ class ServiceController extends Controller
         //$service->icon_path = $path;
     }
     
+    if ($request->hasFile('image')) {
+        $file1 = $request->file('image');
+
+        if($service->image)
+        {
+            if (file_exists($service->image)) {
+                unlink($service->image);
+            }
+        }
+
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+        $file1->move(public_path(). "/img/services", $filename);
+        $service->image = "/img/services/".$filename;
+    }
+
+    if ($request->hasFile('external_image')) {
+        $file2 = $request->file('external_image');
+
+        if($service->external_image)
+        {
+
+            if (file_exists($service->external_image)) {
+                unlink($service->external_image);
+            }
+        }
+
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
+        $file2->move(public_path(). "/img/services", $filename);
+        $service->external_image = "/img/services/".$filename;
+    }
+
     $service->save();
 
     return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha actualizado correctamente', 'symbol' => 'success'], 200);
@@ -175,6 +228,22 @@ class ServiceController extends Controller
             // $val = $val[0];
             //Storage::disk('google')->delete($service->icon_path);
         //}
+
+        if($service->image)
+        {
+            if (file_exists($service->image)) {
+                unlink($service->image);
+            }
+        }
+
+        if($service->external_image)
+        {
+
+            if (file_exists($service->external_image)) {
+                unlink($service->external_image);
+            }
+        }
+
 
         $service->delete();
         return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha eliminado correctamente', 'symbol' => 'success'], 200);

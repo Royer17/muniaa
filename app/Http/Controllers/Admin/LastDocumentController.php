@@ -106,7 +106,7 @@ class LastDocumentController extends Controller
             //$filename = time().str_slug($file1->getClientOriginalExtension());
             $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
 
-            $file1->move(public_path(). "/img/documents", $filename);
+            $file2->move(public_path(). "/img/documents", $filename);
             $document->external_image = "/img/documents/".$filename;
         }
 

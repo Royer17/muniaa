@@ -79,6 +79,9 @@ function Editar(btn){
     let _route = '/admin/service/'+_id;
     $.get(_route, function(p){
         const form = `#form-services`;
+
+        const {image, external_image} = p;
+
         document.querySelector(`${form} input[name="title"]`).value = p.title; 
         document.querySelector(`${form} input[name="id"]`).value = p.id; 
         document.querySelector(`${form} textarea[name="description"]`).value = p.description;
@@ -89,6 +92,16 @@ function Editar(btn){
         if(p.icon){
             $('#form-services input[name="icon"]').next().attr('src', p.icon);
             $('#form-services input[name="icon"]').next().show();
+        }
+
+        if(image){
+            document.querySelector(`${service.formId} .image`).setAttribute('src', `${image}`);
+            $(`${service.formId} .image`).show();
+        }
+
+        if(external_image){
+            document.querySelector(`${service.formId} .external_image`).setAttribute('src', `${external_image}`);
+            $(`${service.formId} .external_image`).show();
         }
 
         $('#modalCrearService').modal('show');
@@ -162,11 +175,14 @@ service.btnAdd.on('click', function(){
 
 //Eventos de limpieza
 function cleanModal(){
-  $(`textarea[name="description"]`).summernote('reset');
-  destroySummernote($(`textarea[name="description"]`));
-  $('#form-services')[0].reset();
-  $(`#service_method`).remove();
-  $('#modalCrearService img').hide();
+    $(`textarea[name="description"]`).summernote('reset');
+    destroySummernote($(`textarea[name="description"]`));
+    $('#form-services')[0].reset();
+    $(`#service_method`).remove();
+    $('#modalCrearService img').hide();
+
+    $(`${service.formId} .image`).hide();
+    $(`${service.formId} .external_image`).hide();
 }
 
 //-----------------------

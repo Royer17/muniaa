@@ -7,5 +7,6 @@ var service = {
 	selectCategories:$('#categories-service'),
 	modalTitle:$('#modal-title-service'),
 	form:$('#form-services'),
+	formId: `#form-services`,
 
 };
