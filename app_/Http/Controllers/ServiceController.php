@@ -11,7 +11,7 @@ class ServiceController extends Controller
     public function get_view($slug)
     {   
         $service = Service::whereSlug($slug)->first();
-        
+
         return view('pages.services.citizen-security', compact('service'));
     }
 

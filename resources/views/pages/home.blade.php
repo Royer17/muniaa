@@ -50,9 +50,12 @@
   <div
     class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 px-4 md:py-6 md:gap-x-7 md:gap-y-8 mx-auto max-w-[1300px]"
   >
+    @foreach($services as $service)
     <div class="service-card-base">
-      <a href="#"> <img src="{{ '/img/services/secciu.png' }}" /> </a>
+      <a href="/servicios-municipales/{{ $service->slug }}"> <img src="{{ $service->icon }}" /> </a>
     </div>
+    @endforeach
+    {{-- 
     <div class="service-card-base">
       <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
     </div>
@@ -71,6 +74,7 @@
     <div class="service-card-base">
       <a href="#"> <img src="{{ '/img/services/regciv.png' }}" /> </a>
     </div>
+    --}}
   </div>
 </section>
 <section class="section hidden md:block bg-[#E3E3E3]" id="news-desktop">

@@ -38,9 +38,12 @@
           </div>
         </div>
         <div class="hidden md:flex flex-col gap-5">
+          @foreach($services as $service)
           <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
+            <a href="/servicios-municipales/{{ $service->slug }}"> <img src="{{ $service->icon }}" /> </a>
           </div>
+          @endforeach
+          {{-- 
           <div class="service-card-base">
             <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
           </div>
@@ -62,6 +65,7 @@
           <div class="service-card-base">
             <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
           </div>
+          --}}
         </div>
       </div>
     </div>

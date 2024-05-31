@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Service;
 use App\Setting;
+use App\LastDocument;
+use App\InstitutionalDocument;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -11,7 +13,7 @@ class ServiceController extends Controller
     public function get_view($slug)
     {   
         $service = Service::whereSlug($slug)->first();
-        
+
         return view('pages.services.citizen-security', compact('service'));
     }
 

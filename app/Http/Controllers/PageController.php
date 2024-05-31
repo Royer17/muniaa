@@ -59,16 +59,18 @@ class PageController extends Controller
 
         $services = Service::take(8)
             ->wherePublished(1)
+            ->orderBy('id', 'DESC')
             ->get();
 
         $inst_documents = InstitutionalDocument::take(8)
             ->wherePublished(1)
+            ->orderBy('id', 'DESC')
             ->get();
 
-        $last_documents = LastDocument::take(10)
+        $last_documents = LastDocument::take(8)
             ->orderBy('id', 'DESC')
             ->wherePublished(1)
-            ->with('files')
+            //->with('files')
             ->get();
 
         $last_popup = Popup::orderBy('id', 'DESC')

@@ -165,7 +165,7 @@
           <ul class="py-1" aria-labelledby="dropdownLargeButton">
             <li>
               <a
-                href="#"
+                href="/municipalidad/mision-y-vision"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                 >Misión y Visión</a
               >
@@ -269,13 +269,16 @@
         class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
       >
         <ul class="py-1" aria-labelledby="dropdownLargeButton">
+          @foreach($last_documents as $document)
           <li>
             <a
               href="#"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >Enlaces 1</a
+              >{{ $document->title }}</a
             >
           </li>
+          @endforeach
+          {{-- 
           <li>
             <a
               href="#"
@@ -291,6 +294,7 @@
               >Enlaces 3</a
             >
           </li>
+          --}}
         </ul>
       </div>
 
@@ -324,13 +328,16 @@
           class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
         >
           <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            @foreach($services as $service)
             <li>
               <a
-                href="#"
+                href="/servicios-municipales/{{ $service->slug }}"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >Servicio 1</a
+                >{{ $service->title }}</a
               >
             </li>
+            @endforeach
+            {{-- 
             <li>
               <a
                 href="#"
@@ -345,6 +352,7 @@
                 >Servicio 3</a
               >
             </li>
+            --}}
           </ul>
         </div>
         <div class="h-6 bg-dark-blue w-0.5"></div>
@@ -373,13 +381,16 @@
           class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
         >
           <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            @foreach($inst_documents as $document)
             <li>
               <a
                 href="#"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >TUPA 1</a
+                >{{ $document->title }}</a
               >
             </li>
+            @endforeach
+            {{-- 
             <li>
               <a
                 href="#"
@@ -394,6 +405,7 @@
                 >OTROS 3</a
               >
             </li>
+            --}}
           </ul>
         </div>
         <div class="h-6 bg-dark-blue w-0.5"></div>

@@ -61,7 +61,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Archivo</label>
+                                        <label>Ícono</label>
                                         <input type="file" name="icon" value="" style="margin-bottom: 10px;" class="form-control">
                                         <img src="" width="200px">
                                     </div>
