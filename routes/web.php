@@ -30,6 +30,7 @@ Route::get('/municipalidad/funcionarios', 'MunicipalityController@officials_view
 Route::get('/municipalidad/directorio', 'MunicipalityController@directory_view');
 Route::get('/municipalidad/planeamiento-y-organizacion', 'MunicipalityController@planning_and_organization_view');
 Route::get('/municipalidad/directivas', 'MunicipalityController@directives_view');
+Route::get('/municipalidad/galeria-de-fotos', 'MunicipalityController@photos_gallery_view');
 
 
 Route::prefix('municipalidad')->group(function(){

@@ -6,6 +6,7 @@ use App\CityCouncil;
 use App\Commission;
 use App\Setting;
 use Illuminate\Http\Request;
+use DB;
 
 class MunicipalityController extends Controller
 {
@@ -88,4 +89,16 @@ class MunicipalityController extends Controller
 
     }
 
+    public function photos_gallery_view()
+    {
+        $notice_images = DB::table('info_informacion')
+            ->orderBy('fecha_en', 'DESC')
+            ->where('published', 1)
+            ->where('deleted_at', NULL)
+            ->take(20)
+            ->get(['foto', 'foto1', 'foto2']);
+
+        return view('pages.municipality.gallery', compact('notice_images'));
+
+    }
 }
