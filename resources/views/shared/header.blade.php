@@ -137,7 +137,7 @@
       </div>
 
         
-        <div class="h-6 bg-dark-blue w-0.5"></div>
+      <div class="h-6 bg-dark-blue w-0.5"></div>
 
         <button
           id="dropdownNavbarLink"
@@ -199,25 +199,19 @@
               >Organigrama </a
             >
           </div>
-          <div class="py-1">
-            <a
-              href="#"
-              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >Concejo Municipal </a
-            >
-          </div>
-          <div class="py-1">
-            <a
-              href="#"
-              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >Concejo Municipal </a
-            >
-          </div>
+
           <div class="py-1">
             <a
               href="#"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Directorio Telefónico </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Comisiones de Regidores</a
             >
           </div>
           <div class="py-1">
@@ -278,29 +272,9 @@
             >
           </li>
           @endforeach
-          {{-- 
-          <li>
-            <a
-              href="#"
-              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >
-              Enlaces 2</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >Enlaces 3</a
-            >
-          </li>
-          --}}
+
         </ul>
       </div>
-
-
-
-
 
         <div class="h-6 bg-dark-blue w-0.5"></div>
           <button
@@ -342,22 +316,7 @@
               
             </li>
             @endforeach
-            {{-- 
-            <li>
-              <a
-                href="#"
-                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >Servicio 2</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >Servicio 3</a
-              >
-            </li>
-            --}}
+
           </ul>
         </div>
         <div class="h-6 bg-dark-blue w-0.5"></div>
@@ -414,40 +373,284 @@
     <div class="hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 absolute bg-white w-full z-50 md:hidden">
         <a
+        href="#"
+        class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+        >Inicio</a
+        >
+        <a
           href="#"
           class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
           >Informe de Rendición de Cuentas</a
         >
-        <a
-          href="#"
-          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-          >El Distrito</a
+        <!-- Distrito mobile -->
+        <button
+          id="dropdownNavbarLink"
+          data-dropdown-toggle="dropdownNavbar11"
+          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between w-fit"
         >
-        <a
-          href="#"
-          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-          >La municipalidad</a
+          El Distrito
+          <svg
+            class="w-4 h-4 ml-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="dropdownNavbar11"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-154 w-244"
         >
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Historia</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Turismo</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Galeia de Fotos</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- fin Distrito mobile -->
+        <!-- Municipalidad mobile -->
+        <button
+          id="dropdownNavbarLink"
+          data-dropdown-toggle="dropdownNavbar12"
+          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between w-fit "
+        >
+          La Municipalidad
+          <svg
+            class="w-4 h-4 ml-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="dropdownNavbar12"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-154 w-244"
+        >
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a
+                href="/municipalidad/mision-y-vision"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Misión y Visión</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >Alcalde</a
+              >
+            </li>
+          </ul>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Concejo Municipal </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Funcionarios</a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Organigrama </a
+            >
+          </div>
+
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Directorio Telefónico </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Comisiones de Regidores</a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Planeamiento y Organización </a
+            >
+          </div>
+          <div class="py-1">
+            <a
+              href="#"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >Directivas Municipal </a
+            >
+          </div>
+        </div>
+        <!--Fin municipalidad mobile -->
         <a
           href="#"
           class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
           >Obras Municipales</a
         >
-        <a
-          href="#"
-          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-          >Enlaces</a
+
+         <!-- Enlaces mobile -->
+        <button
+        id="dropdownNavbarLink"
+        data-dropdown-toggle="dropdownNavbar13"
+        class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between w-fit"
+      >
+        Enlaces
+    
+        <svg
+          class="w-4 h-4 ml-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
         >
-        <a
-          href="#"
-          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-          >Servicios</a
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <div
+        id="dropdownNavbar13"
+        class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-154 w-244"
+      >
+        <ul class="py-1" aria-labelledby="dropdownLargeButton">
+          @foreach($last_documents as $document)
+          <li>
+            <a
+              href="/enlaces/{{ $document->slug }}"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >{{ $document->title }}</a
+            >
+          </li>
+          @endforeach
+
+        </ul>
+      </div>
+       <!-- fin Enlaces mobile -->
+      <!-- Servicio mobile -->
+      <button
+          id="dropdownNavbarLink"
+          data-dropdown-toggle="dropdownNavbar14"
+          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between w-fit"
         >
-        <a
-          href="#"
-          class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-          >Favoritos</a
+          Servicios
+      
+          <svg
+            class="w-4 h-4 ml-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="dropdownNavbar14"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-154 w-244"
         >
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            @foreach($services as $service)
+            <li>
+              @if($service->url)
+                <a href="{{ $service->url }}" target="_blank" 
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >{{ $service->title }}</a>
+              @else
+                <a href="/servicios-municipales/{{ $service->slug }}" target="_blank" 
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >{{ $service->title }}</a>
+              @endif
+              
+            </li>
+            @endforeach
+
+          </ul>
+        </div>
+      <!--Fin servicio mobile-->
+       <!-- Favoritos mobile -->
+        <button
+        id="dropdownNavbarLink"
+        data-dropdown-toggle="dropdownNavbar15"
+        class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between w-fit"
+      >
+        Favoritos
+    
+        <svg
+          class="w-4 h-4 ml-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <div
+        id="dropdownNavbar15"
+        class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-154 w-244"
+      >
+        <ul class="py-1" aria-labelledby="dropdownLargeButton">
+          @foreach($inst_documents as $document)
+          <li>
+            <a
+              href="/favoritos/{{ $document->slug }}"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >{{ $document->title }}</a
+            >
+          </li>
+          @endforeach
+
+        </ul>
+      </div>
+      <!--Fin  Favoritos mobile -->
         <a
           href="#"
           class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"

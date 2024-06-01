@@ -171,6 +171,7 @@
     </div>
   </div>
 </section>
+
 <section class="section hidden md:block" id="works-desktop">
   <div class="flex p-5 lg:max-w-[1300px] mx-auto py-10">
     <div class="max-w-4xl">
@@ -180,7 +181,6 @@
         class="swiper works-thumb-swiper border-solid border-l-2 border-t-2 border-b-2 border-[#B0B0B0] h-[435px] rounded-l-xl"
       >
         <div class="swiper-wrapper">
-
           <div class="swiper-slide">
             <div class="group slide-item">
               <div>
@@ -196,8 +196,51 @@
               </div>
             </div>
           </div>
-
-          
+          <div class="swiper-slide">
+            <div class="group slide-item">
+              <div>
+                <img
+                  class="max-w-[200px] w-full"
+                  src="https://picsum.photos/300/200"
+                />
+              </div>
+              <div class="flex flex-col justify-center gap-2 text-white">
+                <p class="text-sm font-bold group-hover:text-white">
+                  Patrullaje permanente en la avenida manuel cuadros
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="group slide-item">
+              <div>
+                <img
+                  class="max-w-[200px] w-full"
+                  src="https://picsum.photos/300/200"
+                />
+              </div>
+              <div class="flex flex-col justify-center gap-2 text-white">
+                <p class="text-sm font-bold group-hover:text-white">
+                  Patrullaje permanente en la avenida manuel cuadros
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="group slide-item">
+              <div>
+                <img
+                  class="max-w-[200px] w-full"
+                  src="https://picsum.photos/300/200"
+                />
+              </div>
+              <div class="flex flex-col justify-center gap-2 text-white">
+                <p class="text-sm font-bold group-hover:text-white">
+                  Patrullaje permanente en la avenida manuel cuadros
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
