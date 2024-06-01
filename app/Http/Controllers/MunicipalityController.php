@@ -55,4 +55,37 @@ class MunicipalityController extends Controller
         $setting = Setting::first();
         return view('pages.municipality.phone-book', compact('setting'));
     }
+
+    public function officials_view()
+    {
+        $setting = Setting::first();
+        $officials = $setting->officials;
+        return view('pages.municipality.officials', compact('officials'));
+
+    }
+
+    public function directory_view()
+    {
+        $setting = Setting::first();
+        $directory = $setting->directory;
+        return view('pages.municipality.directory', compact('directory'));
+
+    }
+
+    public function planning_and_organization_view()
+    {
+        $setting = Setting::first();
+        $planning_and_organization = $setting->planning_and_organization;
+        return view('pages.municipality.planning_and_organization', compact('planning_and_organization'));
+
+    }
+
+    public function directives_view()
+    {
+        $setting = Setting::first();
+        $directives = $setting->directives;
+        return view('pages.municipality.directives', compact('directives'));
+
+    }
+
 }
