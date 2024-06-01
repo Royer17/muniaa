@@ -89,6 +89,25 @@
                     <textarea name="history" value="" placeholder="Historia del distrito" style="margin-bottom: 10px;" class="form-control" rows="10">{{ $setting->history }}</textarea>
                 </div>
 
+
+              <h3>Redes Sociales</h3>
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="text" name="facebook" value="{{ $setting->facebook }}" placeholder="Facebook" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Tiktok</label>
+                    <input type="text" name="tiktok" value="{{ $setting->tiktok }}" placeholder="Tiktok" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Instagram</label>
+                    <input type="text" name="instagram" value="{{ $setting->instagram }}" placeholder="Instagram" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Youtube</label>
+                    <input type="text" name="youtube" value="{{ $setting->youtube }}" placeholder="Youtube" style="margin-bottom: 10px;" class="form-control">
+                </div>
+
             </div>
 
             <div class="col-md-6">

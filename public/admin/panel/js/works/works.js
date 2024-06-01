@@ -348,6 +348,9 @@ $('#btnCrearpublicacion').on('click', function(){
   post.btnSave.show();
 
   $(`#post_photo`).hide();
+  $(`#post_photo1`).hide();
+  $(`#post_photo2`).hide();
+
 	//let _content = '<option value="">Seleccione una opción</option>';
 	// $.get('categories',function(data){
 	// 	$.each(data.categories,function(id,value) {
@@ -371,6 +374,8 @@ function cleanModal(){
   destroySummernote($(`textarea[name="programa"]`));
   $(`#post_method`).remove();
   $('#form-post')[0].reset();
+
+
 }
 
 //Limpiar el dropzone en base al id, remover las imagenes puestas

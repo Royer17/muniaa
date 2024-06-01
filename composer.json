@@ -6,15 +6,16 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "doctrine/dbal": "2.13.9",
         "fideloper/proxy": "~3.3",
         "google/apiclient": "^2.8",
-        "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0",
         "intervention/image": "^2.4",
         "jenssegers/date": "^3.2",
+        "laravel/framework": "5.5.*",
+        "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.5",
-        "yajra/laravel-datatables-oracle": "^8.0",
-        "nao-pon/flysystem-google-drive": "~1.1"
+        "nao-pon/flysystem-google-drive": "~1.1",
+        "yajra/laravel-datatables-oracle": "^8.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
