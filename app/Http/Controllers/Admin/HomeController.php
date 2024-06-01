@@ -30,4 +30,24 @@ class HomeController extends Controller
 
         return view('admin.blank_page', compact('setting', 'configuration_permission'));
     }
+
+    public function municipality_view()
+    {
+        $setting = Setting::first();
+        //$city_councils = CityCouncil::all();
+        //$commissions = Commission::all();
+
+        $user = Auth::user();
+        
+        $configuration_permission = DB::table('permission_user')
+            ->where('user_id', $user->id)
+            ->join('permissions', 'permission_user.permission_id', '=', 'permissions.id')
+            ->select(['permissions.slug'])
+            ->where('permissions.slug', 'ver-configuracion')
+            ->get()
+            ->toArray();
+
+        return view('admin.municipality', compact('setting', 'configuration_permission'));
+    }
+    
 }

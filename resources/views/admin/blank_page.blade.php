@@ -41,78 +41,8 @@
           <div class="row">
             
             <div class="col-md-6">
-              <h3>Alcalde</h3>
 
-                <div class="form-group">
-                  {{ Form::label('title', 'Nombre') }}
-                  <input class="form-control" placeholder="Nombre Completo" name="major" value="{{ $setting->major }}">
-                  <div id="dashboard-description-error" class="text-danger mensaje-error"></div>
-                </div>
-
-                <div class="form-group">
-                  {{ Form::label('title', 'Descripción') }}
-                  <textarea class="form-control" placeholder="Descripción" name="description">{{ $setting->description }}</textarea>
-                  <div id="dashboard-description-error" class="text-danger mensaje-error"></div>
-                </div>
-
-                <div class="form-group">
-                    <label>Imágen</label>
-                    <input type="file" name="photo" value="" style="margin-bottom: 10px;" class="form-control">
-                    @if($setting->photo)
-                    <img src="{{ $setting->photo }}" width="200px">
-                    @endif
-                </div>
-
-              <h3>Visión y Misión</h3>
-                <div class="form-group">
-                  {{ Form::label('title', 'Visión') }}
-                  <textarea class="form-control" placeholder="Visión" name="vision">{{ $setting->vision }}</textarea>
-                  <div id="dashboard-vision-error" class="text-danger mensaje-error"></div>
-                </div>
-                <div class="form-group">
-                  {{ Form::label('title', 'Misión') }}
-                  <textarea class="form-control" placeholder="Misión" name="mission">{{ $setting->mission }}</textarea>
-                  <div id="dashboard-mission-error" class="text-danger mensaje-error"></div>
-                </div>
-                <div class="form-group">
-                    <label>Organigrama(img)</label>
-                    <input type="file" name="organization_chart" value="" style="margin-bottom: 10px;" class="form-control">
-                    @if($setting->organization_chart)
-                    <img src="{{ $setting->organization_chart }}" width="200px">
-                    @endif
-                </div>
-
-              <h3>Distrito</h3>
-
-                <div class="form-group">
-                    <label>Historia del distrito</label>
-                    <textarea name="history" value="" placeholder="Historia del distrito" style="margin-bottom: 10px;" class="form-control" rows="10">{{ $setting->history }}</textarea>
-                </div>
-
-
-              <h3>Redes Sociales</h3>
-                <div class="form-group">
-                    <label>Facebook</label>
-                    <input type="text" name="facebook" value="{{ $setting->facebook }}" placeholder="Facebook" style="margin-bottom: 10px;" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Tiktok</label>
-                    <input type="text" name="tiktok" value="{{ $setting->tiktok }}" placeholder="Tiktok" style="margin-bottom: 10px;" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Instagram</label>
-                    <input type="text" name="instagram" value="{{ $setting->instagram }}" placeholder="Instagram" style="margin-bottom: 10px;" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Youtube</label>
-                    <input type="text" name="youtube" value="{{ $setting->youtube }}" placeholder="Youtube" style="margin-bottom: 10px;" class="form-control">
-                </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <h3>Datos de la Página</h3>
+                <h3>Datos de la Página</h3>
 
                 <div class="form-group">
                     <label>Título de la página</label>
@@ -178,6 +108,48 @@
                     @if($setting->image3)
                     <img src="{{ $setting->image3 }}" width="500px">
                     @endif
+                </div>
+            </div>
+
+            <div class="col-md-6">
+
+                <h3>Distrito</h3>
+
+                <div class="form-group">
+                    <label>Historia del distrito</label>
+                    <textarea name="history" value="" placeholder="Historia del distrito" style="margin-bottom: 10px;" class="form-control" rows="10">{{ $setting->history }}</textarea>
+                </div>
+
+                <h3>Redes Sociales</h3>
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="text" name="facebook" value="{{ $setting->facebook }}" placeholder="Facebook" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Tiktok</label>
+                    <input type="text" name="tiktok" value="{{ $setting->tiktok }}" placeholder="Tiktok" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Instagram</label>
+                    <input type="text" name="instagram" value="{{ $setting->instagram }}" placeholder="Instagram" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Youtube</label>
+                    <input type="text" name="youtube" value="{{ $setting->youtube }}" placeholder="Youtube" style="margin-bottom: 10px;" class="form-control">
+                </div>
+
+                <h3>Redes Sociales Turismo</h3>
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="text" name="facebook_tourism" value="{{ $setting->facebook_tourism }}" placeholder="Facebook" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Tiktok</label>
+                    <input type="text" name="tiktok_tourism" value="{{ $setting->tiktok_tourism }}" placeholder="Tiktok" style="margin-bottom: 10px;" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Instagram</label>
+                    <input type="text" name="instagram_tourism" value="{{ $setting->instagram_tourism }}" placeholder="Instagram" style="margin-bottom: 10px;" class="form-control">
                 </div>
 
             </div>

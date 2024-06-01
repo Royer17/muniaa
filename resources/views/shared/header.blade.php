@@ -187,7 +187,7 @@
           </div>
           <div class="py-1">
             <a
-              href="#"
+              href="/municipalidad/funcionarios"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Funcionarios</a
             >
@@ -202,14 +202,14 @@
 
           <div class="py-1">
             <a
-              href="#"
+              href="/municipalidad/directorio"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Directorio Telefónico </a
             >
           </div>
           <div class="py-1">
             <a
-              href="#"
+              href="/municipalidad/planeamiento-y-organizacion"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Comisiones de Regidores</a
             >
@@ -223,7 +223,7 @@
           </div>
           <div class="py-1">
             <a
-              href="#"
+              href="/municipalidad/directivas"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Directivas Municipal </a
             >

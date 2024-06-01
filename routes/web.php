@@ -25,12 +25,20 @@ Route::get('/', 'PageController@home')->name('pages.home');
 Route::prefix('distrito')->group(function(){
     Route::get('historia', 'DistrictController@History')->name('pages.district.history');
 });
+
+Route::get('/municipalidad/funcionarios', 'MunicipalityController@officials_view');
+Route::get('/municipalidad/directorio', 'MunicipalityController@directory_view');
+Route::get('/municipalidad/planeamiento-y-organizacion', 'MunicipalityController@planning_and_organization_view');
+Route::get('/municipalidad/directivas', 'MunicipalityController@directives_view');
+Route::get('/municipalidad/galeria-de-fotos', 'MunicipalityController@photos_gallery_view');
+
+
 Route::prefix('municipalidad')->group(function(){
     Route::get('mision-y-vision', 'MunicipalityController@missionVision')->name('pages.municipality.mission-vision');
     Route::get('alcalde', 'MunicipalityController@mayor')->name('pages.municipality.mayor');
     Route::get('concejo-municipal', 'MunicipalityController@cityCouncil')->name('pages.municipality.city-council');
     Route::get('comisiones', 'MunicipalityController@commissions')->name('pages.municipality.commissions');
-    Route::get('funcionarios', 'MunicipalityController@officials')->name('pages.municipality.officials');
+    // Route::get('funcionarios', 'MunicipalityController@officials')->name('pages.municipality.officials');
     Route::get('organigrama', 'MunicipalityController@organizationChart')->name('pages.municipality.organization-chart');
     Route::get('directorio-telefonico', 'MunicipalityController@phoneBook')->name('pages.municipality.phone-book');
 });
@@ -113,6 +121,8 @@ Route::get('/hola2',function(){
 Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["auth.personalized"]], function () {
 
     Route::get('dashboard', 'HomeController@dashboard_view');
+    Route::get('municipalidad', 'HomeController@municipality_view');
+
     //Route::get('noticias', 'PostController@view');
 
     //Gestión de Publicacion

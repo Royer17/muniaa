@@ -6,7 +6,7 @@
     <div
       class="flex items-center px-10 md:px-20 bg-dark-blue w-full h-16 md:h-20 text-white"
     >
-      <h1 class="text-sm md:text-3xl uppercase">Visión y Misión</h1>
+      <h1 class="text-sm md:text-3xl uppercase">Planeamiento y Organización</h1>
 
       
       
@@ -17,15 +17,15 @@
       >
         <div class="flex-1 bg-white shadow-md rounded-2xl h-fit p-4 md:p-6">
           <div>
-<!--             <img
+            <img
               class="w-full mb-5 max-h-[40rem]"
               src="https://picsum.photos/1200/600"
-            /> -->
+            />
             <div class="flex flex-col gap-4">
               <div>
-                <h2 class="text-xl font-bold mb-4">Funcionarios</h2>
+                <h2 class="text-xl font-bold mb-4">Planeamiento y Organización</h2>
                 <p class="text-sm md:text-base">
-                    {!! $officials !!}
+                    {!! $planning_and_organization !!}
                 </p>
               </div>
             </div>
@@ -43,7 +43,11 @@
             </a>
           </div>
           @endforeach
+
           {{-- 
+          <div class="service-card-base">
+            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
+          </div>
           <div class="service-card-base">
             <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
           </div>
@@ -70,7 +74,6 @@
       </div>
     </div>
   </section>
-
 
   @include('shared.information')
 @endsection

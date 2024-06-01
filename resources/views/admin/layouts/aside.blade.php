@@ -35,6 +35,13 @@
           </li>
           @endif
 
+          <li class="nav-item">
+            <a href="/admin/municipalidad" class="nav-link">
+              <i class="nav-icon fas fa-landmark"></i>
+              <p>Municipalidad</p>
+            </a>
+          </li>
+
           @if(in_array('ver-usuarios', $permissions) && \Auth::user()->role_id == 1)
           <li class="nav-item">
             <a href="/admin/usuarios" class="nav-link">
@@ -56,7 +63,7 @@
           @if(in_array('ver-concejo-municipal', $permissions))
           <li class="nav-item">
             <a href="/admin/concejo-municipal" class="nav-link">
-              <i class="nav-icon fas fa-landmark"></i>
+              <i class="nav-icon fas fa-gavel"></i>
               <p>Concejo municipal</p>
             </a>
           </li>
