@@ -330,11 +330,16 @@
           <ul class="py-1" aria-labelledby="dropdownLargeButton">
             @foreach($services as $service)
             <li>
-              <a
-                href="/servicios-municipales/{{ $service->slug }}"
+              @if($service->url)
+                <a href="{{ $service->url }}" target="_blank" 
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >{{ $service->title }}</a
-              >
+                >{{ $service->title }}</a>
+              @else
+                <a href="/servicios-municipales/{{ $service->slug }}" target="_blank" 
+                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                >{{ $service->title }}</a>
+              @endif
+              
             </li>
             @endforeach
             {{-- 

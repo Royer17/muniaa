@@ -66,6 +66,11 @@
                                     </div>
 
                                     <div class="form-group">
+                                        {{ Form::label('title', 'URL') }}
+                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
+                                    </div>
+
+                                    <div class="form-group">
                                         <label>PDF</label>
                                         <input type="file" name="icon" value="" style="margin-bottom: 10px;" class="form-control">
                                         <a href="" target="_blank">Archivo</a>

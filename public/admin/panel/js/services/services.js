@@ -86,7 +86,8 @@ function Editar(btn){
         document.querySelector(`${form} input[name="id"]`).value = p.id; 
         document.querySelector(`${form} textarea[name="description"]`).value = p.description;
         document.querySelector(`${form} select[name="published"]`).value = p.published;
-        document.querySelector(`${form} input[name="order"]`).value = p.order; 
+        document.querySelector(`${form} input[name="order"]`).value = p.order;
+        document.querySelector(`${form} input[name="url"]`).value = p.url;
         addSummernoteEditorMini($(`textarea[name="description"]`));
 
         $('#form-services input[name="icon"]').next().hide();

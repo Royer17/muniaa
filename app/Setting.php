@@ -13,5 +13,5 @@ class Setting extends Model
     
     protected $primaryKey = 'id';
     
-    protected $fillable = ['major', 'description', 'vision', 'mission', 'address', 'reference', 'web_title', 'email', 'phone', 'schedule_days', 'schedule_hours', 'history'];
+    protected $fillable = ['major', 'description', 'vision', 'mission', 'address', 'reference', 'web_title', 'email', 'phone', 'schedule_days', 'schedule_hours', 'history', 'facebook', 'tiktok', 'instagram', 'youtube'];
 }
