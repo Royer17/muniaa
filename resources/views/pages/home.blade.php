@@ -3,27 +3,16 @@
 <section class="section" id="slider">
   <div class="swiper main-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img
-          class="w-full"
-          src="img/photos/alianza.png"
-          alt="Foto principal alto de alianza"
-        />
-      </div>
-      <div class="swiper-slide">
-        <img
-          class="w-full"
-          src="img/photos/alianza.png"
-          alt="Foto principal alto de alianza"
-        />
-      </div>
-      <div class="swiper-slide">
-        <img
-          class="w-full"
-          src="img/photos/alianza.png"
-          alt="Foto principal alto de alianza"
-        />
-      </div>
+      @foreach($sliders as $slider)
+          <div class="swiper-slide">
+            <img
+              class="w-full"
+              src="{{ $slider->img_slide }}"
+              alt="Foto principal alto de alianza"
+            />
+          </div>
+      @endforeach
+      
     </div>
 
     <div class="button-next custom-next">
@@ -62,75 +51,32 @@
   <div class="flex p-5 lg:max-w-[1300px] mx-auto py-10">
     <div class="max-w-4xl">
       <h1 class="title">Noticias</h1>
+      
       <div
         thumbsSlider=""
         class="swiper news-thumb-swiper h-[435px] rounded-l-xl"
       >
         <div class="swiper-wrapper">
+
+          @foreach($news as $item)
           <div class="swiper-slide">
             <div class="group slide-item">
               <div>
                 <img
                   class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
+                  src="{{ $item->image }}"
                 />
               </div>
               <div class="flex flex-col justify-center gap-2 text-white">
                 <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
+                  {{ $item->title }}
                 </p>
-                <p class="text-xs group-hover:text-white">23 de Nov.</p>
+                <p class="text-xs group-hover:text-white">{{ \Date::parse($item->date)->format('l\, d \d\e\ F \d\e\l\ Y') }}</p>
+                <a href="/noticias/{{ $item->slug }}"> <p class="text-xs group-hover:text-white"> ver más </p></a>
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-                <p class="text-xs group-hover:text-white">23 de Nov.</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-                <p class="text-xs group-hover:text-white">23 de Nov.</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-                <p class="text-xs group-hover:text-white">23 de Nov.</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -140,30 +86,15 @@
         class="swiper news-swiper max-w-full max-h-[500px] w-full rounded-xl overflow-hidden"
       >
         <div class="swiper-wrapper w-full">
+          @foreach($news as $item)
           <div class="swiper-slide">
             <img
               class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
+              src="{{ $item->image }}"
             />
           </div>
-          <div class="swiper-slide">
-            <img
-              class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
-            />
-          </div>
+          @endforeach
+
         </div>
 
         <div class="button-next custom-next">
@@ -192,45 +123,26 @@
   <h1 class="title">Noticias</h1>
   <div class="swiper news-swiper bg-dark-blue rounded-tl-xl">
     <div class="swiper-wrapper">
+
+      @foreach($news as $item)
       <div class="swiper-slide">
         <div class="news-slide">
           <div>
-            <img src="https://picsum.photos/300/200" />
+            <img src="{{ $item->image }}" />
           </div>
           <div class="flex flex-col justify-center gap-2 text-white">
             <p class="text-sm font-bold">
-              Patrullaje permanente en la avenida manuel cuadros
+              {{ $item->title }}
             </p>
-            <p class="text-xs">23 de Nov.</p>
+            <p class="text-xs">{{ \Date::parse($item->date)->format('l\, d \d\e\ F \d\e\l\ Y') }}</p>
+            <a href="/noticias/{{ $item->slug }}"> <p class="text-xs group-hover:text-white"> ver más </p></a>
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="news-slide">
-          <div>
-            <img src="https://picsum.photos/300/200" />
-          </div>
-          <div class="flex flex-col justify-center gap-2 text-white">
-            <p class="text-sm font-bold">
-              Patrullaje permanente en la avenida manuel cuadros
-            </p>
-            <p class="text-xs">23 de Nov.</p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="news-slide">
-          <div>
-            <img src="https://picsum.photos/300/200" />
-          </div>
-          <div class="flex flex-col justify-center gap-2 text-white">
-            <p class="text-sm font-bold">
-              Patrullaje permanente en la avenida manuel cuadros
-            </p>
-            <p class="text-xs">23 de Nov.</p>
-          </div>
-        </div>
-      </div>
+
+      @endforeach
+
+
     </div>
 
     <div class="button-next custom-next">
@@ -262,6 +174,7 @@
         class="swiper works-thumb-swiper border-solid border-l-2 border-t-2 border-b-2 border-[#B0B0B0] h-[435px] rounded-l-xl"
       >
         <div class="swiper-wrapper">
+
           <div class="swiper-slide">
             <div class="group slide-item">
               <div>
@@ -277,51 +190,8 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-              </div>
-            </div>
-          </div>
+
+          
         </div>
       </div>
     </div>
@@ -445,14 +315,17 @@
       >
         Galeria de Fotos
       </h1>
+
+
       <div class="swiper photo-gallery-swiper">
         <div class="swiper-wrapper">
+          
+          @foreach($notice_images as $image)
           <div class="swiper-slide px-[20px]">
-            <img src="img/photos/foto.png" alt="Fotos Alto de Alianza 1" />
+            <img src="{{ $image->foto }}" alt="Fotos Alto de Alianza">
           </div>
-          <div class="swiper-slide px-[20px]">
-            <img src="img/photos/foto.png" alt="Fotos Alto de Alianza 2" />
-          </div>
+          @endforeach
+          
         </div>
         <div class="button-next custom-next">
           <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
