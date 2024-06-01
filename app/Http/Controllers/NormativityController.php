@@ -22,16 +22,22 @@ class NormativityController extends Controller
     {
         $setting = Setting::first();
 
-        return view('pages.normativity.index', compact('setting'));
+        $document_types = DB::table('document_types')
+            ->select(['id', 'name'])
+            ->where('deleted_at', NULL)
+            ->get();
+
+        return view('pages.normativity.index', compact('setting', 'document_types'));
     }
 
     public function resolutions_datatable(Request $request)
     {
 
         $result = DB::table('normas')
-            ->select('idnor', 'numdoc', 'fechaemi', 'nomfile', 'referenc', 'tipodocu')
-            ->where('published', 1)
-            ->where('deleted_at', NULL);
+            ->join('document_types', 'normas.tipodocu', '=', 'document_types.id')
+            ->select('normas.idnor', 'normas.numdoc', 'normas.fechaemi', 'normas.nomfile', 'normas.referenc', 'document_types.name as tipodocu')
+            ->where('normas.published', 1)
+            ->where('normas.deleted_at', NULL);
 
         if ($request->tipodocu) {
             $result = $result->where('tipodocu', $request->tipodocu);

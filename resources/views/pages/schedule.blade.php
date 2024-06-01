@@ -1,39 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner">
-    <div class="image-layer" style="background-image:url({{ asset('assets/img/bgs/banner-img-1.jpg') }})"></div>
-    <div class="banner-inner">
-        <div class="container-lg">
-            <div class="inner-container clearfix">
-                <h1>Agenda</h1>
-                <div class="page-nav">
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="{{ route('pages.home') }}">Inicio</a></li>
-                        <!-- <li><a href="">Distrito</a></li> -->
-                        <li class="active">Agenda</li>
-                    </ul>
-                </div>
+
+<section id="vision">
+    <div
+      class="flex items-center px-10 md:px-20 bg-dark-blue w-full h-16 md:h-20 text-white"
+    >
+      <h1 class="text-sm md:text-3xl uppercase">Agenda</h1>
+    
+      
+    </div>
+    <div class="bg-[#E9E9E9]">
+      <div
+        class="flex flex-col md:flex-row gap-4 px-3 md:px-20 py-2 md:py-10"
+      >
+        <div class="flex-1 bg-white shadow-md rounded-2xl h-fit p-4 md:p-6">
+          <div>
+            <div class="parrafodf">
+                <div id='calendar'></div>
+
             </div>
+          </div>
         </div>
+
+      </div>
     </div>
-</section>
-<section class="default-section">
-    <div class="container-lg">
+  </section>
 
-        <div class="row as">
-        <!-- contenido -->
-
-        </div>
-
-        <div class="parrafodf">
-            <div id='calendar'></div>
-
-        </div>
-    </div>
-</section>
-
-<!-- <div id="modal-schedule" class="modal" tabindex="-1" role="dialog">
+<div id="modal-schedule" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -50,9 +44,9 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
-
+@include('shared.information')
 @endsection
 
 @section('scripts')
@@ -135,4 +129,7 @@
         // });
 
     </script>
+
+
+
 @endsection
