@@ -113,6 +113,8 @@ Route::get('/hola2',function(){
 Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["auth.personalized"]], function () {
 
     Route::get('dashboard', 'HomeController@dashboard_view');
+    Route::get('municipalidad', 'HomeController@municipality_view');
+
     //Route::get('noticias', 'PostController@view');
 
     //Gestión de Publicacion
