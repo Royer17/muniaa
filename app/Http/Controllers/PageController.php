@@ -7,6 +7,7 @@ use App\LastDocument;
 use App\Post;
 use App\Popup;
 use App\Service;
+use App\Works;
 use App\Setting;
 use App\WorksCategory;
 use App\Youtube;
@@ -57,7 +58,7 @@ class PageController extends Controller
             ->whereDate('finished_at', '>=', $now)
             ->get();
 
-        $services = Service::take(8)
+        $services = Service::take(15)
             ->wherePublished(1)
             ->orderBy('order', 'ASC')
             ->get();
@@ -96,7 +97,10 @@ class PageController extends Controller
             ->take(20)
             ->get(['foto', 'foto1', 'foto2']);
 
-        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup', 'notice_images'));
+        $works = Works::wherePublished(1)
+            ->get();
+
+        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup', 'notice_images', 'works'));
     }
 
     public function transparencyPortal()

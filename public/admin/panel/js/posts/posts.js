@@ -250,7 +250,7 @@ function Editar(btn){
         const form = `#form-post`;
        //$('#post_id').val(p.id);
         document.querySelector(`${form} input[name="vc_titulo_informacion"]`).value = p.vc_titulo_informacion; 
-        document.querySelector(`${form} textarea[name="vc_resumen_informacion"]`).value = p.vc_resumen_informacion; 
+        //document.querySelector(`${form} textarea[name="vc_resumen_informacion"]`).value = p.vc_resumen_informacion; 
         document.querySelector(`${form} textarea[name="tx_contenido_informacion"]`).value = p.tx_contenido_informacion; 
         document.querySelector(`${form} input[name="video"]`).value = p.video; 
         document.querySelector(`${form} input[name="id"]`).value = p.in_id_informacion; 
@@ -370,6 +370,7 @@ post.selectCategories.on('change',function(){
 function cleanModal(){
   destroySummernote($(`#content-post`));
   $('#form-post')[0].reset();
+  $(`#content-post`).val("");
   $(`#post_method`).remove();
 }
 
