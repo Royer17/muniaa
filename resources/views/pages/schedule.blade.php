@@ -21,8 +21,6 @@
 <section class="default-section">
     <div class="container-lg">
 
-
-
         <div class="row as">
         <!-- contenido -->
 
@@ -35,7 +33,7 @@
     </div>
 </section>
 
-<div id="modal-schedule" class="modal" tabindex="-1" role="dialog">
+<!-- <div id="modal-schedule" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -52,7 +50,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 @endsection
@@ -137,7 +135,4 @@
         // });
 
     </script>
-
-
-
 @endsection

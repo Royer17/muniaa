@@ -34,8 +34,17 @@
       }
     </style>
   </head>
-  <body>
+    <body>
 
-    @include('shared.header')
-    @yield('content')
-    @include('shared.footer')
+        @include('shared.header')
+        @yield('content')
+        @include('shared.footer')   
+
+        <script src="{{ '/js/jquery-3.5.1.min.js'}}"></script>
+        <script src="{{ '/js/owl.carousel.js' }}"></script>
+        <script src="{{ '/js/jquery.fancybox.min.js' }} "></script>
+        <script src="{{ '/js/jquery.dataTables.min.js' }}"></script>
+        
+        @yield('scripts')
+    </body>
+</html>
