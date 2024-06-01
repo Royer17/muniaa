@@ -181,66 +181,24 @@
         class="swiper works-thumb-swiper border-solid border-l-2 border-t-2 border-b-2 border-[#B0B0B0] h-[435px] rounded-l-xl"
       >
         <div class="swiper-wrapper">
+          @foreach($works as $work)
           <div class="swiper-slide">
             <div class="group slide-item">
               <div>
                 <img
                   class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
+                  src="{{ $work['foto'] }} " alt="Sin Imagen"
                 />
               </div>
               <div class="flex flex-col justify-center gap-2 text-white">
                 <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
+                  {{ $work['actividad'] }}
                 </p>
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="group slide-item">
-              <div>
-                <img
-                  class="max-w-[200px] w-full"
-                  src="https://picsum.photos/300/200"
-                />
-              </div>
-              <div class="flex flex-col justify-center gap-2 text-white">
-                <p class="text-sm font-bold group-hover:text-white">
-                  Patrullaje permanente en la avenida manuel cuadros
-                </p>
-              </div>
-            </div>
-          </div>
+          @endforeach
+                   
         </div>
       </div>
     </div>
@@ -250,30 +208,14 @@
         class="swiper works-swiper max-w-full max-h-[500px] w-full rounded-xl overflow-hidden"
       >
         <div class="swiper-wrapper w-full">
+          @foreach($works as $work)
           <div class="swiper-slide">
             <img
               class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
+              src="{{ $work['foto'] }} "
             />
           </div>
-          <div class="swiper-slide">
-            <img
-              class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="w-full h-full"
-              src="https://picsum.photos/1500/1200"
-            />
-          </div>
+          @endforeach
         </div>
 
         <div class="button-next custom-next">

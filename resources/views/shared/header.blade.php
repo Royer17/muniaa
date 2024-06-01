@@ -33,13 +33,13 @@
             class="flex w-full md:justify-between gap-4 md:gap-0 px-2 py-2 h-fit"
           >
             <div class="flex items-center gap-8 max-w-32 md:max-w-[300px]">
-              <a href="#">
+              <a href="{{ route('pages.home') }}">
                 <img
                 src="{{ asset('img/logo.png') }}"
                   alt="Municipalidad Alto de la Alianza Logo"
                 />
               </a>
-              <a class="hidden md:block" href="#">
+              <a class="hidden md:block" href="{{ route('pages.home') }}">
                 <img
                 src="{{ asset('img/logo4.png') }}"
                   alt="Municipalidad Alto de la Alianza Slogan"
@@ -58,7 +58,7 @@
                   <img src="{{ asset('img/ig.png') }}" alt="instagram" />
                 </a>
               </div>
-              <a href="#">
+              <a href="/portal-de-transparencia">
                 <img
                   src="{{ asset('img/logo-portal-transparencia.png') }}"
                   class="max-w-[110px]"
@@ -75,14 +75,14 @@
     >
       <div class="flex items-center md:space-x-0 lg:space-x-2 xl:space-x-4">
         <a
-          href="#"
+          href="{{ route('pages.home') }}"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
           >Inicio</a
         >
         <div class="h-6 bg-dark-blue w-0.5"></div>
 
         <a
-          href="#"
+          href="{{ route('pages.home') }}"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
           >Informe de Rendición Cuentas</a
         >
@@ -114,7 +114,7 @@
         <ul class="py-1" aria-labelledby="dropdownLargeButton">
           <li>
             <a
-              href="#"
+              href="/distrito/historia"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Historia</a
             >
@@ -172,7 +172,7 @@
             </li>
             <li>
               <a
-                href="#"
+                href="/municipalidad/alcalde"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                 >Alcalde</a
               >
@@ -180,7 +180,7 @@
           </ul>
           <div class="py-1">
             <a
-              href="#"
+              href="{{ route('pages.municipality.city-council') }}"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Concejo Municipal </a
             >
@@ -194,7 +194,7 @@
           </div>
           <div class="py-1">
             <a
-              href="#"
+              href="/municipalidad/organigrama"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Organigrama </a
             >
@@ -209,14 +209,14 @@
           </div>
           <div class="py-1">
             <a
-              href="/municipalidad/planeamiento-y-organizacion"
+              href="{{ route('pages.municipality.commissions') }}"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Comisiones de Regidores</a
             >
           </div>
           <div class="py-1">
             <a
-              href="#"
+              href="/municipalidad/planeamiento-y-organizacion"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Planeamiento y Organización </a
             >
@@ -373,12 +373,12 @@
     <div class="hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 absolute bg-white w-full z-50 md:hidden">
         <a
-        href="#"
+        href="{{ route('pages.home') }}"
         class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
         >Inicio</a
         >
         <a
-          href="#"
+          href="{{ route('pages.home') }}"
           class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
           >Informe de Rendición de Cuentas</a
         >
@@ -409,7 +409,7 @@
           <ul class="py-1" aria-labelledby="dropdownLargeButton">
             <li>
               <a
-                href="#"
+                href="/distrito/historia"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                 >Historia</a
               >
@@ -465,7 +465,7 @@
             </li>
             <li>
               <a
-                href="#"
+                href="/municipalidad/alcalde"
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                 >Alcalde</a
               >
@@ -473,7 +473,7 @@
           </ul>
           <div class="py-1">
             <a
-              href="#"
+              href="{{ route('pages.municipality.city-council') }}"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Concejo Municipal </a
             >
@@ -652,7 +652,7 @@
       </div>
       <!--Fin  Favoritos mobile -->
         <a
-          href="#"
+          href="/portal-de-transparencia"
           class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
           >Portal de Transparencia</a
         >

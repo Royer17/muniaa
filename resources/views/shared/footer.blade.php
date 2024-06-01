@@ -1,3 +1,5 @@
+
+
 <footer class="flex flex-col">
   <div class="flex flex-col md:flex-row w-full">
     <div
@@ -22,12 +24,12 @@
         <p>
           Derechos Reservados Municipalidad Distrital Alto de la Alianza
         </p>
-        <p>Dirección: Av. Prolongación Pinto Nro. 1337</p>
+        <p>Dirección: {{ $setting->address }}</p>
       </div>
 
       <div>
-        <p>Email: mesadepartes@munialtoalianza.gob.pe</p>
-        <p>Central Telefonica: 052-311283</p>
+        <p>Email: {{ $setting->email }}</p>
+        <p>Central Telefonica: {{ $setting->phone }}</p>
       </div>
     </div>
   </div>
