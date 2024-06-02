@@ -15,7 +15,15 @@ class CreateAccountabilityTable extends Migration
     {
         Schema::create('accountability', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('slug');
+            $table->string('image')->nullable();
+            $table->string('external_image')->nullable();
+            $table->text('description')->nullable();
+            $table->string('url')->nullable();
+            $table->boolean('published');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

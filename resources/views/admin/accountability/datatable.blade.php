@@ -38,7 +38,7 @@
         <div class="box">
           <div class="box-header">
             <div class="col-lg-12">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="" id="btnCrearpublicacion">
+              <button type="button" class="btn btn-success add" data-toggle="modal" data-target="" id="btnCrearpublicacion">
                 <i class="fa fa-user-plus"></i> Nueva Rendición de cuenta
               </button>
             </div>
@@ -52,10 +52,9 @@
                 <thead>
                   <tr>
                     <th style="width: 150px;">ID</th>
-                    <th style="width: 200px;">Documento</th>
+                    <th style="width: 200px;">Title</th>
+                    <th style="width: 100px;">Slug</th>
                     <th style="width: 15%;">Fecha</th>
-  				          <th style="width: 100px;">Número de Documento</th>
-                    <th style="width: 100px;">Archivo</th>
                     <th style="width: 100px;">Imagen</th>
                     <th style="width: 100px;">Visible</th>
                     <th style="width: 60px;">Acciones</th>
@@ -67,7 +66,6 @@
   				          <td></td>
                     <td></td>
                     <td></td>
-  				          <td></td>
   				          <td></td>
                     <td></td>
                     <td></td>

@@ -17,7 +17,7 @@ class CreateContentsTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->string('url');
-            $table->integer('model_type'); //1 instituional documents, 2 other/last important documents
+            $table->integer('model_type'); //1 instituional documents, 2 other/last important documents, 3 accountability
             $table->unsignedInteger('model_id');
             $table->integer('type'); //1 foto, 2 pdf or files, 3 video
             $table->timestamps();

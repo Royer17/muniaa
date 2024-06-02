@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Content;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateNormaRequest;
+use App\Http\Requests\CreateInstitutionalDocumentRequest;
 use App\Accountability;
 use App\Utils\Helpers;
 use Carbon\Carbon;
@@ -30,7 +31,7 @@ class AccountabilityController extends Controller
             ->where('user_id', $user->id)
             ->join('permissions', 'permission_user.permission_id', '=', 'permissions.id')
             ->select(['permissions.slug'])
-            ->where('permissions.slug', 'ver-normas')
+            ->where('permissions.slug', 'ver-documentos-institucionales')
             ->get()
             ->toArray();
 
@@ -38,151 +39,193 @@ class AccountabilityController extends Controller
             return redirect('/admin/dashboard');
         }
 
-        $document_types = DB::table('document_types')
-            ->select(['id', 'name'])
-            ->where('deleted_at', NULL)
-            ->get();
-
-        return View::make('admin.normas.datatable', compact('document_types'));
+        return View::make('admin.accountability.datatable');
     }
 
     public function get_datatable(Request $request)
     {
-        $role_id = $request->role_id;
-
-        $result = DB::table('normas')
-            ->join('document_types', 'normas.tipodocu', '=', 'document_types.id')
-            ->select('normas.idnor', 'document_types.name as detalle','normas.fechaemi', 'normas.numdoc', 'normas.nomfile', 'normas.published')
-            ->where('normas.deleted_at', NULL);
+    
+        $result = DB::table('accountability')
+            ->select('title', 'created_at', 'id', 'published', 'slug')
+            ->where('deleted_at', NULL);
 
         return DataTables::of($result)
         ->escapeColumns('Image', 'Actions')
         ->addColumn('Image', function($model)
         {   
-            if ($model->fechaemi) {
-                return Date::createFromFormat('Y-m-d', $model->fechaemi)->format('d \ F \ Y');
+            if ($model->created_at) {
+                return Date::parse($model->created_at)->format('d \ F \ Y');
             }   
             return "";
         })
-        ->addColumn('Actions', function($model) use ($role_id)
+        ->addColumn('Actions', function($model)
         {
-
-            if ($role_id == 3) {
-
-                return "
-                            <button class='btn btn-primary btn-sm solsoShowModal' data-toggle='tooltip' title='Editar' value=$model->idnor OnClick='Editar(this);'>
-                            <i class='fa fa-edit'></i>
-                            </button>";
-            }
-
             return "
-                    <button class='btn btn-primary btn-sm solsoShowModal' data-toggle='tooltip' title='Editar' value=$model->idnor OnClick='Editar(this);'>
+                    <button class='btn btn-primary btn-sm solsoShowModal' data-toggle='tooltip' title='Editar' value=$model->id OnClick='Editar(this);'>
                     <i class='fa fa-edit'></i>
                     </button>
 
-                    <button class='btn btn-danger btn-sm solsoConfirm' data-toggle='modal' data-title='Slider' title='Eliminar' value=$model->idnor OnClick='Eliminar(this);'>
+                    <button class='btn btn-danger btn-sm solsoConfirm' data-toggle='modal' data-title='Slider' title='Eliminar' value=$model->id OnClick='Eliminar(this);'>
                       <i class='fa fa-trash'></i>
                     </button>";
 
         })->make();
     }
 
-    public function store(CreateNormaRequest $request)
+    public function store(CreateInstitutionalDocumentRequest $request)
     {
+        $data = $request->except(['image', 'external_image']);
+        $data['slug'] = str_slug($data['title']);
+        $accountability = new Accountability();
+        $accountability->fill($data);
 
-        $data = $request->except(['nomfile']);
-        $data['fechaemi'] = Carbon::createFromFormat('d/m/Y', $data['fechaemi'])->format('Y-m-d');
+        if ($request->hasFile('image')) {
+            $file1 = $request->file('image');
 
-        $norma = new Norma();
-        $norma->fill($data);
-        $norma->depeorig = 3;
-        $norma->visitas = 0;
-        $norma->digitador = "";
-        $norma->anno = Carbon::now()->format('Y');
-        $norma->detalle = "";
-
-        $norma->nomfile = "";
-        if ($request->hasFile('nomfile')) {
-            $file1 = $request->file('nomfile');
-
-            //$file_name = str_slug($file1->getClientOriginalName()).time();
-            //Storage::disk('google')->put($file_name, fopen($file1, 'r+'));
-            //$url = Storage::disk('google')->url($file_name);
             //$filename = time().str_slug($file1->getClientOriginalExtension());
-            $filename = time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
-
-            $file1->move(public_path(). "/files/norma", $filename);
-            $norma->nomfile = "/files/norma/".$filename;
+            $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+            $file1->move(public_path(). "/img/accountability", $filename);
+            $accountability->image = "/img/accountability/".$filename;
         }
-        
-        $norma->save();
+
+        if ($request->hasFile('external_image')) {
+            $file2 = $request->file('external_image');
+
+            //$filename = time().str_slug($file1->getClientOriginalExtension());
+            $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
+            $file2->move(public_path(). "/img/accountability", $filename);
+            $accountability->external_image = "/img/accountability/".$filename;
+        }
+
+        $accountability->save();
+
+        if ($request->hasFile('file')) {
+            $files = $request->file('file');
+            $files_title = $request->name;
+
+            foreach ($files as $key => $file) {
+
+                $content = new Content();
+                $content->title = $files_title[$key];
+                $content->model_type = 1;
+                $content->model_id = $accountability->id;
+                $content->type = 3;
+
+                //Storage::disk('google')->put($file->getClientOriginalName(), fopen($file, 'r+'));
+                //$url = Storage::disk('google')->url($file->getClientOriginalName());
+                //$content->url = $url;
+                $filename = time().time().str_slug($file->getClientOriginalExtension());
+                $file->move(public_path(). "/files/accountability", $filename);
+                $content->url = "/files/accountability/".$filename;
+                $content->save();
+            }
+        }
 
         return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha creado correctamente', 'symbol' => 'success'], 200);
     }
 
     public function show($id)
-    {
-        $norma = Norma::find($id);
-        $norma->fecha_formatted = Carbon::parse($norma->fechaemi)->format('d/m/Y');
-        return response()->json($norma); 
+    {   
+        $accountability = Accountability::with('files')->find($id);
+        return $accountability;
     }
 
- public function update($id, CreateNormaRequest $request)
+ public function update($id, CreateInstitutionalDocumentRequest $request)
  {
-    $data = $request->except(['nomfile']);
-    $data['fechaemi'] = Carbon::createFromFormat('d/m/Y', $data['fechaemi'])->format('Y-m-d');
 
-    $norma = Norma::find($id);
-        
-    $norma->fill($data);
+    $data = $request->except(['image', 'external_image']);
+    $data['slug'] = str_slug($data['title']);
+    $accountability = Accountability::find($id);
+    $accountability->fill($data);
 
-    if ($request->hasFile('nomfile')) {
-        $file1 = $request->file('nomfile');
+    if ($request->hasFile('image')) {
+        $file1 = $request->file('image');
 
-        if($norma->nomfile)
+        if($accountability->image)
         {
-            // $val = explode('id=', $norma->nomfile); 
-            // $val = $val[1];
-            // $val = explode('&', $val); 
-            // $val = $val[0];
-            // Storage::disk('google')->delete($val);
-            if (file_exists($norma->nomfile)) {
-                unlink($norma->nomfile);
+            if (file_exists($accountability->image)) {
+                unlink($accountability->image);
             }
         }
 
-        // Storage::disk('google')->put($file1->getClientOriginalName(), fopen($file1, 'r+'));
-        // $url = Storage::disk('google')->url($file1->getClientOriginalName());
-        // $norma->nomfile = $url;
-        $filename = time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
-        $file1->move(public_path(). "/files/norma", $filename);
-        $norma->nomfile = "/files/norma/".$filename;
-
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file1->getClientOriginalName()).".".$file1->getClientOriginalExtension();
+        $file1->move(public_path(). "/img/accountability", $filename);
+        $accountability->image = "/img/accountability/".$filename;
     }
-    
-    $norma->save();
+
+    if ($request->hasFile('external_image')) {
+        $file2 = $request->file('external_image');
+
+        if($accountability->external_image)
+        {
+            if (file_exists($accountability->external_image)) {
+                unlink($accountability->external_image);
+            }
+        }
+
+        //$filename = time().str_slug($file1->getClientOriginalExtension());
+        $filename = time().time().str_slug($file2->getClientOriginalName()).".".$file2->getClientOriginalExtension();
+
+        $file2->move(public_path(). "/img/accountability", $filename);
+        $accountability->external_image = "/img/accountability/".$filename;
+    }
+
+    $accountability->save();
+
+    if ($request->hasFile('file')) {
+        $files = $request->file('file');
+        $files_title = $request->name;
+
+        foreach ($files as $key => $file) {
+
+            $content = new Content();
+            $content->title = $files_title[$key];
+            $content->model_type = 1;
+            $content->model_id = $accountability->id;
+            $content->type = 3;
+
+            // Storage::disk('google')->put($file->getClientOriginalName(), fopen($file, 'r+'));
+            // $url = Storage::disk('google')->url($file->getClientOriginalName());
+            // $content->url = $url;
+            $filename = time().time().str_slug($file->getClientOriginalExtension());
+            $file->move(public_path(). "/files/accountability", $filename);
+            $content->url = "/files/accountability/".$filename;
+            
+            $content->save();
+        }
+    }
 
     return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha actualizado correctamente', 'symbol' => 'success'], 200);
 }
 
     public function delete($id)
     {
-        $norma = Norma::where('idnor', $id)->first();
+        $document = Accountability::find($id);
 
-        if (file_exists($norma->nomfile)) {
-            unlink($norma->nomfile);
+        $contents = Content::whereModelType(1)
+            ->whereModelId($document->id)
+            ->whereType(3)
+            ->delete();
+
+        if($document->image)
+        {
+            if (file_exists($document->image)) {
+                unlink($document->image);
+            }
         }
 
-        // if($norma->nomfile && substr($norma->nomfile, 0, 8) == "https://")
-        // {
-        //     $val = explode('id=', $norma->nomfile); 
-        //     $val = $val[1];
-        //     $val = explode('&', $val); 
-        //     $val = $val[0];
-        //     Storage::disk('google')->delete($val);
-        // }
+        if($document->external_image)
+        {
 
-        $norma->delete();
+            if (file_exists($document->external_image)) {
+                unlink($document->external_image);
+            }
+        }
+
+        $document->delete();
+        
         return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha eliminado correctamente', 'symbol' => 'success'], 200);
         
     }

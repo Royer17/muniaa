@@ -13,5 +13,13 @@ class Accountability extends Model
 
     protected $primaryKey = 'id';
     
-    protected $fillable = ['title', 'description', 'url', 'published'];
+    protected $fillable = ['title', 'description', 'url', 'published', 'slug'];
+
+
+    public function files()
+    {
+        return $this->hasMany('App\Content', 'model_id')->whereModelType(1)
+            ->whereType(3);
+    }
+
 }
