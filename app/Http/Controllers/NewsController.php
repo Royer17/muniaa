@@ -17,7 +17,6 @@ class NewsController extends Controller
 
         $setting = Setting::first();
 
-
         return view('pages.news.index', compact('news', 'setting'));
     }
 
