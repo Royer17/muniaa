@@ -200,6 +200,15 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
 
     Route::delete('norma/{id}', 'NormaController@delete');
     Route::get('/normas-datatable', 'NormaController@get_datatable');
+    
+    //Rendicion de cuentas
+    Route::get('/rendicion-de-cuentas', ['as' => 'datatable-normas', 'uses' => 'AccountabilityController@get_index']);
+    Route::post('accountability', 'AccountabilityController@store');
+    Route::put('accountability/{id}', 'AccountabilityController@update');
+    Route::get('accountability/{id}', 'AccountabilityController@show');
+
+    Route::delete('accountability/{id}', 'AccountabilityController@delete');
+    Route::get('/accountability-datatable', 'AccountabilityController@get_datatable');
 
     //Document types
     Route::get('/tipos-de-documento', ['as' => 'datatable-document-types', 'uses' => 'DocumentTypeController@get_index']);
