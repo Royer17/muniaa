@@ -19,8 +19,6 @@ class Setting extends Model
             'planning_and_organization',
             'directives',
             'facebook_tourism',
-            'tiktok_tourism',
-            'instagram_tourism',
-            'youtube_tourism',
+            'tourism',
     ];
 }

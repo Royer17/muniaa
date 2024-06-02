@@ -138,20 +138,11 @@
                     <input type="text" name="youtube" value="{{ $setting->youtube }}" placeholder="Youtube" style="margin-bottom: 10px;" class="form-control">
                 </div>
 
-                <h3>Redes Sociales Turismo</h3>
+                <h3>Turismo</h3>
                 <div class="form-group">
-                    <label>Facebook</label>
-                    <input type="text" name="facebook_tourism" value="{{ $setting->facebook_tourism }}" placeholder="Facebook" style="margin-bottom: 10px;" class="form-control">
+                    <label>Turismo</label>
+                    <textarea name="tourism" value="" placeholder="" style="margin-bottom: 10px;" class="form-control" rows="10">{{ $setting->tourism }}</textarea>
                 </div>
-                <div class="form-group">
-                    <label>Tiktok</label>
-                    <input type="text" name="tiktok_tourism" value="{{ $setting->tiktok_tourism }}" placeholder="Tiktok" style="margin-bottom: 10px;" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Instagram</label>
-                    <input type="text" name="instagram_tourism" value="{{ $setting->instagram_tourism }}" placeholder="Instagram" style="margin-bottom: 10px;" class="form-control">
-                </div>
-
             </div>
           </div>
           <button class="btn btn-success float-right" id="first_part">Actualizar</button>
@@ -231,5 +222,6 @@
           });
 
           addSummernoteEditorSuperMini($(`#form-first-part textarea[name="history"]`));
+          addSummernoteEditorSuperMini($(`#form-first-part textarea[name="tourism"]`));
     </script>
 @endsection

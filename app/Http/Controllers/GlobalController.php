@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Service;
 use App\Setting;
 use App\InstitutionalDocument;
+use App\Post;
 use App\LastDocument;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -32,10 +33,18 @@ class GlobalController extends Controller
             //->with('files')
             ->get();
 
+        $news = Post::select(['in_id_informacion as id', 'vc_titulo_informacion as title', 'slug', 'foto as image', 'fecha_en as date'])
+            ->orderBy('fecha_en', 'DESC')
+            ->wherePublished(1)
+            ->take(3)
+            ->get();
+
         $view->with('services', $services)
                 ->with('setting', $setting)
                 ->with('inst_documents', $inst_documents)
-                ->with('last_documents', $last_documents);
+                ->with('last_documents', $last_documents)
+                ->with('news', $news);
+
 
     }
 
