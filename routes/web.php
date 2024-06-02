@@ -49,6 +49,7 @@ Route::prefix('modernizacion')->group(function(){
     Route::get('licencia-de-funcionamiento', 'ModernizationController@operatingLicense')->name('pages.modernization.operating-license');
     Route::get('libro-de-reclamaciones', 'ModernizationController@complaintsBook')->name('pages.modernization.complaints-book');
 });
+
 Route::prefix('servicios-municipales')->group(function(){
     Route::get('{slug}', 'ServiceController@get_view')->name('pages.services.citizen-security');
 
