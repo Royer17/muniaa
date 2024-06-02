@@ -231,7 +231,7 @@
         </div>
         <div class="h-6 bg-dark-blue w-0.5"></div>
         <a
-          href="#"
+          href="/obras"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
           >Obras</a
         >
