@@ -5,7 +5,7 @@
            alt="Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">MDC</span>
+      <span class="brand-text font-weight-light">MDAA</span>
     </a>
 
     <!-- Sidebar -->
@@ -34,13 +34,14 @@
             </a>
           </li>
           @endif
-
+          @if(in_array('ver-concejo-municipal', $permissions))
           <li class="nav-item">
             <a href="/admin/municipalidad" class="nav-link">
               <i class="nav-icon fas fa-landmark"></i>
               <p>Municipalidad</p>
             </a>
           </li>
+          @endif
 
           @if(in_array('ver-usuarios', $permissions) && \Auth::user()->role_id == 1)
           <li class="nav-item">
@@ -171,7 +172,7 @@
           <li class="nav-item">
             <a href="/admin/documentos-institucionales" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
-              <p>Documentos Inst.</p>
+              <p>Favoritos</p>
             </a>
           </li>
           @endif
@@ -180,7 +181,7 @@
           <li class="nav-item">
             <a href="/admin/otros-documentos-importantes" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>Otros Documentos</p>
+              <p>Enlaces</p>
             </a>
           </li>
           @endif

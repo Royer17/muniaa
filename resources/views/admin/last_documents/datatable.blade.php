@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-12">
           <div class="col-sm-12">
-            <h1>Otros documentos importantes</h1>
+            <h1>Enlaces</h1>
           </div>
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-              <li class="breadcrumb-item active">Documentos</li>
+              <li class="breadcrumb-item active">Enlaces </li>
             </ol>
           </div>
         </div>
@@ -39,7 +39,7 @@
           <div class="box-header">
             <div class="col-lg-12">
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="" id="last-document-add">
-                <i class="fa fa-file"></i> Nuevo Documento
+                <i class="fa fa-file"></i> Nuevo Enlace
               </button>
             </div>
           </div>

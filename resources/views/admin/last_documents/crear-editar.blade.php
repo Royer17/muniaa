@@ -6,7 +6,7 @@
         <div class="modal-header">
            <div class="row">
             <div class="col-md-6">
-              <h4 class="solsoModalTitle" id="modal-title-last-document">Crear Documento</h4>
+              <h4 class="solsoModalTitle" id="modal-title-last-document">Crear Enlace</h4>
             </div>
             <div class="col-md-6">
             </div>
