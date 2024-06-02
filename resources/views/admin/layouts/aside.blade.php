@@ -43,6 +43,13 @@
           </li>
           @endif
 
+          <li class="nav-item">
+            <a href="/admin/rendicion-de-cuentas" class="nav-link">
+              <i class="nav-icon fas fa-landmark"></i>
+              <p>Rendición de cuentas</p>
+            </a>
+          </li>
+
           @if(in_array('ver-usuarios', $permissions) && \Auth::user()->role_id == 1)
           <li class="nav-item">
             <a href="/admin/usuarios" class="nav-link">

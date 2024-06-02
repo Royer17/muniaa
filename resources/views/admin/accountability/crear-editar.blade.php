@@ -6,7 +6,7 @@
         <div class="modal-header">
            <div class="row">
             <div class="col-md-6">
-              <h4 class="solsoModalTitle title">Crear Rendición de cuenta</h4>
+              <h4 class="solsoModalTitle title"></h4>
             </div>
             <div class="col-md-6">
             </div>
@@ -29,40 +29,33 @@
                                     </div>
 
                                     <div class="form-group">
-                                        {{ Form::label('title', 'Tipo de Documento') }}
-                                        <select name="tipodocu" class="form-control">
-                                            @foreach($document_types as $document_type)
-                                            <option value="{{ $document_type->id }}">{{ $document_type->name }}</option>
-                                            @endforeach
-                                            {{-- 
-                                            <option value="Acuerdo de Concejo">Acuerdo de Concejo</option>
-                                            <option value="Ordenanza Municipal">Ordenanza Municipal</option>
-                                            <option value="Resolución de Alcaldia">Resolución de Alcaldia</option>
-                                            <option value="Decreto de Alcaldia">Decreto de Alcaldia</option>
-                                            <option value="Resolución de Gerencia Municipal">Resolución de Gerencia Municipal</option>
-                                            --}}
-                                        </select>
-                                        <div id="norma-tipodocu-error" class="text-danger mensaje-error"></div>
+                                        {{ Form::label('title', 'Título') }}
+                                        {{ Form::text('title', null, array('placeholder' => 'EJEMPLO: REGLAMENTO ORGANIZACIONAL DE FUNCIONES', 'class' => 'form-control')) }}
+                                        <div id="accountability-title-error" class="mensaje-error"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Fecha de Emisión</label>
-                                        <input type="text" name="fechaemi" value="" style="margin-bottom: 10px;" placeholder="d/m/Y" class="form-control">
-                                        <div id="norma-fechaemi-error" class=" text-danger mensaje-error"></div>
+                                        <label>Imágen</label>
+                                        <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img class="image" src="" alt="" style="height: 200px;">
                                     </div>
 
                                     <div class="form-group">
-                                        {{ Form::label('title', 'Número de Documento') }}
-                                        {{ Form::text('numdoc', null, array('placeholder' => 'EJEMPLO: ORDENANZA MUNICIPAL Nº 000X-202X', 'class' => 'form-control')) }}
-                                        <div id="norma-numdoc-error" class="mensaje-error"></div>
+                                        {{ Form::label('content', 'Descripción') }}
+                                        <textarea name="description" placeholder="Resumen de la noticia." class="form-control" rows="5"></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        {{ Form::label('title', 'Referencia') }}
-                                        {{ Form::textarea('referenc', null, array('placeholder' => 'EJEMPLO: ORDENANZA MUNICIPAL Nº 000X-202X: CONTENIDO DE LA ORDENANZA', 'class' => 'form-control')) }}
-                                        <div id="norma-referenc-error" class="mensaje-error"></div>
+                                        <label>Imágen Externa</label>
+                                        <input type="file" name="external_image" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img class="external_image" src="" alt="" style="height: 200px;">
                                     </div>
 
+                                    <div class="form-group">
+                                        {{ Form::label('title', 'URL') }}
+                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
+                                    </div>
+                                    
                                     <div class="form-group">
                                         {{ Form::label('title', 'Visible') }}
                                         <select class="form-control" name="published">
@@ -70,12 +63,24 @@
                                             <option value="0">No</option>
                                         </select>
                                     </div>
-
-
+                                    
+                                    <div class="form-group links">
+                                        <a href="">File1</a><button>X</button>
+                                        <a href="">File2</a><button>X</button>
+                                        <a href="">File3</a><button>X</button>
+                                    </div>
                                     <div class="form-group">
-                                        <label>Archivo</label>
-                                        <input type="file" name="nomfile" value="" style="margin-bottom: 10px;" class="form-control">
-                                        <a href="">Archivo</a>
+                                        <label>Archivo</label><button title="Agregar" class="add-files">+</button>
+                                    </div>
+                                    <div class="form-group files">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" name="files_title[]" class="form-control" placeholder="Nombre">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="file" name="files[]" value="" style="margin-bottom: 10px;" class="form-control">
+                                            </div>                     
+                                        </div>
                                     </div>
                                     
                               {{ Form::close() }}
@@ -84,8 +89,8 @@
                                 <button class="pull-left btn btn-success btn-ms solsoSave save" data-message-title="Create notification" data-message-error="Validation error messages" data-message-success="Data was saved">
                                         <i class="fa fa-save"></i> Guardar
                                 </button>
-                                
-                                <button class="pull-left btn btn-success btn-ms solsoSave margin-left update" data-message-title="Create notification" data-message-error="Validation error messages" data-message-success="Data was saved">
+
+                                <button class="pull-left btn btn-success btn-ms solsoSave update margin-left" data-message-title="Create notification" data-message-error="Validation error messages" data-message-success="Data was saved">
                                         <i class="fa fa-save"></i> Actualizar
                                 </button>
 
