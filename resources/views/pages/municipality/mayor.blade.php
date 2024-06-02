@@ -19,19 +19,18 @@
           <div>
             <img
               class="w-full mb-5 max-h-[40rem]"
-              src="https://picsum.photos/1200/600"
+              src="{{ $setting->photo }}"
             />
             <div class="flex flex-col gap-4">
               <div>
-                <h2 class="text-xl font-bold mb-4">Visión</h2>
+                <h2 class="text-xl font-bold mb-4">Alcalde</h2>
                 <p class="text-sm md:text-base">
-                    {!! $setting->vision !!}
+                    {!! $setting->mayor !!}
                 </p>
               </div>
               <div>
-                <h2 class="text-xl font-bold mb-4">Misión</h2>
                 <p class="text-sm md:text-base">
-                    {!! $setting->vision !!}
+                    {!! $setting->description !!}
                 </p>
               </div>
             </div>
