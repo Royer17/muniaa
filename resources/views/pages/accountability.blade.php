@@ -21,7 +21,17 @@
               src="https://picsum.photos/1200/600"
             /> -->
             <div class="flex flex-col gap-4">
-                <img src="{{ $setting->organization_chart }}" alt="">
+                
+              @foreach($accountability as $record)
+                <label>{{ $record->title }}</label>
+                <img class="w-full mb-5 max-h-[40rem]" src="{{ $record->image }}"/>
+                <img class="w-full mb-5 max-h-[40rem]" src="{{ $record->external_image }}"/>
+                <p>{!!  $record->description !!}</p>
+                <a href="{{  $record->url }}" target="_blank">Enlace</a>
+                <hr>
+
+
+              @endforeach
             </div>
           </div>
         </div>

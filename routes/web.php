@@ -68,6 +68,9 @@ Route::prefix('servicios-municipales')->group(function(){
 Route::get('/favoritos/{slug}', 'InstitutionalDocumentController@get_view');
 Route::get('/enlaces/{slug}', 'InstitutionalDocumentController@get_view_links');
 
+Route::get('rendicion-de-cuentas', 'AccountabilityController@get_index');
+
+
 Route::prefix('normatividad')->group(function(){
     Route::get('resoluciones-de-alcaldia', 'NormativityController@mayoralResolutions')->name('pages.normativity.mayoral-resolutions');
     Route::get('resolutions-datatable', 'NormativityController@resolutions_datatable');

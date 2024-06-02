@@ -82,7 +82,7 @@
         <div class="h-6 bg-dark-blue w-0.5"></div>
 
         <a
-          href="{{ route('pages.home') }}"
+          href="/rendicion-de-cuentas"
           class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
           >Informe de Rendición Cuentas</a
         >
