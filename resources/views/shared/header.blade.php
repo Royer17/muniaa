@@ -122,14 +122,14 @@
         </li>
         <li>
           <a
-            href="#"
+            href="/distrito/turismo"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Turismo</a
           >
         </li>
         <li>
           <a
-            href="#"
+            href="/municipalidad/galeria-de-fotos"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Galeia de Fotos</a
           >
@@ -267,11 +267,14 @@
       <ul class="py-1" aria-labelledby="dropdownLargeButton">
         @foreach($last_documents as $document)
         <li>
-          <a
-            href="/enlaces/{{ $document->slug }}"
-            class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-            >{{ $document->title }}</a
-          >
+          @if($document->url)
+            <a href="{{ $document->url }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" target="_blank" 
+            >{{ $document->title }}</a>
+          @else
+            <a href="/enlaces/{{ $document->slug }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+            >{{ $document->title }}</a>
+          @endif
+
         </li>
         @endforeach
 
@@ -311,7 +314,7 @@
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >{{ $service->title }}</a>
             @else
-              <a href="/servicios-municipales/{{ $service->slug }}" target="_blank" 
+              <a href="/servicios-municipales/{{ $service->slug }}"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >{{ $service->title }}</a>
             @endif
