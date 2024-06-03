@@ -6,7 +6,7 @@
     <div
       class="flex items-center px-10 md:px-20 bg-dark-blue w-full h-16 md:h-20 text-white"
     >
-      <h1 class="text-sm md:text-3xl uppercase">Visión y Misión</h1>
+      <h1 class="text-sm md:text-3xl uppercase">Funcionarios</h1>
 
       
       

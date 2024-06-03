@@ -16,12 +16,12 @@
       >
         <div class="flex-1 bg-white shadow-md rounded-2xl h-fit p-4 md:p-6">
           <div>
-            <img
+<!--             <img
               class="w-full mb-5 max-h-[40rem]"
               src="https://picsum.photos/1200/600"
-            />
+            /> -->
             <div class="flex flex-col gap-4">
-              
+              {!! $setting->history !!}
             </div>
           </div>
         </div>
