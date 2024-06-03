@@ -48,17 +48,24 @@
           </div>
           <div class="flex gap-4 items-center">
             <div class="hidden md:flex gap-2 max-w-28">
-              <a href="#">
+              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
                 <img src="{{ asset('img/fb.png') }}" alt="Facebook" />
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
                 <img src="{{ asset('img/tiktok.png') }}" alt="Tiktok" />
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
                 <img src="{{ asset('img/ig.png') }}" alt="instagram" />
               </a>
             </div>
-            <a href="/portal-de-transparencia">
+            <a href="https://mpv.munialtoalianza.gob.pe/" target="_blank" >
+              <img
+                src="{{ asset('img/mesapartes.png') }}"
+                class="max-w-[110px]"
+                alt="Portal de Transparencia"
+              />
+            </a>
+            <a href="/portal-de-transparencia" target="_blank" >
               <img
                 src="{{ asset('img/logo-portal-transparencia.png') }}"
                 class="max-w-[110px]"
@@ -364,9 +371,9 @@
       </div>
       <div class="h-6 bg-dark-blue w-0.5"></div>
       <a
-        href="#"
+        href="/portal-de-transparencia"
         class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-        >Portal de Transparencia</a
+        target="_blank" >Portal de Transparencia</a
       >
 
 
@@ -659,7 +666,7 @@
       <a
         href="/portal-de-transparencia"
         class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-        >Portal de Transparencia</a
+        target="_blank" >Portal de Transparencia</a
       >
     </div>
   </div>

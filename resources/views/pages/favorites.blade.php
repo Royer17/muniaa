@@ -42,9 +42,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+    
 
 
   @include('shared.information')

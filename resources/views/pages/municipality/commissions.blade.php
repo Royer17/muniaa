@@ -39,7 +39,7 @@
                                                 <td valign="top" bgcolor="#FFFFFF">
                                                 <div style="margin: 0px; padding: 0px;">
                                                     @foreach($commissions as $commission)
-                                                    <table border="0" cellpadding="5" cellspacing="0" width="100%" style="font-size: 13px; font-family: Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-weight: normal; font-style: normal; border: 1px solid rgb(239, 239, 239);">
+                                                    <table border="0" cellpadding="6" cellspacing="0" width="100%" style="font-size: 13px; font-family: Arial, 'Arial Unicode MS', Helvetica, sans-serif; font-weight: normal; font-style: normal; border: 1px solid rgb(239, 239, 239);">
                                                         <tr>
                                                             <th width="40%" bgcolor="#efefef">
                                                             <font size="2">COMISIÓN</font></th>
@@ -92,35 +92,7 @@
             </div>
           </div>
         </div>
-        <div class="hidden md:flex flex-col gap-5">
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/licenciafun.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        
 
   @include('shared.information')
 @endsection

@@ -43,33 +43,7 @@
             </a>
           </div>
           @endforeach
-          {{-- 
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/licenciafun.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          --}}
-        </div>
-      </div>
-    </div>
-  </section>
+          
 
 
   @include('shared.information')

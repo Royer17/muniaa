@@ -6,7 +6,7 @@
     <div
       class="flex items-center px-10 md:px-20 bg-dark-blue w-full h-16 md:h-20 text-white"
     >
-      <h1 class="text-sm md:text-3xl uppercase">{!! $main_news->vc_titulo_informacion !!}</h1>
+      <h1 class="text-sm md:text-3xl uppercase">Detalles Noticia</h1>
     
       
     </div>
@@ -16,107 +16,93 @@
       >
         <div class="flex-1 bg-white shadow-md rounded-2xl h-fit p-4 md:p-6">
 
-        <div class="row clearfix">
-            <!--Content Side-->
-            <div class="content-side col-lg-8 col-md-12 col-sm-12">
-                <div class="content-inner">
-                    <div class="single-post">
-                        <div class="post-details">
-                            <div class="main-image-box">
-                                <figure class="image"><img src="{{ asset('/assets/img/news/news-01.jpg') }}" alt=""></figure>
-                            </div>
-
-                            <h2>{!! $main_news->vc_titulo_informacion !!}</h2>
-
-                            {!! $main_news->tx_contenido_informacion !!}
-                            <br>
-                            @if($main_news->foto)
-                            <img src="{{ $main_news->foto }}" style="  display: block;margin-left: auto;margin-right: auto;width: 100%;">
-                            @endif
-
-                            <br>
-                            @if($main_news->foto1)
-                            <img src="{{ $main_news->foto1 }}" style="  display: block;margin-left: auto;margin-right: auto;width: 100%;">
-                            @endif
-                            <br>
-                            @if($main_news->foto2)
-                            <img src="{{ $main_news->foto2 }}" style="  display: block;margin-left: auto;margin-right: auto;width: 100%;">
-                            @endif
-                            <br>
-                            Fecha de publicación: {{ $main_news->fecha }}
+        <section class="section hidden md:block bg-[#E3E3E3]" id="news-desktop">
+            <div class="flex p-5 lg:max-w-[1300px] mx-auto py-10">
+              <div class="w-4/12">
+                <a href="/noticias"> <h1 class="title">Noticias</h1> </a>
+                
+                <div
+                  thumbsSlider=""
+                  class="swiper news-thumb-swiper h-[435px] rounded-l-xl"
+                >
+                  <div class="swiper-wrapper">
+          
+                    
+                    <div class="swiper-slide">
+                      <div class="group slide-item">
+                        
+                        <div class="flex flex-col justify-center gap-2 text-white">
+                          <p class="text-sm font-bold group-hover:text-white">
+                            {!! $main_news->vc_titulo_informacion !!}
+                          </p>
+                          
+                         
+                          <p class="text-xs group-hover:text-white">{{ $main_news->fecha }}</p>
+                          <a href=""> <p class="text-xs group-hover:text-white"> {!! $main_news->tx_contenido_informacion !!}  </p></a>
                         </div>
-                        <div class="share-post">
-                            <strong>Comparte esta publicación con tus amigos</strong>
-                            <ul class="links clearfix">
-                                <li class="facebook"><a href="#"><span class="txt">Facebook</span></a></li>
-                                <li class="twitter"><a href="#"><span class="txt">Twiter</span></a></li>
-                            </ul>
-                        </div>
+                      </div>
                     </div>
+                    
+                  </div>
                 </div>
+              </div>
+          
+              <div class="w-8/12">
+                <div
+                  class="swiper news-swiper max-w-full max-h-[500px] w-full rounded-xl overflow-hidden"
+                >
+                  <div class="swiper-wrapper w-full">
+                   
+                    <div class="swiper-slide">
+                      @if($main_news->foto)
+                      <img
+                        class="w-full h-full"
+                        src="{{ $main_news->foto }}"
+                      />
+                      @endif
+                    </div>
+                    <div class="swiper-slide">
+                        @if($main_news->foto1)
+                        <img
+                          class="w-full h-full"
+                          src="{{ $main_news->foto1 }}"
+                        />
+                        @endif
+                    </div>
+                    <div class="swiper-slide">
+                        @if($main_news->foto2)
+                        <img
+                          class="w-full h-full"
+                          src="{{ $main_news->foto2 }}"
+                        />
+                        @endif
+                    </div>
+                   
+          
+                  </div>
+          
+                  <div class="button-next custom-next">
+                    <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L11.586 9 7.293 4.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="button-prev custom-prev">
+                    <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.707 14.707a1 1 0 010-1.414L8.414 9l4.293-4.293a1 1 0 00-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!--Sidebar Side-->
-            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-                <aside class="sidebar">
-                    <div class="bg-layer">
-                        <div class="image-layer"></div>
-                    </div>
-                    <div class="sidebar-widget search-box">
-                        <div class="widget-inner">
-                            <div class="sidebar-title">
-                                <h4>Buscar</h4>
-                            </div>
-                            <form method="GET" action="">
-                                <div class="form-group">
-                                    <input type="search" name="q" placeholder="Búsqueda por título" required>
-                                    <button type="submit"><span class="material-icons">search</span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- post -->
-                    <div class="sidebar-widget recent-posts">
-                        <div class="widget-inner">
-                            <div class="sidebar-title">
-                                <h4>Últimas Noticias</h4>
-                            </div>
-                            <div class="recent-posts-box">
-                                @foreach($other_news as $item)
-                                <div class="post">
-                                    <div class="inner">
-                                        <figure class="post-thumb">
-                                            <img src="{{ asset('/assets/img/news/news-02.jpg') }}" alt="">
-                                            <a href="" class="overlink"><span class="icon material-icons">info</span></a>
-                                        </figure>
-                                        <div class="post-date">{{ $item->fecha }}</div>
-                                        <h5 class="title"><a href="/noticias/{{ $item->slug }}">{{ $item->vc_titulo_informacion }}</a></h5>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                    <!-- tags -->
-<!--                     <div class="sidebar-widget popular-tags">
-                        <div class="widget-inner">
-                            <div class="sidebar-title">
-                                <h4>Tags</h4>
-                            </div>
-                            <ul class="tags-list clearfix">
-                                <li><a href="">Cultura</a></li>
-                                <li><a href="">Seguridad</a></li>
-                                <li><a href="">Deportes</a></li>
-                                <li><a href="">Recreación</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
-                </aside>
-            </div>
+          </section>
         </div>
-
-        </div>
-       
-
-
 @include('shared.information')
 @endsection

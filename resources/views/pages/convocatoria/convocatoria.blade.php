@@ -24,10 +24,10 @@
         <div class="article pull-left">
        
             <div class="article-title">
-            <a href="/portaltransparencia/Ficha Curricular.xls">DESCARGAR FICHA CURRICULAR</a>
+            <a href="#">DESCARGAR FICHA CURRICULAR</a>
             </div>
         </div>
-
+        <br>
         </div>
 
         <?php $i=1; ?>
@@ -45,7 +45,7 @@
         <th>Bases</th>
         <th>Aptos</th>
         <th>Resultados</th>
-        <th>Imagen</th>
+        
 
         </tr>
         </thead>
@@ -126,9 +126,7 @@
 
         </div>
 
-      </div>
-    </div>
-  </section>
+     
 
 
 @include('shared.information')

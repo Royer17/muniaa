@@ -175,7 +175,7 @@
 <section class="section hidden md:block" id="works-desktop">
   <div class="flex p-5 lg:max-w-[1300px] mx-auto py-10">
     <div class="max-w-4xl">
-      <h1 class="title">Obras</h1>
+      <a href="/obras"><h1 class="title">Obras</h1></a>
       <div
         thumbsSlider=""
         class="swiper works-thumb-swiper border-solid border-l-2 border-t-2 border-b-2 border-[#B0B0B0] h-[435px] rounded-l-xl"
