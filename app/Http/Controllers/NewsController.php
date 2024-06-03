@@ -22,10 +22,10 @@ class NewsController extends Controller
 
     public function detail($slug)
     {
-    	$news = Post::whereSlug($slug)->first();
+    	$main_news = Post::whereSlug($slug)->first();
     	$other_news = [];
-    	if ($news) {
-			$other_news = Post::where('in_id_informacion', '!=', $news->in_id_informacion)
+    	if ($main_news) {
+			$other_news = Post::where('in_id_informacion', '!=', $main_news->in_id_informacion)
 				->orderBy('in_id_informacion', 'DESC')
 				->take(3)
     			->get();
@@ -33,7 +33,6 @@ class NewsController extends Controller
 
         $setting = Setting::first();
 
-
-        return view('pages.news.detail', compact('news', 'other_news', 'setting'));
+        return view('pages.news.detail', compact('main_news', 'other_news', 'setting'));
     }
 }
