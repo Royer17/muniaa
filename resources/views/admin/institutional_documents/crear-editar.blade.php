@@ -6,7 +6,7 @@
         <div class="modal-header">
            <div class="row">
             <div class="col-md-6">
-              <h4 class="solsoModalTitle" id="modal-title-inst-document">Crear </h4>
+              <h4 class="solsoModalTitle" id="modal-title-inst-document">Crear Favorito</h4>
             </div>
             <div class="col-md-6">
             </div>
@@ -30,7 +30,7 @@
 
                                     <div class="form-group">
                                         {{ Form::label('title', 'Título') }}
-                                        {{ Form::text('title', null, array('placeholder' => 'EJEMPLO: REGLAMENTO ORGANIZACIONAL DE FUNCIONES', 'class' => 'form-control')) }}
+                                        {{ Form::text('title', null, array('placeholder' => 'EJEMPLO:ROF', 'class' => 'form-control')) }}
                                         <div id="inst-document-title-error" class="mensaje-error"></div>
                                     </div>
 
@@ -41,7 +41,7 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>Imágen</label>
+                                        <label>icono</label>
                                         <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
                                         <img class="image" src="" alt="" style="height: 200px;">
                                     </div>

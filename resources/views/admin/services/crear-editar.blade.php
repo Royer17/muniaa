@@ -35,9 +35,22 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Imágen</label>
+                                        {{ Form::label('title', 'Orden') }}
+                                        <P>Nota: Se ordenara respecto a todos los servicios</P>
+                                        {{ Form::text('order', null, array('placeholder' => 'Ejemplo : 11', 'class' => 'form-control')) }}
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Icono </label>
                                         <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
                                         <img class="image" src="" alt="" style="height: 200px;">
+                                    </div>
+
+                                    <div class="form-group">
+                                        
+                                        {{ Form::label('title', 'URL') }}
+                                        <p>Nota: Solo si es necesario, Al dar click en icono te enviara directo a esta "URL" o "ENLACE" </p>
+                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
                                     </div>
 
                                     <div class="form-group">
@@ -47,7 +60,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Imágen Externa</label>
+                                        <label>Imagen contenido</label>
                                         <input type="file" name="external_image" value="" style="margin-bottom: 10px;" class="form-control">
                                         <img class="external_image" src="" alt="" style="height: 200px;">
                                     </div>
@@ -58,16 +71,6 @@
                                             <option value="1">Si</option>
                                             <option value="0">No</option>
                                         </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        {{ Form::label('title', 'Orden') }}
-                                        {{ Form::text('order', null, array('placeholder' => '###', 'class' => 'form-control')) }}
-                                    </div>
-
-                                    <div class="form-group">
-                                        {{ Form::label('title', 'URL') }}
-                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
                                     </div>
 
                                     <div class="form-group">

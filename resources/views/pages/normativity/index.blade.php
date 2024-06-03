@@ -61,11 +61,11 @@
   
 
 
-@include('shared.information')
+@include('shared.information2')
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <!--<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
     <script type="text/javascript">
         datatableNormatividad();
 
@@ -107,7 +107,7 @@
 
                               return `
                                 <a target="_blank" href="${full['nomfile']}">
-                                  <img class="img-responsive" src="/img/pdf.png" width="50px">
+                                  <img class="img-responsive" src="<?= url('img/pdf.png') ?>" width="50px">
                                 </a>
 
                               `;

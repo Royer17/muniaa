@@ -53,6 +53,7 @@
 
                                     <div class="form-group">
                                         {{ Form::label('title', 'URL') }}
+                                        <p>Nota: Solo si es necesario, Al dar click en icono te enviara directo a esta "URL" o "ENLACE" </p>
                                         {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
                                     </div>
 
