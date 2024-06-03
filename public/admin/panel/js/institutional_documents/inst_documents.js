@@ -83,14 +83,14 @@ function Editar(btn){
     let _route = '/admin/institutional-document/'+_id;
     $.get(_route, function(p){
         const form = `#form-inst-documents`;
-
+        
         const {image, external_image, description} = p;
-
 
         document.querySelector(`${form} input[name="title"]`).value = p.title; 
         document.querySelector(`${form} input[name="id"]`).value = p.id; 
         document.querySelector(`${form} textarea[name="description"]`).value = description;
         //document.querySelector(`${form} input[name="acronym"]`).value = p.acronym;
+        document.querySelector(`${form} input[name="url"]`).value = p.url; 
         document.querySelector(`${form} select[name="published"]`).value = p.published;
         addSummernoteEditorMini($(`${form} textarea[name="description"]`));
 

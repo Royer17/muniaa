@@ -13,7 +13,7 @@ class InstitutionalDocument extends Model
 
     protected $primaryKey = 'id';
     
-    protected $fillable = ['title', 'slug', 'acronym', 'published', 'description'];
+    protected $fillable = ['title', 'slug', 'acronym', 'published', 'description', 'url'];
 
     public function files()
     {
