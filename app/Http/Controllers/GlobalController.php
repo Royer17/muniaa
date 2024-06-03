@@ -46,7 +46,7 @@ class GlobalController extends Controller
         $last_popup = Popup::orderBy('id', 'DESC')
             ->where('visible', "SI")
             ->whereDate('finished_at', '>=', $now)
-            ->first();
+            ->get();
 
         $view->with('services', $services)
                 ->with('setting', $setting)

@@ -48,13 +48,13 @@
           </div>
           <div class="flex gap-4 items-center">
             <div class="hidden md:flex gap-2 max-w-28">
-              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
+              <a href="{{ $setting->facebook }}"  target="_blank">
                 <img src="{{ asset('img/fb.png') }}" alt="Facebook" />
               </a>
-              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
+              <a href="{{ $setting->tiktok }}"  target="_blank">
                 <img src="{{ asset('img/tiktok.png') }}" alt="Tiktok" />
               </a>
-              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
+              <a href="{{ $setting->instagram }}"  target="_blank">
                 <img src="{{ asset('img/ig.png') }}" alt="instagram" />
               </a>
             </div>
@@ -359,11 +359,14 @@
         <ul class="py-1" aria-labelledby="dropdownLargeButton">
           @foreach($inst_documents as $document)
           <li>
-            <a
-              href="/favoritos/{{ $document->slug }}"
-              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >{{ $document->title }}</a
-            >
+            @if($document->url)
+            <a href="{{ $document->url }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" target="_blank" 
+              >{{ $document->title }}</a>
+            @else
+              <a href="/favoritos/{{ $document->slug }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >{{ $document->title }}</a>
+
+            @endif
           </li>
           @endforeach
 

@@ -65,6 +65,11 @@
                                         </select>
                                     </div>
                                     
+                                    <div class="form-group">
+                                        {{ Form::label('title', 'URL') }}
+                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
+                                    </div>
+
                                     <div class="form-group links">
                                         <a href="">File1</a><button>X</button>
                                         <a href="">File2</a><button>X</button>
