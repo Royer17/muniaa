@@ -79,10 +79,11 @@
         class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
         >Inicio</a
       >
+
       <div class="h-6 bg-dark-blue w-0.5"></div>
 
       <a
-        href="{{ route('pages.home') }}"
+        href="/rendicion-de-cuentas"
         class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
         >Informe de Rendición Cuentas</a
       >
@@ -136,17 +137,9 @@
       </ul>
     </div>
 
-<<<<<<< HEAD
-      
-    <div class="h-6 bg-dark-blue w-0.5"></div>
-=======
-        <a
-          href="/rendicion-de-cuentas"
-          class="text-black block px-1 2xl:px-3 py-2 rounded-md md:text-xs xl:text-base font-medium"
-          >Informe de Rendición Cuentas</a
-        >
+
         <div class="h-6 bg-dark-blue w-0.5"></div>
->>>>>>> b68f443473edac17fb58b7511470487b1496c0c8
+
 
       <button
         id="dropdownNavbarLink"
