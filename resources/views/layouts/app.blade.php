@@ -28,7 +28,6 @@
       .mfp-bg {
         overflow: hidden;
       }
-
       .mfp-wrap {
         overflow: hidden !important;
       }

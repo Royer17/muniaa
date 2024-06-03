@@ -244,38 +244,21 @@
   <h1 class="title">Obras</h1>
   <div class="swiper works-swiper bg-dark-blue rounded-tl-xl">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
+
+      @foreach($works as $work)
+        <div class="swiper-slide">
         <div class="works-slide">
           <div>
-            <img src="https://picsum.photos/300/200" alt="Foto obras 1" />
+            <img src="{{ $work['foto'] }}" alt="Foto obras 1" />
           </div>
           <div class="flex flex-col justify-center gap-2 text-white">
             <p class="text-sm font-bold">
-              Patrullaje permanente en la avenida manuel cuadros
+              {{ $work['actividad'] }}
             </p>
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="works-slide">
-          <div>
-            <img src="https://picsum.photos/300/200" alt="Foto obras 2" />
-          </div>
-          <div class="text-white">
-            <p>Patrullaje permanente en la avenida manuel cuadros</p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="works-slide">
-          <div>
-            <img src="https://picsum.photos/300/200" alt="Foto obras 3" />
-          </div>
-          <div class="text-white">
-            <p>Patrullaje permanente en la avenida manuel cuadros</p>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
     <div class="button-next custom-next">
       <svg class="text-white" fill="currentColor" viewBox="0 0 20 20">

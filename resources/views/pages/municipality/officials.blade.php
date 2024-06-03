@@ -31,45 +31,7 @@
             </div>
           </div>
         </div>
-        <div class="hidden md:flex flex-col gap-5">
-          @foreach($services as $service)
-          <div class="service-card-base">
-            @if($service->url)
-            <a href="{{ $service->url }}" target="_blank">
-            @else
-            <a href="/servicios-municipales/{{ $service->slug }}" target="_blank">
-            @endif
-              <img src="{{ $service->image }}" />
-            </a>
-          </div>
-          @endforeach
-          {{-- 
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/licenciafun.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          --}}
-        </div>
-      </div>
-    </div>
-  </section>
+        
 
 
   @include('shared.information')
