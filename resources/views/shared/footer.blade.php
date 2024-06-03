@@ -44,12 +44,12 @@
   </div>
 </footer>
 
+@if($last_popup)
 <div id="news-popup" class="popup-gallery hidden">
   <a
-    href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg"
-    title="The Cleaner"
+    href="{{ url($last_popup->imagen) }}"
     ><img
-      src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg"
+      src="{{ url($last_popup->imagen) }}"
       width="75"
       height="75"
   /></a>
@@ -102,6 +102,7 @@
       height="75"
   /></a> -->
 </div>
+@endif
 <script
   src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
   integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="

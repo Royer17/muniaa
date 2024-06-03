@@ -100,7 +100,10 @@ class PageController extends Controller
         $works = Works::wherePublished(1)
             ->get();
 
-        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup', 'notice_images', 'works'));
+        $url_img = url($last_popup->imagen);
+
+
+        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup', 'notice_images', 'works', 'url_img'));
     }
 
     public function transparencyPortal()
