@@ -24,6 +24,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/', 'PageController@home')->name('pages.home');
 Route::prefix('distrito')->group(function(){
     Route::get('historia', 'DistrictController@History')->name('pages.district.history');
+    Route::get('turismo', 'DistrictController@tourism');
+
 });
 
 Route::get('/municipalidad/funcionarios', 'MunicipalityController@officials_view');
@@ -49,6 +51,7 @@ Route::prefix('modernizacion')->group(function(){
     Route::get('licencia-de-funcionamiento', 'ModernizationController@operatingLicense')->name('pages.modernization.operating-license');
     Route::get('libro-de-reclamaciones', 'ModernizationController@complaintsBook')->name('pages.modernization.complaints-book');
 });
+
 Route::prefix('servicios-municipales')->group(function(){
     Route::get('{slug}', 'ServiceController@get_view')->name('pages.services.citizen-security');
 
@@ -66,6 +69,9 @@ Route::prefix('servicios-municipales')->group(function(){
 //Route::get('/docgestion/{acronym}', 'InstitutionalDocumentController@get_view');
 Route::get('/favoritos/{slug}', 'InstitutionalDocumentController@get_view');
 Route::get('/enlaces/{slug}', 'InstitutionalDocumentController@get_view_links');
+
+Route::get('rendicion-de-cuentas', 'AccountabilityController@get_index');
+
 
 Route::prefix('normatividad')->group(function(){
     Route::get('resoluciones-de-alcaldia', 'NormativityController@mayoralResolutions')->name('pages.normativity.mayoral-resolutions');
