@@ -43,6 +43,7 @@
     </p>
   </div>
 </footer>
+
 <div id="news-popup" class="popup-gallery hidden">
   <a
     href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg"
@@ -52,7 +53,7 @@
       width="75"
       height="75"
   /></a>
-  <a
+<!--   <a
     href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg"
     title="Winter Dance"
     ><img
@@ -99,7 +100,7 @@
       src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg"
       width="75"
       height="75"
-  /></a>
+  /></a> -->
 </div>
 <script
   src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
