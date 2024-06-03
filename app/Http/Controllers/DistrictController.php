@@ -12,4 +12,11 @@ class DistrictController extends Controller
         $setting = Setting::first();
         return view('pages.district.history', compact('setting'));
     }
+
+    public function tourism()
+    {
+        $setting = Setting::first();
+        return view('pages.district.tourism', compact('setting'));
+    }
+
 }

@@ -121,16 +121,16 @@
           </li>
           <li>
             <a
-              href="#"
+              href="/distrito/turismo"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >Turismo</a
             >
           </li>
           <li>
             <a
-              href="#"
+              href="/municipalidad/galeria-de-fotos"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >Galeia de Fotos</a
+              >Galería de Fotos</a
             >
           </li>
         </ul>
@@ -265,11 +265,13 @@
         <ul class="py-1" aria-labelledby="dropdownLargeButton">
           @foreach($last_documents as $document)
           <li>
-            <a
-              href="/enlaces/{{ $document->slug }}"
-              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-              >{{ $document->title }}</a
-            >
+            @if($document->url)
+            <a href="{{ $document->url }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >{{ $document->title }}</a>
+            @else
+            <a href="/enlaces/{{ $document->slug }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >{{ $document->title }}</a>
+            @endif
           </li>
           @endforeach
 
@@ -423,9 +425,9 @@
             </li>
             <li>
               <a
-                href="#"
+                href=""
                 class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
-                >Galeia de Fotos</a
+                >Galería de Fotos</a
               >
             </li>
           </ul>

@@ -24,6 +24,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/', 'PageController@home')->name('pages.home');
 Route::prefix('distrito')->group(function(){
     Route::get('historia', 'DistrictController@History')->name('pages.district.history');
+    Route::get('turismo', 'DistrictController@tourism');
+
 });
 
 Route::get('/municipalidad/funcionarios', 'MunicipalityController@officials_view');
