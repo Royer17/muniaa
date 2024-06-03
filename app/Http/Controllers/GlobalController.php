@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Service;
+use App\Popup;
 use App\Setting;
 use App\InstitutionalDocument;
 use App\Post;
 use App\LastDocument;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+use Carbon\Carbon;
 
 class GlobalController extends Controller
 {
     public function compose(View $view) {
-        
+ 
+        $now = Carbon::now()->format('Y-m-d');
+
         //$services = Service::wherePublished(1)->get();
         $setting = Setting::first();
 
@@ -39,11 +43,17 @@ class GlobalController extends Controller
             ->take(3)
             ->get();
 
+        $last_popup = Popup::orderBy('id', 'DESC')
+            ->where('visible', "SI")
+            ->whereDate('finished_at', '>=', $now)
+            ->first();
+
         $view->with('services', $services)
                 ->with('setting', $setting)
                 ->with('inst_documents', $inst_documents)
                 ->with('last_documents', $last_documents)
-                ->with('news', $news);
+                ->with('news', $news)
+                ->with('last_popup', $last_popup);
 
 
     }
