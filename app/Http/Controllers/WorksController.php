@@ -15,7 +15,6 @@ class WorksController extends Controller
             ->wherePublished(1)        
     		->orderBy('id', 'DESC');
 
-        $setting = Setting::first();
 
         if ($request->tipo) {
             $type = DB::table('obras')
@@ -29,7 +28,7 @@ class WorksController extends Controller
 
     	$works = $works->paginate(3);
 
-        return view('pages.works.index', compact('works', 'setting'));
+        return view('pages.works.index', compact('works'));
     }
 
     public function detail($slug)

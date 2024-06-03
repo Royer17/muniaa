@@ -1,24 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner">
-    <div class="image-layer" style="background-image:url({{ asset('/assets/img/bgs/banner-img-1.jpg') }})"></div>
-    <div class="banner-inner">
-        <div class="container-lg">
-            <div class="inner-container clearfix">
-                <h1>Obras</h1>
-                <div class="page-nav">
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="{{ route('pages.home') }}">Inicio</a></li>
-                        <li class="active">Obras</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+<section id="vision">
+    <div
+      class="flex items-center px-10 md:px-20 bg-dark-blue w-full h-16 md:h-20 text-white"
+    >
+      <h1 class="text-sm md:text-3xl uppercase">Visión y Misión</h1>
+    
+      
     </div>
-</section>
-<div class="sidebar-page-container">
-    <div class="container-lg">
+    <div class="bg-[#E9E9E9]">
+      <div
+        class="flex flex-col md:flex-row gap-4 px-3 md:px-20 py-2 md:py-10"
+      >
+        <div class="flex-1 bg-white shadow-md rounded-2xl h-fit p-4 md:p-6">
         <div class="row clearfix">
             <!--Content Side-->
             <div class="content-side col-lg-8 col-md-12 col-sm-12">
@@ -124,7 +120,7 @@
                         </div>
                     </div>
                     <!-- tags -->
-                    <div class="sidebar-widget popular-tags">
+<!--                     <div class="sidebar-widget popular-tags">
                         <div class="widget-inner">
                             <div class="sidebar-title">
                                 <h4>Tags</h4>
@@ -136,10 +132,14 @@
                                 <li><a href="">Recreación</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </aside>
             </div>
         </div>
-    </div>
-</div>
+
+        </div>
+       
+
+
+  @include('shared.information')
 @endsection
