@@ -6,7 +6,7 @@
     <div
       class="flex items-center px-10 md:px-20 bg-dark-blue w-full h-16 md:h-20 text-white"
     >
-      <h1 class="text-sm md:text-3xl uppercase">Organigrama</h1>
+      <h1 class="text-sm md:text-3xl uppercase"> Rendición de Cuentas </h1>
     
       
     </div>
@@ -35,35 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="hidden md:flex flex-col gap-5">
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/parquefami.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/licenciafun.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/sci.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-          <div class="service-card-base">
-            <a href="#"> <img src="{{ asset('img/services/regciv.png') }}" /> </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        
 
 @include('shared.information')
 @endsection

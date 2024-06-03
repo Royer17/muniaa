@@ -30,7 +30,7 @@
 
                                     <div class="form-group">
                                         {{ Form::label('title', 'Título') }}
-                                        {{ Form::text('title', null, array('placeholder' => 'EJEMPLO: REGLAMENTO ORGANIZACIONAL DE FUNCIONES', 'class' => 'form-control')) }}
+                                        {{ Form::text('title', null, array('placeholder' => 'EJEMPLO: RENDICION DE CUENTAS ', 'class' => 'form-control')) }}
                                         <div id="accountability-title-error" class="mensaje-error"></div>
                                     </div>
 

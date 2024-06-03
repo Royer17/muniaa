@@ -56,7 +56,7 @@
 <section class="section hidden md:block bg-[#E3E3E3]" id="news-desktop">
   <div class="flex p-5 lg:max-w-[1300px] mx-auto py-10">
     <div class="max-w-4xl">
-      <h1 class="title">Noticias</h1>
+      <a href="/noticias"> <h1 class="title">Noticias</h1> </a>
       
       <div
         thumbsSlider=""
@@ -126,7 +126,7 @@
   </div>
 </section>
 <section class="section md:hidden" id="news-mobile">
-  <h1 class="title">Noticias</h1>
+  <a href="/noticias"><h1 class="title">Noticias</h1></a>
   <div class="swiper news-swiper bg-dark-blue rounded-tl-xl">
     <div class="swiper-wrapper">
 
