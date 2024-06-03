@@ -46,14 +46,15 @@
 
 @if($last_popup)
 <div id="news-popup" class="popup-gallery hidden">
+  @foreach($last_popup as $record)
   <a
-    href="{{ url($last_popup->imagen) }}"
+    href="{{ url($record->imagen) }}"
     ><img
-      src="{{ url($last_popup->imagen) }}"
+      src="{{ url($record->imagen) }}"
       width="75"
       height="75"
   /></a>
-
+  @endforeach
 </div>
 @endif
 <script

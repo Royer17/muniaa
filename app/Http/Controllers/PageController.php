@@ -77,7 +77,7 @@ class PageController extends Controller
         $last_popup = Popup::orderBy('id', 'DESC')
             ->where('visible', "SI")
             ->whereDate('finished_at', '>=', $now)
-            ->first();
+            ->get();
 
         $videos = Youtube::take(3)
             ->wherePublished(1)

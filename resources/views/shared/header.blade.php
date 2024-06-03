@@ -48,13 +48,13 @@
           </div>
           <div class="flex gap-4 items-center">
             <div class="hidden md:flex gap-2 max-w-28">
-              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
+              <a href="{{ $setting->facebook }}"  target="_blank">
                 <img src="{{ asset('img/fb.png') }}" alt="Facebook" />
               </a>
-              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
+              <a href="{{ $setting->tiktok }}"  target="_blank">
                 <img src="{{ asset('img/tiktok.png') }}" alt="Tiktok" />
               </a>
-              <a href="https://www.facebook.com/municipalidadaltodelaalianza?locale=es_LA"  target="_blank">
+              <a href="{{ $setting->instagram }}"  target="_blank">
                 <img src="{{ asset('img/ig.png') }}" alt="instagram" />
               </a>
             </div>
