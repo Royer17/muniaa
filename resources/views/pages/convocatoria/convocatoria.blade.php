@@ -129,7 +129,7 @@
      
 
 
-@include('shared.information')
+@include('shared.information2')
 @endsection
 
 @section('scripts')

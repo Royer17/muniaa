@@ -24,7 +24,7 @@
         <div class="flex-1 bg-white shadow-md rounded-2xl h-fit p-4 md:p-6">
 
           <section class="md:h-full flex items-center text-gray-600">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 py-5 mx-auto">
                 <div class="text-center mb-12">
                     <h5 class="text-base md:text-lg text-indigo-700 mb-1">Municipalidad Distrital de Alto de la Alianza</h5>
                     <h1 class="text-4xl md:text-6xl text-gray-700 font-semibold">Nuestras Obras</h1>
@@ -67,7 +67,7 @@
         
    
 
-@include('shared.information')
+@include('shared.information2')
 @endsection
 
      
