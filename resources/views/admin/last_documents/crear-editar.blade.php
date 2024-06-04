@@ -35,15 +35,25 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Imágen</label>
+                                        <label>Icono</label>
+                                        <p style="color:green">se Recomienda medidas :335px x 110px  </p>
                                         <input type="file" name="image" value="" style="margin-bottom: 10px;" class="form-control">
                                         <img class="image" src="" alt="" style="height: 200px;">
                                     </div>
 
                                     <div class="form-group">
-                                        {{ Form::label('content', 'Descripción') }}
-                                        <textarea name="description" placeholder="Resumen de la noticia." class="form-control" id="summary-post" rows="5"></textarea>
+                                        {{ Form::label('title', 'URL ') }}<p style="color:red">Nota: Solo si es necesario, Al dar click a te enviara directo a esta "URL"  </p>
+                                        
+                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
                                     </div>
+
+                                    <div class="form-group">
+                                        {{ Form::label('content', 'Descripción') }}
+                                        <textarea name="description" placeholder="Descripción ." class="form-control" id="summary-post" rows="5"></textarea>
+                                    </div>
+
+
+                                   
 
                                     <div class="form-group">
                                         <label>Imágen Externa</label>
@@ -51,11 +61,7 @@
                                         <img class="external_image" src="" alt="" style="height: 200px;">
                                     </div>
 
-                                    <div class="form-group">
-                                        {{ Form::label('title', 'URL') }}
-                                        <p>Nota: Solo si es necesario, Al dar click en icono te enviara directo a esta "URL" o "ENLACE" </p>
-                                        {{ Form::text('url', null, array('placeholder' => 'Enlace', 'class' => 'form-control')) }}
-                                    </div>
+
 
                                     <div class="form-group">
                                         {{ Form::label('title', 'Visible') }}

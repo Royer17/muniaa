@@ -45,7 +45,11 @@
                                         <input type="file" name="bases" value="" style="margin-bottom: 10px;" class="form-control">
                                         <a href="">Bases</a>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label>Aptos</label>
+                                        <input type="file" name="aptos" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <a href="">Aptos</a>
+                                    </div>
                                     <div class="form-group">
                                         <label>Resultados</label>
                                         <input type="file" name="resultados" value="" style="margin-bottom: 10px;" class="form-control">
@@ -53,11 +57,7 @@
 
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Aptos</label>
-                                        <input type="file" name="aptos" value="" style="margin-bottom: 10px;" class="form-control">
-                                        <a href="">Aptos</a>
-                                    </div>
+
 
                                     <div class="form-group">
                                         {{ Form::label('title', 'Visible') }}

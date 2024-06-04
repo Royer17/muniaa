@@ -31,8 +31,12 @@
                                         {{ Form::label('title', 'Tipo de reunión') }}
                                         <select name="type" class="form-control">
                                             <option value="">Seleccione</option>
+                                            <option value="Social">Social</option>
+                                            <option value="Deportivo">Deportivo</option>
+                                            <option value="Economico ">Económico</option>
+                                            <option value="Academico">Académico</option>
                                             <option value="Cultural">Cultural</option>
-                                            <option value="Academico">Academico</option>
+                                            <option value="Politico">Político</option>
                                         </select>
                                         <div id="schedule-type-error" class="text-danger mensaje-error"></div>
                                     </div>
