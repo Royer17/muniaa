@@ -10,6 +10,7 @@ node_modules/
 /vendor/
 .env
 
+munialianza.zip
 public/files/
 public/img/
 
