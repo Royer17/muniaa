@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Content;
+use Illuminate\Support\Facades\File; 
 
 class ContentController extends Controller
 {
@@ -12,8 +13,9 @@ class ContentController extends Controller
     {
         $content = Content::find($content_id);
         
-        if (file_exists($content->url)) {
-            unlink($content->url);
+        if (File::exists($content->url)) {
+            //unlink($content->url);
+            File::delete($content->url);
         }
         $content->delete();
         

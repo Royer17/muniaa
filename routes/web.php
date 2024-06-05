@@ -188,6 +188,7 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
     Route::put('service/{id}', 'ServiceController@update');
     Route::get('service/{id}', 'ServiceController@show');
     Route::delete('service/{id}', 'ServiceController@delete');
+    Route::delete('service/{id}/file', 'ServiceController@delete_file');
     Route::get('/services-datatable', 'ServiceController@get_datatable');
 
     //Convocatorias
@@ -206,6 +207,7 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
     Route::get('norma/{id}', 'NormaController@show');
 
     Route::delete('norma/{id}', 'NormaController@delete');
+    Route::delete('norma/{id}/file', 'NormaController@delete_file');
     Route::get('/normas-datatable', 'NormaController@get_datatable');
         
     //Rendicion de cuentas
