@@ -22,7 +22,11 @@
                       <select id="tipodocu" class="block w-full py-2 pl-3 pr-10 text-base border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md appearance-none">
                           <option value="">Todas</option>
                           @foreach($document_types as $document)
-                              <option value="{{ $document->id }}">{{ $document->name }}</option>
+                                @if($document->slug == $document_type_slug_selected)
+                                    <option value="{{ $document->id }}" selected>{{ $document->name }}</option>
+                                @else
+                                    <option value="{{ $document->id }}">{{ $document->name }}</option>
+                                @endif
                           @endforeach
                       </select>
                       <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">

@@ -8,6 +8,7 @@ use App\Post;
 use App\Popup;
 use App\Service;
 use App\Works;
+use App\DocumentType;
 use App\Setting;
 use App\WorksCategory;
 use App\Youtube;
@@ -100,7 +101,10 @@ class PageController extends Controller
         $works = Works::wherePublished(1)
             ->get();
 
-        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup', 'notice_images', 'works'));
+        $document_types = DocumentType::wherePublished(1)
+            ->get(['id', 'slug', 'name']);
+
+        return view('pages.home', compact('news', 'calls', 'resolutions', 'works_categories', 'sliders', 'modals_to_show', 'services', 'inst_documents', 'last_documents', 'setting', 'videos', 'last_popup', 'notice_images', 'works', 'document_types'));
     }
 
     public function transparencyPortal()

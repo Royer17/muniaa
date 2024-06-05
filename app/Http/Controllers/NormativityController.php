@@ -18,16 +18,17 @@ class NormativityController extends Controller
         return view('pages.normativity.mayoral-resolutions', compact('setting'));
     }
 
-    public function allResolutions()
+    public function allResolutions(Request $request)
     {
         $setting = Setting::first();
+        $document_type_slug_selected = $request->tipo;
 
         $document_types = DB::table('document_types')
-            ->select(['id', 'name'])
+            ->select(['id', 'name', 'slug'])
             ->where('deleted_at', NULL)
             ->get();
 
-        return view('pages.normativity.index', compact('setting', 'document_types'));
+        return view('pages.normativity.index', compact('setting', 'document_types', 'document_type_slug_selected'));
     }
 
     public function resolutions_datatable(Request $request)

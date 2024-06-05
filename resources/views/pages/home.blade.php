@@ -335,6 +335,7 @@
       <!-- Normatividad Column -->
       <div class="bg-white p-4 shadow-md rounded-lg">
           <h2 class="text-xl font-bold mb-4" style="color: var(--custom-blue);">Normatividad</h2>
+          @foreach($document_types as $document_type)
           <div class="flex items-center border-l-4 border-blue-500 mb-4 p-3 bg-white shadow-sm">
               <div class="flex-shrink-0">
                   <div class="w-12 h-6 bg-white text-blue-500 text-center text-lg flex items-center justify-center">
@@ -342,11 +343,14 @@
                   </div>
               </div>
               <div class="flex-grow pl-3">
-                  <a href="#" title="Actas de Sesión" class="uppercase text-blue-500 hover:text-blue-700">
-                      Resolucion alcadia
+                  <a href="/normatividad?tipo={{ $document_type->slug }}" title="Actas de Sesión" class="uppercase text-blue-500 hover:text-blue-700">
+                      {{ $document_type->name }}
                   </a>
               </div>
           </div>
+          @endforeach
+
+          {{--
           <div class="flex items-center border-l-4 border-blue-500 mb-4 p-3 bg-white shadow-sm">
               <div class="flex-shrink-0">
                   <div class="w-12 h-6 bg-white text-blue-500 text-center text-lg flex items-center justify-center">
@@ -371,6 +375,7 @@
                   </a>
               </div>
           </div>
+          --}}
       </div>
 
       <!-- Enlaces Column -->
