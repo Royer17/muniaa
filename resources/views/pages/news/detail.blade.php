@@ -77,7 +77,22 @@
                         />
                         @endif
                     </div>
-                   
+                    <div class="swiper-slide">
+                        @if($main_news->foto3)
+                        <img
+                          class="w-full h-full"
+                          src="{{ $main_news->foto3 }}"
+                        />
+                        @endif
+                    </div>
+                    <div class="swiper-slide">
+                        @if($main_news->foto4)
+                        <img
+                          class="w-full h-full"
+                          src="{{ $main_news->foto4 }}"
+                        />
+                        @endif
+                    </div>
           
                   </div>
           

@@ -191,6 +191,22 @@ class PostsController extends Controller {
 			$post->foto2 = "/img/news/".$filename;
 		}
 
+		if ($request->hasFile('foto3')) {
+			$img = $request->file('foto3');
+
+			$filename = time().'66d.'.str_slug($img->getClientOriginalExtension());
+			$img->move(public_path(). "/img/news/", $filename);
+			$post->foto3 = "/img/news/".$filename;
+		}
+
+		if ($request->hasFile('foto4')) {
+			$img = $request->file('foto4');
+
+			$filename = time().'88c.'.str_slug($img->getClientOriginalExtension());
+			$img->move(public_path(). "/img/news/", $filename);
+			$post->foto4 = "/img/news/".$filename;
+		}
+
         // if ($request->hasFile('foto2')) {
         //     $file1 = $request->file('foto2');
 
@@ -293,6 +309,31 @@ class PostsController extends Controller {
 		$img->move(public_path(). "/img/news", $filename);
 		$post->foto2= "/img/news/".$filename;
 	}
+
+	if ($request->hasFile('foto3')) {
+		$img = $request->file('foto3');
+
+		if(file_exists($post->foto3)){
+			unlink($post->foto3);
+		}
+
+		$filename = time().'88d.'.str_slug($img->getClientOriginalExtension());
+		$img->move(public_path(). "/img/news", $filename);
+		$post->foto3= "/img/news/".$filename;
+	}
+
+	if ($request->hasFile('foto4')) {
+		$img = $request->file('foto4');
+
+		if(file_exists($post->foto4)){
+			unlink($post->foto4);
+		}
+
+		$filename = time().'88c.'.str_slug($img->getClientOriginalExtension());
+		$img->move(public_path(). "/img/news", $filename);
+		$post->foto4= "/img/news/".$filename;
+	}
+
     // if ($request->hasFile('foto2')) {
     //     $file1 = $request->file('foto2');
 

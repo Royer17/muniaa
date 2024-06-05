@@ -71,6 +71,18 @@
                                         <input type="file" name="foto2" value="" style="margin-bottom: 10px;" class="form-control">
                                         <img src="" alt="" style="height: 200px;" id="post_photo2">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Foto 4</label>
+                                        <input type="file" name="foto3" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img src="" alt="" style="height: 200px;" id="post_photo3">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Foto 5</label>
+                                        <input type="file" name="foto4" value="" style="margin-bottom: 10px;" class="form-control">
+                                        <img src="" alt="" style="height: 200px;" id="post_photo4">
+                                    </div>
                                    
                                     <div class="form-group">
                                         <label>Fecha</label>
