@@ -108,6 +108,11 @@ class PageController extends Controller
         return view('pages.transparency-portal');
     }
 
+    public function virtualMpv()
+    {
+        return view('pages.mesa_partes');
+    }
+
     public function convocatoria_view()
     {   
 
