@@ -309,6 +309,7 @@ Route::group(["namespace" => "Admin", "prefix" => "admin", "middleware" => ["aut
     Route::delete('commission/{id}', 'CommissionController@delete');
     Route::get('/commissions-datatable', 'CommissionController@get_datatable');
 
+    Route::delete('content/{id}', 'ContentController@delete');
 
 });
 

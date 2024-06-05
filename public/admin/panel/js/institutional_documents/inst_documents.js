@@ -106,7 +106,7 @@ function Editar(btn){
 
         let content = "";
         p.files.forEach((element) => {
-            content += `<a href="${element.url}" target="_blank">${element.title}</a><button>X</button>`;
+            content += `<div><a href="${element.url}" target="_blank">${element.title}</a><button data-index="${element.id}" type="button" onclick="EliminarArchivo(this);">X</button></div>`;
         });
 
         $('#form-inst-documents .links').append(content);
@@ -167,6 +167,56 @@ function Eliminar(btn){
   })
   return;
 }
+
+//Elimnar file
+function EliminarArchivo(btn){
+    const recordId = btn.dataset.index;
+
+  Swal.fire({
+    title: `Eliminar Archivo`,
+    showCancelButton: true,
+    confirmButtonText: `Confirmar`,
+    cancelButtonText: `Cancelar`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.value) {
+      const url = `/admin/content/${recordId}`;
+      lockWindow();
+      const data = {};
+      //$('body').modalmanager('loading').find('.modal-scrollable').off('click.modalmanager');
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('input[name=_token]').val()
+          }
+      });
+      $.ajax({
+         type: 'DELETE',
+         url : url,
+         data: data,
+            success: function(re){
+                //$('body').modalmanager('removeLoading');
+                //$('body,html').removeClass("page-overflow");
+                //$('body,html').removeClass("modal-open");
+                unlockWindow();
+                btn.parentElement.remove();
+                Swal.fire(re.title, re.message, re.symbol);
+            },
+            error:function(jqXHR, textStatus, errorThrown)
+            {
+               unlockWindow();
+
+              Swal.fire(`Error`, `Ha ocurrido un error`, `warning`);
+            }
+
+       });
+    }
+  })
+  return;
+}
+
+
+
+
 
 //--------------------------------------------
 document.querySelector('#form-inst-documents .add-files')
