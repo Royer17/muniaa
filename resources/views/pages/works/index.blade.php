@@ -60,6 +60,38 @@
                 
             </div>
 
+                @if ($works->hasPages())
+                <div class="pagination-box text-center">
+                        <ul class="pagination">
+
+                            @if($works->currentPage() >= 3)
+                                <li class="hidden-xs"><a href="{{ $works->url(1) }}" style="margin-right: 16px;">1</a></li>
+                            @endif
+                            @if($works->currentPage() == 4)
+                                <li class="hidden-xs"><a href="{{ $works->url(2) }}" style="margin-right: 16px;">2</a></li>
+                            @endif
+                            @if($works->currentPage() > 4)
+                                <li><span style="margin-right: 16px;">...</span></li>
+                            @endif
+                            @foreach(range(1, $works->lastPage()) as $i)
+                                @if($i >= $works->currentPage() - 1 && $i <= $works->currentPage() + 1)
+                                    @if ($i == $works->currentPage())
+                                        <li class="active"><span style="margin-right: 16px;">{{ $i }}</span></li>
+                                    @else
+                                        <li><a href="{{ $works->url($i) }}" style="margin-right: 16px;">{{ $i }}</a></li>
+                                    @endif
+                                @endif
+                            @endforeach
+                            @if($works->currentPage() < $works->lastPage() - 3)
+                                <li><span style="margin-right: 16px;">...</span></li>
+                            @endif
+                            @if($works->currentPage() < $works->lastPage() - 2)
+                                <li class="hidden-xs"><a href="{{ $works->url($works->lastPage()) }}" style="margin-right: 16px;">{{ $works->lastPage() }}</a></li>
+                            @endif
+                        </ul>
+                </div>
+                @endif
+
         </section>
 
         </div>
