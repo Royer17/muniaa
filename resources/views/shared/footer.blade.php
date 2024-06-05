@@ -57,15 +57,13 @@
   @endforeach
 </div>
 @endif
-<script
+<!-- <script
   src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
   integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
   crossorigin="anonymous"
-></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script src="./js/slides/homepage.min.js"></script>
-<script src="./js/main.min.js"></script>
-</body>
-</html>
+<script src="./js/main.min.js"></script> -->
