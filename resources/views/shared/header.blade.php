@@ -393,7 +393,7 @@
       >Inicio</a
       >
       <a
-        href="{{ route('pages.home') }}"
+        href="/rendicion-de-cuentas"
         class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
         >Informe de Rendición de Cuentas</a
       >
@@ -495,14 +495,14 @@
         </div>
         <div class="py-1">
           <a
-            href="#"
+             href="/municipalidad/funcionarios"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Funcionarios</a
           >
         </div>
         <div class="py-1">
           <a
-            href="#"
+          href="/municipalidad/organigrama"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Organigrama </a
           >
@@ -510,28 +510,28 @@
 
         <div class="py-1">
           <a
-            href="#"
+          href="/municipalidad/directorio"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Directorio Telefónico </a
           >
         </div>
         <div class="py-1">
           <a
-            href="#"
+          href="{{ route('pages.municipality.commissions') }}"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Comisiones de Regidores</a
           >
         </div>
         <div class="py-1">
           <a
-            href="#"
+          href="/municipalidad/planeamiento-y-organizacion"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Planeamiento y Organización </a
           >
         </div>
         <div class="py-1">
           <a
-            href="#"
+            href="/municipalidad/directivas"
             class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
             >Directivas Municipal </a
           >
@@ -539,7 +539,8 @@
       </div>
       <!--Fin municipalidad mobile -->
       <a
-        href="#"
+        
+        href="/obras"
         class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
         >Obras Municipales</a
       >
