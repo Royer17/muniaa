@@ -13,7 +13,7 @@ class NewsController extends Controller
     	$news_local = Post::select(['in_id_informacion as id', 'vc_titulo_informacion as title', 'slug', 'created_at', 'foto as image'])
     		->orderBy('fecha_en', 'DESC')
             ->where('published', 1)
-    		->paginate(3);
+    		->paginate(6);
 
         $setting = Setting::first();
 

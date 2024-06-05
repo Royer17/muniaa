@@ -26,7 +26,7 @@ class WorksController extends Controller
             }
         }
 
-    	$works = $works->paginate(3);
+    	$works = $works->paginate(6);
 
         return view('pages.works.index', compact('works'));
     }

@@ -35,13 +35,13 @@
           <div class="flex items-center gap-8 max-w-32 md:max-w-[300px]">
             <a href="{{ route('pages.home') }}">
               <img
-              src="{{ asset('img/logo.png') }}"
+              src="{{ $setting->cover }}"
                 alt="Municipalidad Alto de la Alianza Logo"
               />
             </a>
             <a class="hidden md:block" href="{{ route('pages.home') }}">
               <img
-              src="{{ asset('img/logo4.png') }}"
+              src="{{ $setting->image1 }}"
                 alt="Municipalidad Alto de la Alianza Slogan"
               />
             </a>
@@ -63,14 +63,14 @@
             </div>
             <a href="https://mpv.munialtoalianza.gob.pe/" target="_blank" >
               <img
-                src="{{ asset('img/mesapartes.png') }}"
+                src="{{ $setting->image2 }}"
                 class="max-w-[110px]"
                 alt="Portal de Transparencia"
               />
             </a>
             <a href="/portal-de-transparencia" target="_blank" >
               <img
-                src="{{ asset('img/logo-portal-transparencia.png') }}"
+                src="{{ $setting->image3 }}"
                 class="max-w-[110px]"
                 alt="Portal de Transparencia"
               />
