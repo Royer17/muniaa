@@ -42,9 +42,9 @@
     @foreach($services as $service)
     <div class="service-card-base">
       @if($service->url)
-      <a href="{{ $service->url }}" target="_blank">
+      <a href="{{ $service->url }}" >
       @else
-      <a href="/servicios-municipales/{{ $service->slug }}" target="_blank">
+      <a href="/servicios-municipales/{{ $service->slug }}" >
       @endif
         <img src="{{ $service->image }}" />
       </a>
@@ -324,6 +324,114 @@
   </div>
   <div></div>
 </section>
+</section>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<div class="max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Normatividad Column -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+          <h2 class="text-xl font-bold mb-4" style="color: var(--custom-blue);">Normatividad</h2>
+          <div class="flex items-center border-l-4 border-blue-500 mb-4 p-3 bg-white shadow-sm">
+              <div class="flex-shrink-0">
+                  <div class="w-12 h-6 bg-white text-blue-500 text-center text-lg flex items-center justify-center">
+                      <i class="fa fa-folder"></i>
+                  </div>
+              </div>
+              <div class="flex-grow pl-3">
+                  <a href="#" title="Actas de Sesión" class="uppercase text-blue-500 hover:text-blue-700">
+                      Resolucion alcadia
+                  </a>
+              </div>
+          </div>
+          <div class="flex items-center border-l-4 border-blue-500 mb-4 p-3 bg-white shadow-sm">
+              <div class="flex-shrink-0">
+                  <div class="w-12 h-6 bg-white text-blue-500 text-center text-lg flex items-center justify-center">
+                      <i class="fa fa-folder"></i>
+                  </div>
+              </div>
+              <div class="flex-grow pl-3">
+                  <a href="#" title="Acuerdos de Concejo" class="uppercase text-blue-500 hover:text-blue-700">
+                      Acuerdos de Concejo
+                  </a>
+              </div>
+          </div>
+          <div class="flex items-center border-l-4 border-blue-500 mb-4 p-3 bg-white shadow-sm">
+              <div class="flex-shrink-0">
+                  <div class="w-12 h-6 bg-white text-blue-500 text-center text-lg flex items-center justify-center">
+                      <i class="fa fa-folder"></i>
+                  </div>
+              </div>
+              <div class="flex-grow pl-3">
+                  <a href="#" title="Convenios" class="uppercase text-blue-500 hover:text-blue-700">
+                      Ordenanzas municipales
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <!-- Enlaces Column -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+          <h2 class="text-xl font-bold mb-4" style="color: var(--custom-blue);">Enlaces</h2>
+          @foreach($last_documents as $document)
+          <div class="flex items-center border-l-4 border-green-500 mb-4 p-3 bg-white shadow-sm">
+            <div class="flex-shrink-0">
+                <div class="w-12 h-6 bg-white text-green-500 text-center text-lg flex items-center justify-center">
+                    <i class="fa fa-folder"></i>
+                </div>
+            </div>
+
+            
+            <div class="flex-grow pl-3">
+              <a
+              href="/enlaces/{{ $document->slug }}"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >{{ $document->title }}</a
+            >
+            </div>
+          </div>
+
+    
+          @endforeach
+
+
+
+          
+      </div>
+
+      <!-- Favoritos Column -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+          <h2 class="text-xl font-bold mb-4" style="color: var(--custom-blue);">Favoritos</h2>
+
+          @foreach($inst_documents as $document)
+         
+          <div class="flex items-center border-l-4 border-blue-500 mb-4 p-3 bg-white shadow-sm">
+            <div class="flex-shrink-0">
+                <div class="w-12 h-6 bg-white text-blue-500 text-center text-lg flex items-center justify-center">
+                    <i class="fa fa-folder"></i>
+                </div>
+            </div>
+            <div class="flex-grow pl-3">
+              <a
+              href="/favoritos/{{ $document->slug }}"
+              class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+              >{{ $document->title }}</a
+            >
+            </div>
+          </div>
+          @endforeach
+
+         
+      </div>
+  </div>
+</div>
+
+
+
+</section>
 <section class="section" id="links">
   <h1 class="title md:hidden">Enlaces</h1>
   <div class="swiper links-swiper">
@@ -365,7 +473,7 @@
       </svg>
     </div>
   </div>
-</section>
+
 
     <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

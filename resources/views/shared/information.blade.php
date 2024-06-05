@@ -75,11 +75,11 @@
     @foreach($services as $service)
       @if($service->url)
       <div class="service-card-base">
-        <a href="{{ $service->url }}" target="_blank"> <img src="{{ $service->image }}" /> </a>
+        <a href="{{ $service->url }}" > <img src="{{ $service->image }}" /> </a>
       </div>
       @else
       <div class="service-card-base">
-        <a href="/servicios-municipales/{{ $service->slug }}" target="_blank"> <img src="{{ $service->image }}" /> </a>
+        <a href="/servicios-municipales/{{ $service->slug }}" > <img src="{{ $service->image }}" /> </a>
       </div>
       @endif
     @endforeach
