@@ -14,4 +14,5 @@ class Post extends Model
     protected $primaryKey = 'in_id_informacion';
 
     protected $fillable = ['vc_titulo_informacion', 'vc_resumen_informacion', 'tx_contenido_informacion', 'video', 'published'];
+    
 }
