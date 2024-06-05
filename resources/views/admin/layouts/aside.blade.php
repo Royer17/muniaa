@@ -53,7 +53,7 @@
           </li>
           @endif
           
-          @if(in_array('ver-concejo-municipal', $permissions))
+          @if(in_array('ver-municipalidad', $permissions))
           <li class="nav-item">
             <a href="/admin/municipalidad" class="nav-link">
               <i class="nav-icon fas fa-landmark"></i>
@@ -62,12 +62,14 @@
           </li>
           @endif
 
+          @if(in_array('ver-rendicion-de-cuentas', $permissions))
           <li class="nav-item">
             <a href="/admin/rendicion-de-cuentas" class="nav-link">
               <i class="nav-icon fas fa-landmark"></i>
               <p>Rendición de cuentas</p>
             </a>
           </li>
+          @endif
 
 
 
@@ -159,14 +161,15 @@
               <p>Normas</p>
             </a>
           </li>
+          @endif
 
+          @if(in_array('ver-tipo-de-documento', $permissions))
           <li class="nav-item">
             <a href="/admin/tipos-de-documento" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Tipos de documento</p>
             </a>
           </li>
-
           @endif
 
           @if(in_array('ver-videos', $permissions))
