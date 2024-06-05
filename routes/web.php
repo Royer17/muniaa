@@ -87,6 +87,7 @@ Route::prefix('normatividad')->group(function(){
     Route::get('otros-documentos', 'NormativityController@otherDocuments')->name('pages.normativity.other-documents');
 });
 Route::get('portal-de-transparencia', 'PageController@transparencyPortal')->name('pages.transparency-portal');
+Route::get('mesa_partes', 'PageController@virtualMpv')->name('pages.mesa_partes');
 Route::prefix('noticias')->group(function(){
     Route::get('/', 'NewsController@index')->name('pages.news');
     Route::get('/{slug}', 'NewsController@detail')->name('pages.news.detail');
