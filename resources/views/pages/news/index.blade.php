@@ -55,6 +55,39 @@
                     </div>
                   @endforeach
                 </div>
+
+                @if ($news_local->hasPages())
+                <div class="pagination-box text-center">
+                        <ul class="pagination">
+
+                            @if($news_local->currentPage() >= 3)
+                                <li class="hidden-xs"><a href="{{ $news_local->url(1) }}" style="margin-right: 16px;">1</a></li>
+                            @endif
+                            @if($news_local->currentPage() == 4)
+                                <li class="hidden-xs"><a href="{{ $news_local->url(2) }}" style="margin-right: 16px;">2</a></li>
+                            @endif
+                            @if($news_local->currentPage() > 4)
+                                <li><span style="margin-right: 16px;">...</span></li>
+                            @endif
+                            @foreach(range(1, $news_local->lastPage()) as $i)
+                                @if($i >= $news_local->currentPage() - 1 && $i <= $news_local->currentPage() + 1)
+                                    @if ($i == $news_local->currentPage())
+                                        <li class="active"><span style="margin-right: 16px;">{{ $i }}</span></li>
+                                    @else
+                                        <li><a href="{{ $news_local->url($i) }}" style="margin-right: 16px;">{{ $i }}</a></li>
+                                    @endif
+                                @endif
+                            @endforeach
+                            @if($news_local->currentPage() < $news_local->lastPage() - 3)
+                                <li><span style="margin-right: 16px;">...</span></li>
+                            @endif
+                            @if($news_local->currentPage() < $news_local->lastPage() - 2)
+                                <li class="hidden-xs"><a href="{{ $news_local->url($news_local->lastPage()) }}" style="margin-right: 16px;">{{ $news_local->lastPage() }}</a></li>
+                            @endif
+                        </ul>
+                </div>
+                @endif
+
             </div>
         </section>
 
