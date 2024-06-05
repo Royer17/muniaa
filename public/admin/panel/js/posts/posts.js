@@ -3,6 +3,8 @@ const roleId = document.querySelector('input[name="role_id"]').value;
 const postPhoto = document.querySelector('#post_photo');
 const postPhoto1 = document.querySelector('#post_photo1');
 const postPhoto2 = document.querySelector('#post_photo2');
+const postPhoto3 = document.querySelector('#post_photo3');
+const postPhoto4 = document.querySelector('#post_photo4');
 
 $(document).on('ready',function(){
 	datatablePosts("");
@@ -272,6 +274,17 @@ function Editar(btn){
             document.querySelector(`#post_photo2`).setAttribute('src', `${p.foto2}`);
             postPhoto2.style.display = 'block';
         }
+
+        if(p.foto3){
+            document.querySelector(`#post_photo3`).setAttribute('src', `${p.foto3}`);
+            postPhoto3.style.display = 'block';
+        }
+
+        if(p.foto4){
+            document.querySelector(`#post_photo4`).setAttribute('src', `${p.foto4}`);
+            postPhoto4.style.display = 'block';
+        }
+
     
         $('#modalCrearNoticia').modal('show');
     });
@@ -347,6 +360,9 @@ $('#btnCrearpublicacion').on('click', function(){
   $(`#post_photo`).hide();
   $(`#post_photo1`).hide();
   $(`#post_photo2`).hide();
+  $(`#post_photo3`).hide();
+  $(`#post_photo4`).hide();
+
 
 	//let _content = '<option value="">Seleccione una opción</option>';
 	// $.get('categories',function(data){
