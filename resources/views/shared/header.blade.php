@@ -57,6 +57,9 @@
               <a href="{{ $setting->instagram }}"  target="_blank">
                 <img src="{{ asset('img/ig.png') }}" alt="instagram" />
               </a>
+              <!-- <a href="{{ $setting->youtube }}"  target="_blank">
+                <img src="{{ asset('img/ig.png') }}" alt="youtube" />
+              </a> -->
             </div>
             <a href="https://mpv.munialtoalianza.gob.pe/" target="_blank" >
               <img
