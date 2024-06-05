@@ -36,7 +36,7 @@ class GlobalController extends Controller
             ->wherePublished(1)
             //->with('files')
             ->get();
-
+        
         $news = Post::select(['in_id_informacion as id', 'vc_titulo_informacion as title', 'slug', 'foto as image', 'fecha_en as date'])
             ->orderBy('fecha_en', 'DESC')
             ->wherePublished(1)

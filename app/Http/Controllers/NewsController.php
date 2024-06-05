@@ -10,14 +10,14 @@ class NewsController extends Controller
 {
     public function index()
     {
-    	$news = Post::select(['in_id_informacion as id', 'vc_titulo_informacion as title', 'slug', 'created_at', 'foto as image'])
+    	$news_local = Post::select(['in_id_informacion as id', 'vc_titulo_informacion as title', 'slug', 'created_at', 'foto as image'])
     		->orderBy('fecha_en', 'DESC')
             ->where('published', 1)
     		->paginate(2);
 
         $setting = Setting::first();
 
-        return view('pages.news.index', compact('news', 'setting'));
+        return view('pages.news.index', compact('news_local', 'setting'));
     }
 
     public function detail($slug)
