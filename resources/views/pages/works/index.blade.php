@@ -39,7 +39,7 @@
                                 src="{{ $item->foto }}" alt="blog">
                             <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
                                 <h2 class="text-base font-medium text-indigo-300 mb-1">{{ \Date::parse($item->fechaini)->format('l\, d \d\e\ F \d\e\l\ Y') }}</h2>
-                                <h1 class="text-2xl font-semibold mb-3">{{ $item->actividad }}</h1>
+                                <h1 class="text-1xl font-semibold mb-3">{{ $item->actividad }}</h1>
                                 <p class="leading-relaxed mb-3">  </p>
                                 <div class="flex items-center flex-wrap ">
                                     
@@ -60,37 +60,53 @@
                 
             </div>
 
+              
                 @if ($works->hasPages())
-                <div class="pagination-box text-center">
-                        <ul class="pagination">
+<div class="pagination-box text-center mt-6">
+    <ul class="pagination flex justify-center space-x-2">
+        @if($works->currentPage() >= 3)
+        <li class="hidden xs:block">
+            <a href="{{ $works->url(1) }}" class="px-3 py-1 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-100">1</a>
+        </li>
+        @endif
 
-                            @if($works->currentPage() >= 3)
-                                <li class="hidden-xs"><a href="{{ $works->url(1) }}" style="margin-right: 16px;">1</a></li>
-                            @endif
-                            @if($works->currentPage() == 4)
-                                <li class="hidden-xs"><a href="{{ $works->url(2) }}" style="margin-right: 16px;">2</a></li>
-                            @endif
-                            @if($works->currentPage() > 4)
-                                <li><span style="margin-right: 16px;">...</span></li>
-                            @endif
-                            @foreach(range(1, $works->lastPage()) as $i)
-                                @if($i >= $works->currentPage() - 1 && $i <= $works->currentPage() + 1)
-                                    @if ($i == $works->currentPage())
-                                        <li class="active"><span style="margin-right: 16px;">{{ $i }}</span></li>
-                                    @else
-                                        <li><a href="{{ $works->url($i) }}" style="margin-right: 16px;">{{ $i }}</a></li>
-                                    @endif
-                                @endif
-                            @endforeach
-                            @if($works->currentPage() < $works->lastPage() - 3)
-                                <li><span style="margin-right: 16px;">...</span></li>
-                            @endif
-                            @if($works->currentPage() < $works->lastPage() - 2)
-                                <li class="hidden-xs"><a href="{{ $works->url($works->lastPage()) }}" style="margin-right: 16px;">{{ $works->lastPage() }}</a></li>
-                            @endif
-                        </ul>
-                </div>
-                @endif
+        @if($works->currentPage() == 4)
+        <li class="hidden xs:block">
+            <a href="{{ $works->url(2) }}" class="px-3 py-1 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-100">2</a>
+        </li>
+        @endif
+
+        @if($works->currentPage() > 4)
+        <li><span class="px-3 py-1">...</span></li>
+        @endif
+
+        @foreach(range(1, $works->lastPage()) as $i)
+        @if($i >= $works->currentPage() - 1 && $i <= $works->currentPage() + 1)
+        @if ($i == $works->currentPage())
+        <li class="active">
+            <span class="px-3 py-1 rounded-md border border-gray-300 bg-blue-500 text-white">{{ $i }}</span>
+        </li>
+        @else
+        <li>
+            <a href="{{ $works->url($i) }}" class="px-3 py-1 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-100">{{ $i }}</a>
+        </li>
+        @endif
+        @endif
+        @endforeach
+
+        @if($works->currentPage() < $works->lastPage() - 3)
+        <li><span class="px-3 py-1">...</span></li>
+        @endif
+
+        @if($works->currentPage() < $works->lastPage() - 2)
+        <li class="hidden xs:block">
+            <a href="{{ $works->url($works->lastPage()) }}" class="px-3 py-1 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-100">{{ $works->lastPage() }}</a>
+        </li>
+        @endif
+    </ul>
+</div>
+@endif
+
 
         </section>
 

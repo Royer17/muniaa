@@ -61,7 +61,7 @@
                 <img src="{{ asset('img/ig.png') }}" alt="youtube" />
               </a> -->
             </div>
-            <a href="https://mpv.munialtoalianza.gob.pe/" target="_blank" >
+            <a href="/mesa_partes" target="_blank" >
               <img
                 src="{{ $setting->image2 }}"
                 class="max-w-[110px]"

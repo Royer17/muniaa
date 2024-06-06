@@ -16,7 +16,7 @@ class ConvocatoriaController extends Controller
             ->select('referencia', 'unidad', 'fecha', 'bases', 'aptos', 'resultados', 'idnoti')
             ->where('deleted_at', NULL)
             ->wherePublished(1)
-            ->orderBy('idnoti','DESC');
+            ->orderBy('fecha','DESC');
 
         return DataTables::of($result)
         ->escapeColumns('Image')

@@ -23,44 +23,21 @@
             /> -->
             <div class="flex flex-col gap-4">
 
-
-              @foreach($city_councils as $city_council)   
-              <table width="800" border="0" class="cardprofile" style="margin-bottom: 10px;">
-                  <tbody class="tcuerpo">
-                      <tr>
-                          <td width="370" height="250">
-                              <img class="sombra" src="{{ $city_council->photo }}" style="border-radius: 5px;">
-
-                          </td>
-                          
-                          <td style="padding-left: 20px;">
-                              <table border="0">
-                                  <tbody>
-                                      <tr>
-                                          <td  class="text-titulo pull-left" ><b style="color:#2e8ece"> {{ $city_council->position }}</b></td>
-                                      </tr>
-                                      <tr>
-                                         <td class="text-titulo pull-left">{{ $city_council->name }}</td>
-                                         
-                                      </tr>
-                                      <tr>
-                                          <td class="text-titulo pull-left">{{ $city_council->email }}</td>
-                                          
-                                      </tr>
-                                  </tbody>
-                              </table>    
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
-              
-              <hr style="color: #0056b2;" /> <!-- separacion horizontal entre filas -->
-              @endforeach
+              <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                @foreach($city_councils as $city_council)
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img class="w-full h-32 object-cover object-center" src="{{ $city_council->photo }}" alt="{{ $city_council->name }}">
+                    <div class="p-6">
+                        <h2 class="text-xl font-bold text-blue-600 mb-2">{{ $city_council->position }}</h2>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">{{ $city_council->name }}</p>
+                        <p class="text-lg text-gray-600">{{ $city_council->email }}</p>
+                    </div>
+                </div>
+                <br><br>
+                @endforeach
+            </div>
             
-
-
-
-
+            
             </div>
           </div>
         </div>
