@@ -76,7 +76,10 @@
                                     <div class="form-group">
                                         <label>PDF</label>
                                         <input type="file" name="icon" value="" style="margin-bottom: 10px;" class="form-control">
-                                        <a href="" target="_blank">Archivo</a>
+                                        <div>
+                                            <a href="" target="_blank">Archivo</a>
+                                            <button type="button" onclick="EliminarArchivo(this);">X</button>
+                                        </div>
                                     </div>
                                     
                               {{ Form::close() }}

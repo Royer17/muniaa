@@ -71,11 +71,14 @@
                                         </select>
                                     </div>
 
-
                                     <div class="form-group">
                                         <label>Archivo</label>
                                         <input type="file" name="nomfile" value="" style="margin-bottom: 10px;" class="form-control">
-                                        <a href="">Archivo</a>
+                                        <div>
+                                            <a href="" target="_blank">Archivo</a>
+                                            <button type="button" onclick="EliminarArchivo(this);">X</button>
+                                        </div>
+                                        
                                     </div>
                                     
                               {{ Form::close() }}

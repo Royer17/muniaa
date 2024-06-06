@@ -97,9 +97,8 @@ function Editar(btn){
         document.querySelector(`${form} textarea[name="referenc"]`).value = p.referenc; 
         document.querySelector(`${form} select[name="published"]`).value = p.published;
 
-        $('#form-normas input[name="nomfile"]').next().hide();
         if(p.nomfile){
-            $('#form-normas input[name="nomfile"]').next().attr('href', p.nomfile);
+            $('#form-normas input[name="nomfile"]').next().children().attr('href', p.nomfile);
             $('#form-normas input[name="nomfile"]').next().show();
         }
 
@@ -160,6 +159,53 @@ function Eliminar(btn){
   return;
 }
 
+//Elimnar file
+function EliminarArchivo(btn){
+   const recordId = $('#form-normas input[name="id"]').val();
+
+  Swal.fire({
+    title: `Eliminar Archivo`,
+    showCancelButton: true,
+    confirmButtonText: `Confirmar`,
+    cancelButtonText: `Cancelar`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.value) {
+      const url = `/admin/norma/${recordId}/file`;
+      lockWindow();
+      const data = {};
+      //$('body').modalmanager('loading').find('.modal-scrollable').off('click.modalmanager');
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('input[name=_token]').val()
+          }
+      });
+      $.ajax({
+         type: 'DELETE',
+         url : url,
+         data: data,
+            success: function(re){
+                //$('body').modalmanager('removeLoading');
+                //$('body,html').removeClass("page-overflow");
+                //$('body,html').removeClass("modal-open");
+                unlockWindow();
+                btn.parentElement.remove();
+                Swal.fire(re.title, re.message, re.symbol);
+                $postsTable.ajax.reload();
+            },
+            error:function(jqXHR, textStatus, errorThrown)
+            {
+               unlockWindow();
+
+              Swal.fire(`Error`, `Ha ocurrido un error`, `warning`);
+            }
+
+       });
+    }
+  })
+  return;
+}
+
 //--------------------------------------------
 $('#btnCrearpublicacion').on('click', function(){
     cleanError();
@@ -175,7 +221,8 @@ $('#btnCrearpublicacion').on('click', function(){
 function cleanModal(){
   $('#form-normas')[0].reset();
   $(`#norma_method`).remove();
-  $('#modalCrearNorma a').hide();
+  //$('#modalCrearNorma a').hide();
+  $('#form-normas input[name="nomfile"]').next().hide();
 }
 
 //-----------------------

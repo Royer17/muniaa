@@ -258,4 +258,20 @@ class ServiceController extends Controller
         
     }
 
+
+    public function delete_file($id)
+    {
+        $service = Service::where('id', $id)->first();
+        
+        if (file_exists($service->icon)) {
+            unlink($service->icon);
+            $service->icon = "";
+            $service->save();
+        }
+
+        return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha eliminado correctamente el archivo.', 'symbol' => 'success'], 200);
+        
+    }
+
+
 }

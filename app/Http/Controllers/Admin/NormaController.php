@@ -187,4 +187,19 @@ class NormaController extends Controller
         
     }
 
+    public function delete_file($id)
+    {
+        $norma = Norma::where('idnor', $id)->first();
+        
+        if (file_exists($norma->nomfile)) {
+            unlink($norma->nomfile);
+
+            $norma->nomfile = "";
+            $norma->save();
+        }
+
+        return response()->json(['title' => 'Operación Exitosa', 'message' => 'Se ha eliminado correctamente el archivo.', 'symbol' => 'success'], 200);
+        
+    }
+
 }
