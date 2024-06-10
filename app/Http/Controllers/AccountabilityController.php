@@ -11,7 +11,7 @@ class AccountabilityController extends Controller
     public function get_index()
     {
 
-        $accountability = Accountability::wherePublished(1)->get();
+        $accountability = Accountability::wherePublished(1)->with('files')->get();
         
         return view('pages.accountability', compact('accountability'));
     }

@@ -17,7 +17,7 @@
       >
         <div class="flex-1 bg-white shadow-md rounded-2xl h-fit p-4 md:p-6">
           <div>
-            <h3>{!! $service['title'] !!}</h3>
+            
             <p>{!! $service['description'] !!}</p>
             <img src="{{ $service['icon'] }}">
           </div>

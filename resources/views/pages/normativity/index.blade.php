@@ -7,6 +7,49 @@
     padding: 10px; /* Puedes ajustar este valor según tu preferencia */
 }
 
+
+.table-resolutions {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+.table-resolutions thead {
+    background-color: #f9f9f9;
+}
+
+.table-resolutions th, .table-resolutions td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.table-resolutions th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #000;
+}
+
+.table-resolutions td {
+    font-size: 14px;
+    color: #333;
+}
+
+.table-resolutions tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-resolutions tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.img-responsive {
+    width: 32px;
+    height: auto;
+}
+
 </style>
 
 <section id="vision">

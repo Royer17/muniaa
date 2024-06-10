@@ -1,6 +1,94 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid gray;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+dt {
+    font-weight: normal;
+    color: gray;
+}
+
+dd {
+    color: black;
+    font-weight: bold;
+    margin: 0;
+}
+
+.c-orange {
+    color: orange;
+}
+
+.img-responsive {
+    width: 50px;
+    height: auto;
+}
+
+.dataTables_paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.paginate_button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #007bff;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.paginate_button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.paginate_button.current {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+}
+
+.paginate_button.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.ellipsis {
+    padding: 8px 12px;
+    color: #777;
+}
+
+
+</style>
 
 <section id="vision">
     <div class="flex items-center px-10 md:px-20 bg-dark-blue w-full h-16 md:h-20 text-white">

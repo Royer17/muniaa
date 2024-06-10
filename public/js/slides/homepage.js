@@ -12,6 +12,35 @@ const initSwipers = () => {
     },
   };
 
+  const commonSwiperOpts2 = {
+    direction: "horizontal",
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    autoHeight: true,
+    navigation: {
+      nextEl: ".button-next",
+      prevEl: ".button-prev",
+    },
+    slidesPerView: 3, // Mostrar 3 slides por página
+    spaceBetween: 5, // Espacio entre los slides
+    breakpoints: {
+      320: {
+        slidesPerView: 1, // Mostrar 1 slide en dispositivos pequeños
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2, // Mostrar 2 slides en dispositivos medianos
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3, // Mostrar 3 slides en dispositivos grandes
+        spaceBetween: 30,
+      },
+      
+    },
+  };
   const swiperThumbsOpts = {
     spaceBetween: 0,
     slidesPerView: 3,
@@ -60,7 +89,7 @@ const initSwipers = () => {
     },
   });
 
-  new Swiper(".photo-gallery-swiper", commonSwiperOpts);
+  new Swiper(".photo-gallery-swiper", commonSwiperOpts2);
   new Swiper(".links-swiper", linksSwiperOpts);
 };
 

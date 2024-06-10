@@ -21,17 +21,17 @@ class GlobalController extends Controller
         //$services = Service::wherePublished(1)->get();
         $setting = Setting::first();
 
-        $services = Service::take(8)
+        $services = Service::take(9)
             ->wherePublished(1)
             ->orderBy('order', 'ASC')
             ->get();
 
-        $inst_documents = InstitutionalDocument::take(8)
+        $inst_documents = InstitutionalDocument::take(9)
             ->wherePublished(1)
             ->orderBy('id', 'DESC')
             ->get();
 
-        $last_documents = LastDocument::take(8)
+        $last_documents = LastDocument::take(9)
             ->orderBy('id', 'DESC')
             ->wherePublished(1)
             //->with('files')

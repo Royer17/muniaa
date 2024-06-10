@@ -5,11 +5,14 @@ const initSwipers = () => {
     autoplay: {
       delay: 5000,
     },
+    slidesPerView: 4,
+    spaceBetween: 2,
     autoHeight: true,
     navigation: {
       nextEl: ".button-next",
       prevEl: ".button-prev",
     },
+    
   };
 
   const linksSwiperOpts = {

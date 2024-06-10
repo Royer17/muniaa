@@ -1,4 +1,10 @@
 <?php $__env->startSection('content'); ?>
+<style>
+  .swiper-slide img {
+    @apply w-full h-full object-cover; /* Aplica ancho completo, altura completa y ajuste de objeto de la imagen */
+  }
+</style>
+
 
 <section class="section" id="slider">
   <div class="swiper main-swiper">
@@ -283,12 +289,14 @@
 </section>
 <section class="section mt-5" id="photo-gallery">
   <div class="bg-dark-blue py-2 md:pt-6 md:pb-10">
-    <div class="max-w-[300px] md:max-w-[900px] mx-auto">
-      <h1
-        class="text-white text-[14px] md:text-[32px] text-center font-bold mb-3 mt-1"
-      >
-        Galeria de Fotos
-      </h1>
+    <h1
+    class="text-white text-[14px] md:text-[32px] text-center font-bold mb-3 mt-1"
+  >
+  <a href="/municipalidad/galeria-de-fotos"></a>
+    Galeria de Fotos
+  </h1>
+    <div class=" flex p-5 py-10 max-w-[350px] md:max-w-[900px] lg:max-w-[1300px] mx-auto">
+      
 
 
       <div class="swiper photo-gallery-swiper">
@@ -391,11 +399,19 @@
 
             
             <div class="flex-grow pl-3">
-              <a
+              @if($document->url)
+              <a href="{{ $document->url }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" target="_blank" 
+                >{{ $document->title }}</a>
+                @else
+
+                <a
               href="/enlaces/{{ $document->slug }}"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >{{ $document->title }}</a
             >
+                @endif
+
+              
             </div>
           </div>
 
@@ -420,11 +436,17 @@
                 </div>
             </div>
             <div class="flex-grow pl-3">
+
+              @if($document->url)
+              <a href="{{ $document->url }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" target="_blank" 
+                >{{ $document->title }}</a>
+              @else
               <a
               href="/favoritos/{{ $document->slug }}"
               class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
               >{{ $document->title }}</a
             >
+            @endif
             </div>
           </div>
           @endforeach
