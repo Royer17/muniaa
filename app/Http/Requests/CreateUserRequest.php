@@ -26,36 +26,40 @@ class CreateUserRequest extends FormRequest
     public function rules(Request $request)
     {
 
-        if (Auth::user()->role_id == 1) {
-            if ($request->password) {
-                return [
-                    'username' => "required|min:8|unique:users,email," . $this->input('id') . ",id,deleted_at,NULL",
-                    'name' => 'required',
-                    'role_id' => 'required',
-                    'password' => 'required|alpha_num|min:8|confirmed',
-                    'password_confirmation' => 'required|alpha_num|min:8',
-                ]; 
-            }
+        // if (Auth::user()->role_id == 1) {
+        //     if ($request->password) {
+        //         return [
+        //             'username' => "required|min:8|unique:users,email," . $this->input('id') . ",id,deleted_at,NULL",
+        //             'name' => 'required',
+        //             'role_id' => 'required',
+        //             'password' => 'required|min:8|confirmed',
+        //             'password_confirmation' => 'required|min:8',
+        //         ]; 
+        //     }
 
-            return [
-                'username' => "required|min:8|unique:users,email," . $this->input('id') . ",id,deleted_at,NULL",
-                'name' => 'required',
-                'role_id' => 'required',
-            ]; 
-        }
+        //     return [
+        //         'username' => "required|min:8|unique:users,email," . $this->input('id') . ",id,deleted_at,NULL",
+        //         'name' => 'required',
+        //         'role_id' => 'required',
+        //     ]; 
+        // }
 
         if ($request->password) {
             return [
                 'username' => "required|min:8|unique:users,email," . $this->input('id') . ",id,deleted_at,NULL",
                 'name' => 'required',
-                'password' => 'required|alpha_num|min:8|confirmed',
-                'password_confirmation' => 'required|alpha_num|min:8',
+                'correo' => 'required',
+                'role_id' => 'required',
+                'password' => 'required|min:8|confirmed',
+                'password_confirmation' => 'required|min:8',
             ]; 
         }
 
         return [
             'username' => "required|min:8|unique:users,email," . $this->input('id') . ",id,deleted_at,NULL",
+            'correo' => 'required',
             'name' => 'required',
+            'role_id' => 'required',
         ]; 
 
 

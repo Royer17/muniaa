@@ -36,7 +36,7 @@
                                             --}}
 
                                         </select>
-                                        <div id="user-subject-error" class="text-danger mensaje-error"></div>
+                                        <div id="user-role_id-error" class="text-danger mensaje-error"></div>
                                     </div>
                                     @endif
 
