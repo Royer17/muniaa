@@ -49,22 +49,23 @@ class UserController extends Controller {
 
 	public function get_datatable(Request $request)
 	{
-		$role_id = Auth::user()->role_id;
+		//$role_id = Auth::user()->role_id;
 		
-		if ($role_id == 1) {
+		//if ($role_id == 1) {
 			$result = DB::table('users')
-				->select('id', 'role_id', 'name', 'email')
-				->where('deleted_at', NULL);
-		} else {
-			$result = DB::table('users')
-				->select('id', 'role_id', 'name', 'email')
-				->where('id', Auth::user()->id)
-				->where('deleted_at', NULL);
-		}
+				->join('roles', 'users.role_id', '=', 'roles.id')
+				->select('users.id', 'roles.name as role_id', 'users.name', 'users.email')
+				->where('users.deleted_at', NULL);
+		// } else {
+		// 	$result = DB::table('users')
+		// 		->select('id', 'role_id', 'name', 'email')
+		// 		->where('id', Auth::user()->id)
+		// 		->where('deleted_at', NULL);
+		// }
 
 		return DataTables::of($result)
 		->escapeColumns('Actions')
-		->addColumn('Actions', function($model) use ($role_id)
+		->addColumn('Actions', function($model)
         {
 
 			return "
@@ -91,6 +92,7 @@ class UserController extends Controller {
 
 		$user = new User();
 		$user->fill($data);
+		$user->active = 0;
 		$user->email = $data['username'];
 		if ($request->password) {
 			$user->password = bcrypt($request->password);

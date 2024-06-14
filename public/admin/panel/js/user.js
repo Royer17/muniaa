@@ -38,22 +38,22 @@ $datatable = $('#user-datatable').DataTable({
               "aTargets": [ 1 ],
               "mData": "role_id",
               "mRender": function ( data, type, full ) {
+                return full['role_id'];
+                // if (full['role_id'] == 1) {
+                //     return "Administrador";
+                // }
 
-                if (full['role_id'] == 1) {
-                    return "Administrador";
-                }
+                // if (full['role_id'] == 3) {
+                //     return "Imagen";
+                // }
 
-                if (full['role_id'] == 3) {
-                    return "Imagen";
-                }
+                // if (full['role_id'] == 4) {
+                //     return "Recursos";
+                // }
 
-                if (full['role_id'] == 4) {
-                    return "Recursos";
-                }
-
-                if (full['role_id'] == 5) {
-                    return "Legal";
-                }
+                // if (full['role_id'] == 5) {
+                //     return "Legal";
+                // }
 
               }
         }
