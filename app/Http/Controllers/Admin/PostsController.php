@@ -105,6 +105,7 @@ class PostsController extends Controller {
 	public function store(CreatePostRequest $request)
 	{
 		$data = $request->all();
+		$data['vc_titulo_informacion'] = 
 		$post = new Post();
 		$post->fill($data);
 		$post->slug = str_slug($data['vc_titulo_informacion']);

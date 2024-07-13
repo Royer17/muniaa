@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 use Illuminate\Support\Facades\Storage;
 use Auth;
+use App\Uploaders\ImageConverter;
 
 class PopupController extends Controller {
 
@@ -103,8 +104,13 @@ class PopupController extends Controller {
 		if ($request->imagen != '') {
 			$img = $request->imagen;
 			
-			$filename = time().'.'.str_slug($img->getClientOriginalExtension());
-			$img->move(public_path(). "/img", $filename);
+			//$filename = time().time().'.'.$img->getClientOriginalExtension();
+			$filename = time().time().'.webp';
+			
+			$webp_converter = new ImageConverter();
+			$img_converted = $webp_converter->process($img, 'webp', null);
+			
+			$img_converted->save(public_path(). "/img/".$filename, 80);
 			$popup->imagen = "/img/".$filename;
 		}
 
