@@ -31,6 +31,7 @@ function datatableConvocatorias() {
       { data: "bases", name: "bases", searchable: false },
       { data: "resultados", name: "resultados", searchable: false },
       { data: "aptos", name: "aptos", searchable: false },
+      { data: "comunicados", name: "comunicados", searchable: false },
       { data: "Image", searchable: false },
       { data: "published", searchable: false },
       { data: "Actions", searchable: false },
@@ -38,7 +39,7 @@ function datatableConvocatorias() {
     aoColumnDefs: [
       {
         bVisible: false,
-        aTargets: [0, 6],
+        aTargets: [0, 7],
       },
       {
         aTargets: [1],
@@ -78,7 +79,17 @@ function datatableConvocatorias() {
         },
       },
       {
-        aTargets: [7],
+        aTargets: [6],
+        mData: "comunicados",
+        mRender: function (data, type, full) {
+          if (full["comunicados"]) {
+            return `<a target="_blank" href="${full["comunicados"]}">Comunicados</a>`;
+          }
+          return "";
+        },
+      },
+      {
+        aTargets: [8],
         mData: "published",
         mRender: function (data, type, full) {
           if (full["published"] == 1) {

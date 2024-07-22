@@ -2,92 +2,91 @@
 
 @section('content')
 <style>
-    
-
     table {
-    width: 100%;
-    border-collapse: collapse;
-}
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-table, th, td {
-    border: 1px solid gray;
-}
+    table,
+    th,
+    td {
+        border: 1px solid gray;
+    }
 
-th, td {
-    padding: 15px;
-    text-align: left;
-}
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+    }
 
-tr:nth-child(odd) {
-    background-color: #f9f9f9;
-}
+    tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
 
-tr:nth-child(even) {
-    background-color: #ffffff;
-}
+    tr:nth-child(even) {
+        background-color: #ffffff;
+    }
 
-dt {
-    font-weight: normal;
-    color: gray;
-}
+    dt {
+        font-weight: normal;
+        color: gray;
+    }
 
-dd {
-    color: black;
-    font-weight: bold;
-    margin: 0;
-}
+    dd {
+        color: black;
+        font-weight: bold;
+        margin: 0;
+    }
 
-.c-orange {
-    color: orange;
-}
+    .c-orange {
+        color: orange;
+    }
 
-.img-responsive {
-    width: 50px;
-    height: auto;
-}
+    .img-responsive {
+        width: 50px;
+        height: auto;
+    }
 
-.dataTables_paginate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-}
+    .dataTables_paginate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        font-family: Arial, sans-serif;
+    }
 
-.paginate_button {
-    margin: 0 5px;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #007bff;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s, color 0.3s;
-}
+    .paginate_button {
+        margin: 0 5px;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #007bff;
+        background-color: #f9f9f9;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
-.paginate_button:hover {
-    background-color: #007bff;
-    color: white;
-}
+    .paginate_button:hover {
+        background-color: #007bff;
+        color: white;
+    }
 
-.paginate_button.current {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    cursor: default;
-}
+    .paginate_button.current {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        cursor: default;
+    }
 
-.paginate_button.disabled {
-    color: #ccc;
-    cursor: not-allowed;
-}
+    .paginate_button.disabled {
+        color: #ccc;
+        cursor: not-allowed;
+    }
 
-.ellipsis {
-    padding: 8px 12px;
-    color: #777;
-}
-
-
+    .ellipsis {
+        padding: 8px 12px;
+        color: #777;
+    }
 </style>
 
 <section id="vision">
@@ -98,12 +97,14 @@ dd {
         <div class="container mx-auto flex flex-col md:flex-row gap-6 px-3 md:px-20">
             <div class="flex-1 bg-white shadow-md rounded-2xl p-4 md:p-6">
                 <div class="mb-6">
-                    <a href="https://munialtoalianza.gob.pe/web/resources/fotoContenido/293_3419_17012023_FORMATOS%20CAS.pdf" target="_blank" class="text-blue-500 hover:underline font-bold">DESCARGAR FORMATO CAS</a>
+                    <a href="https://munialtoalianza.gob.pe/web/resources/fotoContenido/293_3419_17012023_FORMATOS%20CAS.pdf"
+                        target="_blank" class="text-blue-500 hover:underline font-bold">DESCARGAR FORMATO CAS</a>
                 </div>
 
-                  <br><br>
-                  <div class="overflow-x-auto">
-                    <table id="tabla_convoca" class="stripe w-full bg-white rounded-lg overflow-hidden shadow-md border border-gray-300">
+                <br><br>
+                <div class="overflow-x-auto">
+                    <table id="tabla_convoca"
+                        class="stripe w-full bg-white rounded-lg overflow-hidden shadow-md border border-gray-300">
                         <!-- Cabecera de la tabla -->
                         <thead class="bg-gray-100 border-b border-gray-300">
                             <tr>
@@ -114,6 +115,7 @@ dd {
                                 <th class="px-4 py-2 text-center">Bases</th>
                                 <th class="px-4 py-2 text-center">Aptos</th>
                                 <th class="px-4 py-2 text-center">Resultados</th>
+                                <th class="px-4 py-2 text-center">Comunicados</th>
                             </tr>
                         </thead>
                         <!-- Cuerpo de la tabla -->
@@ -122,30 +124,30 @@ dd {
                         </tbody>
                     </table>
                 </div>
-                
+
                 @push('scripts')
-                <script>
-                    $(document).ready(function () {
-                        $('#tabla_convoca').DataTable({
-                            "pagingType": "simple_numbers", // Usar paginación simple
-                            "language": {
-                                "paginate": {
-                                    "next": "&rarr;", // Personalizar botón de siguiente
-                                    "previous": "&larr;" // Personalizar botón de anterior
+                    <script>
+                        $(document).ready(function () {
+                            $('#tabla_convoca').DataTable({
+                                "pagingType": "simple_numbers", // Usar paginación simple
+                                "language": {
+                                    "paginate": {
+                                        "next": "&rarr;", // Personalizar botón de siguiente
+                                        "previous": "&larr;" // Personalizar botón de anterior
+                                    }
                                 }
-                            }
+                            });
                         });
-                    });
-                </script>
+                    </script>
                 @endpush
-                
-   
-       
 
-@section('scripts')
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<script src="/js/convocatoria.js"></script>
-@endsection
 
-@include('shared.information2')
-@endsection
+
+
+                @section('scripts')
+                <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+                <script src="/js/convocatoria.js"></script>
+                @endsection
+
+                @include('shared.information2')
+                @endsection

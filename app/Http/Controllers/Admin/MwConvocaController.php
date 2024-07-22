@@ -42,7 +42,7 @@ class MwConvocaController extends Controller
 		$role_id = $request->role_id;
 
 		$result = DB::table('mw_convoca')
-			->select('idnoti', 'fecha', 'unidad', 'bases', 'resultados', 'aptos', 'published')
+			->select('idnoti', 'fecha', 'unidad', 'bases', 'resultados', 'aptos', 'comunicados', 'published')
 			->where('deleted_at', NULL);
 		//->orderBy('idnoti','ASC');
 
